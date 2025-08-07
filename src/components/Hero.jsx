@@ -1,19 +1,105 @@
-import React from "react";
-import { FlipWords } from "./Flipword";
+import React, { use, useEffect, useRef } from "react";
+import myImage from "../images/sara.png";
+import RotatingText from "./animations/RotatingText";
+import TechStack from "./Techstack";
+import ScrollReveal from "./animations/ScrollReveal";
+import Projects from "./Projects";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const Hero = () => {
-  const words = ["Websites", "WebApps", "ApiCalls"];
+  gsap.registerPlugin(ScrollTrigger);
+  const techStackRef = useRef(null);
+  const scrollContainerRef = useRef(null);
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.fromTo(
+      techStackRef.current,
+      { opacity: 0, y: 50, scale: 0.95 },
+      {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 1.2,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: techStackRef.current,
+          start: "top center",
+          toggleActions: "play none none reverse",
+          scroller: scrollContainerRef.current,
+        },
+      }
+    );
+  }, []);
 
   return (
-    <div>
-      <div className="h-[40rem] flex justify-center items-center px-4">
-        <div className="text-4xl mx-auto font-normal text-neutral-600 dark:text-neutral-400">
-          I Build
-          <FlipWords words={words} /> <br />
-          Projects
+    <div className="h-screen overflow-hidden">
+      <section className="h-full flex">
+        <div className="hidden md:flex w-1/3  items-center">
+          <div className="sticky top-0">
+            <img
+              src={myImage}
+              alt="Sarangan profile"
+              className="w-50 h-50 object-cover rounded-full shadow-lg border-4 border-gray-200"
+            />
+            <h1 className="text-3xl sm:text-xl font-extrabold text-center leading-tight mt-5">
+              SARANGAN
+            </h1>
+          </div>
         </div>
-      </div>
-      );
+
+        <div
+          className="w-full md:w-2/3 overflow-y-auto px-6 hide-scrollbar pb-20"
+          style={{ paddingTop: "15rem" }}
+          ref={scrollContainerRef}
+        >
+          <div className="max-w-xl mx-auto md:text-left flex flex-col justify-start h-full mb-20">
+            <p className="mt-0 mb-6 text-4xl text-gray-600">
+              A Front-End Developer crafting clean, interactive, and responsive{" "}
+              <span
+                className="inline-block align-baseline"
+                style={{ width: "10.5ch" }}
+              >
+                <RotatingText
+                  texts={["WebApps", "Websites"]}
+                  mainClassName="inline-block text-black text-3xl px-1 rounded"
+                  staggerFrom="last"
+                  initial={{ y: "100%" }}
+                  animate={{ y: 0 }}
+                  exit={{ y: "-120%" }}
+                  staggerDuration={0.025}
+                  splitLevelClassName="overflow-hidden pb-0.5"
+                  transition={{ type: "spring", damping: 30, stiffness: 400 }}
+                  rotationInterval={2000}
+                />
+              </span>{" "}
+              that solve real-world problems.
+            </p>
+            <div
+              ref={techStackRef}
+              className="mt-3"
+              style={{ paddingTop: "15rem" }}
+            >
+              <TechStack />
+            </div>
+
+            <div
+              className="flex flex-col justify-center"
+              style={{ paddingTop: "10rem" }}
+            >
+              <ScrollReveal
+                baseOpacity={0}
+                enableBlur={true}
+                baseRotation={5}
+                blurStrength={10}
+              ></ScrollReveal>
+            </div>
+            <Projects />
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
