@@ -18,7 +18,7 @@ const projects = [
   {
     title: "Büro Krazy",
     description:
-      "A location-based app to find public offices (Bürgerservice) across Germany. Users can filter by needed services and book a mock appointment for demo purposes.",
+      "A location-based app to find public offices (Bürgerservice) across Germany. Users can filter by needed services and book a mock appointment for demo purposes. (Still in Process)",
     github: "https://github.com/sarangan16/buro_DE",
     live: "https://buro-de.vercel.app/",
   },

@@ -17,6 +17,7 @@ const Hero = () => {
   const stackSectionRef = useRef(null);
   const projectsSectionRef = useRef(null);
   const leftBlockRef = useRef(null);
+  const imgRef = useRef(null);
 
   const [leftContent, setLeftContent] = useState("default");
 
@@ -40,6 +41,14 @@ const Hero = () => {
         },
       }
     );
+    gsap.from(imgRef.current, {
+      rotation: 3,
+      duration: 4,
+      yoyo: true,
+      repeat: -1,
+      ease: "power1.inOut",
+      transformOrigin: "50% 50%",
+    });
 
     ScrollTrigger.create({
       trigger: stackSectionRef.current,
@@ -79,6 +88,7 @@ const Hero = () => {
               {leftContent === "default" && (
                 <>
                   <img
+                    ref={imgRef}
                     src={myImage}
                     alt="Sarangan profile"
                     className="w-48 h-48 object-cover rounded-full shadow-lg border-4 border-gray-200"
@@ -110,9 +120,9 @@ const Hero = () => {
           style={{ paddingTop: "15rem" }}
           ref={scrollContainerRef}
         >
-          <div className="max-w-xl mx-auto md:text-left flex flex-col justify-start h-full mb-20">
-            <p className="mt-0 mb-6 text-4xl text-gray-600">
-              A Front-End Developer crafting clean, interactive, and responsive{" "}
+          <div className="max-w-xl mx-auto md:text-left flex flex-col justify-start h-full mb-20 ">
+            <p className="mt-0 mb-6 text-4xl text-gray-600 ">
+              Front-End Developer crafting interactive, and responsive{" "}
               <span
                 className="inline-block align-baseline"
                 style={{ width: "7.5ch" }}
