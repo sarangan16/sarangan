@@ -31,7 +31,7 @@ const TechStack = () => {
           {techStack.map((tech, index) => (
             <div
               key={index}
-              className="flex flex-col items-center text-gray-700 hover:scale-110 transition-transform duration-200 tech-item p-4 bg-gray-200 rounded shadow-md"
+              className="flex flex-col items-center text-gray-700 hover:scale-110 transition-transform duration-200 tech-item p-4 rounded shadow-md"
             >
               <div className="text-2xl mb-2">{tech.icon}</div>
               <span className="text-sm font-medium">{tech.name}</span>

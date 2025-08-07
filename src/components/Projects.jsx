@@ -35,7 +35,6 @@ const Projects = () => {
   return (
     <section className="px-6 py-20">
       <div className="max-w-5xl mx-auto">
-        <h1>Projects</h1>
         <div className="grid gap-10 sm:grid-cols-1 md:grid-cols-2">
           {projects.map((project, index) => (
             <div

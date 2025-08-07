@@ -1,4 +1,4 @@
-import React, { use, useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import myImage from "../images/sara.png";
 import RotatingText from "./animations/RotatingText";
 import TechStack from "./Techstack";
@@ -6,11 +6,19 @@ import ScrollReveal from "./animations/ScrollReveal";
 import Projects from "./Projects";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { FaGithub } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 
 const Hero = () => {
   gsap.registerPlugin(ScrollTrigger);
+
   const techStackRef = useRef(null);
   const scrollContainerRef = useRef(null);
+  const stackSectionRef = useRef(null);
+  const projectsSectionRef = useRef(null);
+  const leftBlockRef = useRef(null);
+
+  const [leftContent, setLeftContent] = useState("default");
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -32,22 +40,69 @@ const Hero = () => {
         },
       }
     );
+
+    ScrollTrigger.create({
+      trigger: stackSectionRef.current,
+      start: "top center",
+      end: "bottom center",
+      scroller: scrollContainerRef.current,
+      onEnter: () => setLeftContent("stack"),
+      onLeaveBack: () => setLeftContent("default"),
+    });
+
+    ScrollTrigger.create({
+      trigger: projectsSectionRef.current,
+      start: "top center",
+      end: "bottom center",
+      scroller: scrollContainerRef.current,
+      onEnter: () => setLeftContent("projects"),
+      onLeaveBack: () => setLeftContent("stack"),
+    });
   }, []);
+
+  useEffect(() => {
+    if (!leftBlockRef.current) return;
+
+    gsap.fromTo(
+      leftBlockRef.current,
+      { opacity: 0, y: 20 },
+      { opacity: 1, y: 0, duration: 1, ease: "power1.out" }
+    );
+  }, [leftContent]);
 
   return (
     <div className="h-screen overflow-hidden">
       <section className="h-full flex">
-        <div className="hidden md:flex w-1/3  items-center">
-          <div className="sticky top-0">
-            <img
-              src={myImage}
-              alt="Sarangan profile"
-              className="w-50 h-50 object-cover rounded-full shadow-lg border-4 border-gray-200"
-            />
-            <h1 className="text-3xl sm:text-xl font-extrabold text-center leading-tight mt-5">
-              SARANGAN
-            </h1>
-          </div>
+        <div className="hidden md:flex w-1/3 items-center">
+          <section>
+            <div className="sticky top-0" ref={leftBlockRef}>
+              {leftContent === "default" && (
+                <>
+                  <img
+                    src={myImage}
+                    alt="Sarangan profile"
+                    className="w-48 h-48 object-cover rounded-full shadow-lg border-4 border-gray-200"
+                  />
+                  <h1 className="text-3xl sm:text-xl font-extrabold text-center leading-tight mt-5">
+                    SARANGAN
+                  </h1>
+                  <p className="text-center">Düsseldorf, Germany</p>
+                  <div className="flex justify-center gap-4 mt-3">
+                    <FaGithub />
+                    <MdEmail />
+                  </div>
+                </>
+              )}
+
+              {leftContent === "stack" && (
+                <h2 className="text-4xl font-bold text-center">STACK</h2>
+              )}
+
+              {leftContent === "projects" && (
+                <h2 className="text-4xl font-bold text-center">PROJECTS</h2>
+              )}
+            </div>
+          </section>
         </div>
 
         <div
@@ -60,11 +115,11 @@ const Hero = () => {
               A Front-End Developer crafting clean, interactive, and responsive{" "}
               <span
                 className="inline-block align-baseline"
-                style={{ width: "10.5ch" }}
+                style={{ width: "7.5ch" }}
               >
                 <RotatingText
-                  texts={["WebApps", "Websites"]}
-                  mainClassName="inline-block text-black text-3xl px-1 rounded"
+                  texts={["WebApps", "Websites", "UI & UX"]}
+                  mainClassName="inline-block text-3xl px-1 rounded"
                   staggerFrom="last"
                   initial={{ y: "100%" }}
                   animate={{ y: 0 }}
@@ -77,8 +132,12 @@ const Hero = () => {
               </span>{" "}
               that solve real-world problems.
             </p>
+
             <div
-              ref={techStackRef}
+              ref={(el) => {
+                techStackRef.current = el;
+                stackSectionRef.current = el;
+              }}
               className="mt-3"
               style={{ paddingTop: "15rem" }}
             >
@@ -94,9 +153,12 @@ const Hero = () => {
                 enableBlur={true}
                 baseRotation={5}
                 blurStrength={10}
-              ></ScrollReveal>
+              />
             </div>
-            <Projects />
+
+            <div ref={projectsSectionRef}>
+              <Projects />
+            </div>
           </div>
         </div>
       </section>
