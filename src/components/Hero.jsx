@@ -8,6 +8,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FaGithub } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
+import Contact from "./Contact";
 
 const Hero = () => {
   gsap.registerPlugin(ScrollTrigger);
@@ -16,10 +17,12 @@ const Hero = () => {
   const scrollContainerRef = useRef(null);
   const stackSectionRef = useRef(null);
   const projectsSectionRef = useRef(null);
+  const contactSectionRef = useRef(null);
   const leftBlockRef = useRef(null);
   const imgRef = useRef(null);
 
   const [leftContent, setLeftContent] = useState("default");
+  const [showContact, setShowContact] = useState(false);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -67,6 +70,15 @@ const Hero = () => {
       onEnter: () => setLeftContent("projects"),
       onLeaveBack: () => setLeftContent("stack"),
     });
+
+    ScrollTrigger.create({
+      trigger: contactSectionRef.current,
+      start: "top center",
+      end: "bottom center",
+      scroller: scrollContainerRef.current,
+      onEnter: () => setLeftContent("contact"),
+      onLeaveBack: () => setLeftContent("projects"),
+    });
   }, []);
 
   useEffect(() => {
@@ -98,8 +110,14 @@ const Hero = () => {
                   </h1>
                   <p className="text-center">Düsseldorf, Germany</p>
                   <div className="flex justify-center gap-4 mt-3">
-                    <FaGithub />
-                    <MdEmail />
+                    <a
+                      href="https://github.com/sarangan16"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-black hover:text-gray-600"
+                    >
+                      <FaGithub size={24} />
+                    </a>
                   </div>
                 </>
               )}
@@ -111,13 +129,16 @@ const Hero = () => {
               {leftContent === "projects" && (
                 <h2 className="text-4xl font-bold text-center">PROJECTS</h2>
               )}
+              {leftContent === "contact" && (
+                <h2 className="text-4xl font-bold text-center">CONTACT</h2>
+              )}
             </div>
           </section>
         </div>
 
         <div
           className="w-full md:w-2/3 overflow-y-auto px-6 hide-scrollbar pb-20"
-          style={{ paddingTop: "15rem" }}
+          style={{ paddingTop: "16rem" }}
           ref={scrollContainerRef}
         >
           <div className="max-w-xl mx-auto md:text-left flex flex-col justify-start h-full mb-20 ">
@@ -168,6 +189,9 @@ const Hero = () => {
 
             <div ref={projectsSectionRef}>
               <Projects />
+            </div>
+            <div ref={contactSectionRef} style={{ paddingTop: "10rem" }}>
+              <Contact />
             </div>
           </div>
         </div>

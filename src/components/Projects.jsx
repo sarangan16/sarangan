@@ -22,13 +22,6 @@ const projects = [
     github: "https://github.com/sarangan16/buro_DE",
     live: "https://buro-de.vercel.app/",
   },
-  {
-    title: "Movie Database",
-    description:
-      "Built with the TMDB API, this app displays trending and top-rated movies. Users can browse movies by category, search titles, and view detailed info.",
-    github: "https://github.com/sarangan16/moviedatabase.github.io",
-    live: "https://taskmanager.live",
-  },
 ];
 
 const Projects = () => {
