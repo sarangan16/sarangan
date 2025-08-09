@@ -18,18 +18,23 @@ const Navbar = () => {
           </div>
 
           <div className="flex space-x-4">
-            <button
-              onClick={() => changeLanguage("de")}
-              className="px-3 py-1 rounded hover:bg-[#FFCC00] focus:outline-none"
-            >
-              DE
-            </button>
-            <button
-              onClick={() => changeLanguage("en")}
-              className="px-3 py-1 rounded hover:bg-blue-400 focus:outline-none"
-            >
-              EN
-            </button>
+            {i18n.language === "en" && (
+              <button
+                onClick={() => changeLanguage("de")}
+                className="px-3 py-1 rounded hover:bg-[#FFCC00] focus:outline-none"
+              >
+                DE
+              </button>
+            )}
+
+            {i18n.language === "de" && (
+              <button
+                onClick={() => changeLanguage("en")}
+                className="px-3 py-1 rounded hover:bg-blue-400 focus:outline-none"
+              >
+                EN
+              </button>
+            )}
           </div>
         </div>
       </div>
