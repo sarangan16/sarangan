@@ -7,10 +7,12 @@ import Projects from "./Projects";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FaGithub } from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
 import Contact from "./Contact";
+import { useTranslation } from "react-i18next";
 
 const Hero = () => {
+  const { t, i18n } = useTranslation();
+
   gsap.registerPlugin(ScrollTrigger);
 
   const techStackRef = useRef(null);
@@ -22,7 +24,6 @@ const Hero = () => {
   const imgRef = useRef(null);
 
   const [leftContent, setLeftContent] = useState("default");
-  const [showContact, setShowContact] = useState(false);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -123,14 +124,20 @@ const Hero = () => {
               )}
 
               {leftContent === "stack" && (
-                <h2 className="text-4xl font-bold text-center">STACK</h2>
+                <h2 className="text-4xl font-bold text-center">
+                  {t("stackh2")}
+                </h2>
               )}
 
               {leftContent === "projects" && (
-                <h2 className="text-4xl font-bold text-center">PROJECTS</h2>
+                <h2 className="text-4xl font-bold text-center">
+                  {t("projecth2")}
+                </h2>
               )}
               {leftContent === "contact" && (
-                <h2 className="text-4xl font-bold text-center">CONTACT</h2>
+                <h2 className="text-4xl font-bold text-center">
+                  {t("contacth2")}
+                </h2>
               )}
             </div>
           </section>
@@ -143,7 +150,7 @@ const Hero = () => {
         >
           <div className="max-w-xl mx-auto md:text-left flex flex-col justify-start h-full mb-20 ">
             <p className="mt-0 mb-6 text-4xl text-gray-600 ">
-              Front-End Developer crafting interactive, and responsive{" "}
+              {t("saranganIntro")}{" "}
               <span
                 className="inline-block align-baseline"
                 style={{ width: "7.5ch" }}
@@ -161,7 +168,7 @@ const Hero = () => {
                   rotationInterval={2000}
                 />
               </span>{" "}
-              that solve real-world problems.
+              {t("saranganIntro2")}
             </p>
 
             <div
