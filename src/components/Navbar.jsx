@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import logo from "../images/logo.png";
+import logo3 from "../images/logo3.png";
 
 const Navbar = () => {
   const { i18n } = useTranslation();
@@ -11,17 +11,17 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 w-full bg-white shadow-sm z-50">
-      <div className="container mx-auto flex justify-center items-center p-4">
-        <div className="flex justify-between w-full max-w-screen-lg items-center">
+      <div className="flex justify-center items-center p-4">
+        <div className="px-6 flex justify-between w-full items-center">
           <div className="text-xl font-bold">
-            <img src={logo} alt="Logo" height="50" width="50" />
+            <img src={logo3} alt="Logo" height="46" width="46" />
           </div>
 
           <div className="flex space-x-4">
             {i18n.language === "en" && (
               <button
                 onClick={() => changeLanguage("de")}
-                className="px-3 py-1 rounded hover:bg-[#FFCC00] focus:outline-none"
+                className="px-4 py-1 rounded bg-[#EF4444] text-white focus:outline-none"
               >
                 DE
               </button>
@@ -30,7 +30,7 @@ const Navbar = () => {
             {i18n.language === "de" && (
               <button
                 onClick={() => changeLanguage("en")}
-                className="px-3 py-1 rounded hover:bg-blue-400 focus:outline-none"
+                className="px-4 py-1 rounded bg-[#EF4444] text-white focus:outline-none"
               >
                 EN
               </button>

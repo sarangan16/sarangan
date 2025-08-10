@@ -9,7 +9,7 @@ i18n.use(initReactI18next).init({
     en: {
       translation: {
         saranganIntro:
-          "Front-End Developer crafting interactive, and responsive",
+          "Front-End Developer Crafting visually stunning, interactive, and responsive",
         saranganIntro2: "that solve real-world problems.",
         stackh2: "STACK",
         projecth2: "PROJECTS",
@@ -29,7 +29,7 @@ i18n.use(initReactI18next).init({
     de: {
       translation: {
         saranganIntro:
-          "Frontend-Entwickler mit Fokus auf interaktive und responsive Anwendungen",
+          "Frontend-Entwickler, der visuell beeindruckende, interaktive und responsive Websites gestaltet",
         saranganIntro2: "die reale Probleme lösen.",
         stackh2: "Tech Stacks",
         projecth2: "PROJEKTE",

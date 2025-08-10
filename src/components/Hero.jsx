@@ -46,8 +46,8 @@ const Hero = () => {
       }
     );
     gsap.from(imgRef.current, {
-      rotation: 3,
-      duration: 4,
+      rotation: 0,
+      duration: 6,
       yoyo: true,
       repeat: -1,
       ease: "power1.inOut",
@@ -94,8 +94,8 @@ const Hero = () => {
 
   return (
     <div className="h-screen overflow-hidden">
-      <section className="h-full flex">
-        <div className="hidden md:flex w-1/3 items-center">
+      <section className="h-full flex my-8">
+        <div className="hidden sm:flex w-1/3 items-center justify-center">
           <section>
             <div className="sticky top-0" ref={leftBlockRef}>
               {leftContent === "default" && (
@@ -104,7 +104,7 @@ const Hero = () => {
                     ref={imgRef}
                     src={myImage}
                     alt="Sarangan profile"
-                    className="w-48 h-48 object-cover rounded-full shadow-lg border-4 border-gray-200"
+                    className="w-48 h-48 object-cover  shadow-lg border-4 border-gray-200 mt-10"
                   />
                   <h1 className="text-3xl sm:text-xl font-extrabold text-center leading-tight mt-5">
                     SARANGAN

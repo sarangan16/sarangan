@@ -16,7 +16,7 @@ const projects = [
     live: "https://jobhunt-pink.vercel.app/",
   },
   {
-    title: "Büro Krazy",
+    title: "Bürokratie",
     descriptionKey: "Büro Krazy.description",
     github: "https://github.com/sarangan16/buro_DE",
     live: "https://buro-de.vercel.app/",
