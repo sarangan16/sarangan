@@ -104,7 +104,7 @@ const Hero = () => {
                     ref={imgRef}
                     src={myImage}
                     alt="Sarangan profile"
-                    className="w-48 h-48 object-cover  shadow-lg border-4 border-gray-200 mt-10"
+                    className="w-48 h-48 object-cover shadow-lg border-4 border-gray-200 mt-10"
                   />
                   <h1 className="text-3xl sm:text-xl font-extrabold text-center leading-tight mt-5">
                     SARANGAN
@@ -145,7 +145,7 @@ const Hero = () => {
 
         <div
           className="w-full md:w-2/3 overflow-y-auto px-6 hide-scrollbar pb-20"
-          style={{ paddingTop: "16rem" }}
+          style={{ paddingTop: "14rem" }}
           ref={scrollContainerRef}
         >
           <div className="max-w-xl mx-auto md:text-left flex flex-col justify-start h-full mb-20 ">
