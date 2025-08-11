@@ -93,7 +93,7 @@ const Hero = () => {
   }, [leftContent]);
 
   return (
-    <div className="h-screen overflow-hidden">
+    <div className="h-screen overflow-hidden pt-10">
       <section className="h-full flex my-8">
         <div className="hidden sm:flex w-1/3 items-center justify-center">
           <section>

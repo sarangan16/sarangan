@@ -1,8 +1,10 @@
 *{
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #EEEEEE;
   color: #4A4A4A			;
 }
 html{
    scroll-behavior: smooth;
+}
+body{
+  background-color: #EEEEEE;
 }

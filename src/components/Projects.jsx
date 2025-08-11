@@ -17,7 +17,7 @@ const projects = [
   },
   {
     title: "Bürokratie",
-    descriptionKey: "Büro Krazy.description",
+    descriptionKey: "Bürokratie.description",
     github: "https://github.com/sarangan16/buro_DE",
     live: "https://buro-de.vercel.app/",
   },

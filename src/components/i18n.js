@@ -17,12 +17,12 @@ i18n.use(initReactI18next).init({
         live: "Live",
         KaufDE: "KaufDE",
         "Job Portal": "Job Portal",
-        "Büro Krazy": "Büro Krazy",
+        Bürokratie: "bureaucracy",
         "KaufDE.description":
           "An online store built with React and Tailwind CSS using the FakeStoreAPI. Features include product listing, category filtering, sorting, and add-to-cart functionality.",
         "Job Portal.description":
           "A job listing app that fetches real-time data from the Arbeitnow API. Includes filtering by job title and location for a tailored job search experience.",
-        "Büro Krazy.description":
+        "Bürokratie.description":
           "A location-based app to find public offices (Bürgerservice) across Germany. Users can filter by needed services and book a mock appointment for demo purposes. (Still in Process)",
       },
     },
@@ -37,12 +37,12 @@ i18n.use(initReactI18next).init({
         live: "Live",
         KaufDE: "KaufDE",
         "Job Portal": "Job Portal",
-        "Büro Krazy": "Büro Krazy",
+        Bürokratie: "Bürokratie",
         "KaufDE.description":
           "Ein Online-Shop, gebaut mit React und Tailwind CSS unter Verwendung der FakeStoreAPI. Funktionen umfassen Produktauflistung, Kategoriefilterung, Sortierung und Warenkorb-Funktion.",
         "Job Portal.description":
           "Eine Jobbörse, die Echtzeit-Daten von der Arbeitnow-API abruft. Es gibt Filter nach Jobtitel und Standort für eine maßgeschneiderte Jobsuche.",
-        "Büro Krazy.description":
+        "Bürokratie.description":
           "Eine standortbasierte App, um öffentliche Ämter (Bürgerservice) in Deutschland zu finden. Nutzer können nach benötigten Services filtern und einen Demo-Termin buchen. (Noch in Bearbeitung)",
       },
     },
