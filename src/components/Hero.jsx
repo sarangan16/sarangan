@@ -149,6 +149,13 @@ const Hero = () => {
           ref={scrollContainerRef}
         >
           <div className="max-w-xl mx-auto md:text-left flex flex-col justify-start h-full mb-20 ">
+            <h1 className="block md:hidden text-2xl font-bold text-center sm:text-xl  leading-tight mt-2">
+              SARANGAN
+            </h1>
+            <p className="text-center block md:hidden font-bold leading-tight mt-5 mb-4">
+              Düsseldorf, Germany
+            </p>
+
             <p className="mt-0 mb-6 text-4xl text-gray-600 ">
               {t("saranganIntro")}{" "}
               <span
@@ -179,6 +186,9 @@ const Hero = () => {
               className="mt-3"
               style={{ paddingTop: "15rem" }}
             >
+              <h1 className="block md:hidden text-2xl font-bold text-center sm:text-xl  leading-tight mt-6">
+                Tech Stack
+              </h1>
               <TechStack />
             </div>
 
@@ -195,9 +205,15 @@ const Hero = () => {
             </div>
 
             <div ref={projectsSectionRef}>
+              <h1 className="block md:hidden text-2xl font-bold text-center sm:text-xl  leading-tight mt-2 mb-5">
+                Projects
+              </h1>
               <Projects />
             </div>
             <div ref={contactSectionRef} style={{ paddingTop: "10rem" }}>
+              <h1 className="block md:hidden text-2xl font-bold text-center sm:text-xl  leading-tight mt-2 mb-5">
+                Contact
+              </h1>
               <Contact />
             </div>
           </div>

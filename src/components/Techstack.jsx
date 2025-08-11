@@ -26,7 +26,7 @@ const techStack = [
 const TechStack = () => {
   return (
     <section className="">
-      <div className="flex flex-wrap gap-4">
+      <div className="flex flex-wrap gap-4 items-center justify-center">
         <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-6 justify-items-center">
           {techStack.map((tech, index) => (
             <div
