@@ -145,7 +145,7 @@ const Hero = () => {
         </div>
 
         <div
-          className="w-full md:w-2/3 overflow-y-auto px-6 hide-scrollbar pb-20"
+          className="right-content w-full md:w-2/3 overflow-y-auto px-6 hide-scrollbar pb-20"
           style={{ paddingTop: "14rem" }}
           ref={scrollContainerRef}
         >
@@ -157,7 +157,7 @@ const Hero = () => {
               Düsseldorf, Germany
             </p>
 
-            <p className="mt-0 mb-6 text-4xl text-gray-600 ">
+            <p className="mt-0 mb-6 text-3xl text-gray-600 ">
               {t("saranganIntro")}{" "}
               <span
                 className="inline-block align-baseline"
@@ -165,7 +165,7 @@ const Hero = () => {
               >
                 <RotatingText
                   texts={["WebApps", "Websites", "UI & UX"]}
-                  mainClassName="inline-block text-3xl px-1 rounded"
+                  mainClassName="inline-block text-2xl px-1 rounded"
                   staggerFrom="last"
                   initial={{ y: "100%" }}
                   animate={{ y: 0 }}
