@@ -1,6 +1,5 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import logo3 from "../images/logo3.png";
 
 const Navbar = () => {
   const { i18n } = useTranslation();

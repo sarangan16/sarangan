@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import "./App.css";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
-import TechStack from "./components/Techstack";
 import "./components/i18n";
 import { useTranslation } from "react-i18next";
 
