@@ -104,7 +104,8 @@ const Hero = () => {
                     ref={imgRef}
                     src={myImage}
                     alt="Sarangan profile"
-                    className="w-48 h-48 object-cover shadow-lg border-4 border-gray-200 mt-10"
+                    className="w-48 h-48 object-cover shadow-lg border-4 border-gray-200 mt-10 rounded-full
+"
                   />
                   <h1 className="text-3xl sm:text-xl font-extrabold text-center leading-tight mt-5">
                     SARANGAN
