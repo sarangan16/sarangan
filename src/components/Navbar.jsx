@@ -13,11 +13,9 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 w-full z-50">
       <div className="flex justify-center items-center p-4">
         <div className="px-6 flex justify-between w-full items-center">
-          <div className="text-xl font-bold">
-            <img src={logo3} alt="Logo" height="46" width="46" />
-          </div>
+          <div className="text-xl font-bold flex w-1/3 items-center justify-center"></div>
 
-          <div className="flex space-x-4">
+          <div className="flex space-x-4 2/3 items-center justify-center">
             {i18n.language === "en" && (
               <button
                 onClick={() => changeLanguage("de")}
