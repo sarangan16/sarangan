@@ -10,6 +10,12 @@ const projects = [
     live: "https://online-store-eight-khaki.vercel.app/",
   },
   {
+    title: "GoldStack",
+    descriptionKey: "GoldStack.description",
+    github: "https://github.com/sarangan16/real-estate",
+    live: "https://real-estate-khaki-six.vercel.app/",
+  },
+  {
     title: "Job Portal",
     descriptionKey: "Job Portal.description",
     github: "https://github.com/sarangan16/jobhunt",

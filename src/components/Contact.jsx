@@ -2,10 +2,13 @@ import React, { useRef, useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useTranslation } from "react-i18next";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Contact = () => {
+  const { t } = useTranslation();
+
   const formRef = useRef(null);
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -59,7 +62,7 @@ const Contact = () => {
       <div className="max-w-2xl mx-auto">
         {submitted ? (
           <p className="text-green-600 text-center font-medium">
-            Thank you! Your message has been sent.
+            {t("messageSent")}
           </p>
         ) : (
           <form
