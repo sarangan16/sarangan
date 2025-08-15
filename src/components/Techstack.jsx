@@ -5,21 +5,24 @@ import {
   FaGithub,
   FaNodeJs,
   FaBootstrap,
+  FaSass,
 } from "react-icons/fa";
-import { SiTailwindcss, SiJavascript, SiVite } from "react-icons/si";
+import { SiTailwindcss, SiJavascript, SiVite, SiFramer } from "react-icons/si";
 
 const techStack = [
-  { name: "React", icon: <FaReact className="text-sky-500" /> },
-  { name: "Tailwind", icon: <SiTailwindcss className="text-cyan-500" /> },
-  { name: "JavaScript", icon: <SiJavascript className="text-yellow-400" /> },
-  { name: "HTML5", icon: <FaHtml5 className="text-orange-600" /> },
-  { name: "CSS3", icon: <FaCss3Alt className="text-blue-600" /> },
-  { name: "Vite", icon: <SiVite className="text-purple-400" /> },
-  { name: "Node.js", icon: <FaNodeJs className="text-green-600" /> },
-  { name: "Bootstrap", icon: <FaBootstrap className="text-orange-600" /> },
+  { name: "React", icon: <FaReact style={{ fill: "#0ea5e9" }} /> },
+  { name: "Tailwind", icon: <SiTailwindcss style={{ fill: "#06b6d4" }} /> },
+  { name: "JavaScript", icon: <SiJavascript style={{ fill: "#fbbf24" }} /> },
+  { name: "HTML5", icon: <FaHtml5 style={{ fill: "#fb923c" }} /> },
+  { name: "CSS3", icon: <FaCss3Alt style={{ fill: "#2563eb" }} /> },
+  { name: "Vite", icon: <SiVite style={{ fill: "#8b5cf6" }} /> },
+  { name: "Node.js", icon: <FaNodeJs style={{ fill: "#16a34a" }} /> },
+  { name: "Bootstrap", icon: <FaBootstrap style={{ fill: "#7952b3" }} /> },
+  { name: "Sass", icon: <FaSass style={{ fill: "#c69" }} /> },
+  { name: "Framer", icon: <SiFramer style={{ fill: "#FFD700" }} /> },
   {
     name: "GitHub",
-    icon: <FaGithub className="text-gray-800 dark:text-white" />,
+    icon: <FaGithub style={{ fill: "#2d3436" }} />,
   },
 ];
 

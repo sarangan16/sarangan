@@ -1,31 +1,52 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { FaGithub } from "react-icons/fa";
+import { FaGithub, FaNode } from "react-icons/fa";
+import { SiReact, SiTailwindcss, SiJavascript } from "react-icons/si";
 
 const projects = [
-  {
-    title: "KaufDE",
-    descriptionKey: "KaufDE.description",
-    github: "https://github.com/sarangan16/online-store",
-    live: "https://online-store-eight-khaki.vercel.app/",
-  },
   {
     title: "GoldStack",
     descriptionKey: "GoldStack.description",
     github: "https://github.com/sarangan16/real-estate",
     live: "https://real-estate-khaki-six.vercel.app/",
+    technologies: [
+      <SiReact />,
+      <SiTailwindcss />,
+      <SiJavascript />,
+      <FaNode />,
+    ],
   },
+  {
+    title: "KaufDE",
+    descriptionKey: "KaufDE.description",
+    github: "https://github.com/sarangan16/online-store",
+    live: "https://online-store-eight-khaki.vercel.app/",
+    technologies: [
+      <SiReact />,
+      <SiTailwindcss />,
+      <SiJavascript />,
+      <FaNode />,
+    ],
+  },
+
   {
     title: "Job Portal",
     descriptionKey: "Job Portal.description",
     github: "https://github.com/sarangan16/jobhunt",
     live: "https://jobhunt-pink.vercel.app/",
+    technologies: [
+      <SiReact />,
+      <SiTailwindcss />,
+      <SiJavascript />,
+      <FaNode />,
+    ],
   },
   {
     title: "Bürokratie",
     descriptionKey: "Bürokratie.description",
     github: "https://github.com/sarangan16/buro_DE",
     live: "https://buro-de.vercel.app/",
+    technologies: [<SiReact />, <SiTailwindcss />, <FaNode />],
   },
 ];
 
@@ -45,7 +66,8 @@ const Projects = () => {
                 <h3 className="text-xl font-semibold mb-2 text-gray-800">
                   {t(project.title)}
                 </h3>
-                <p className="text-gray-600 mb-4">
+                <hr />
+                <p className="text-gray-600 mb-4 mt-2">
                   {t(project.descriptionKey)}
                 </p>
               </div>
