@@ -13,7 +13,7 @@ function App() {
   }, []);
 
   return (
-    <div className="App container  mx-auto px-6 max-w-4xl">
+    <div className="App container mx-auto px-6">
       <Navbar />
       <Hero />
     </div>

@@ -9,6 +9,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FaGithub } from "react-icons/fa";
 import Contact from "./Contact";
 import { useTranslation } from "react-i18next";
+import Navbar from "./Navbar";
 
 const Hero = () => {
   const { t } = useTranslation();
@@ -22,205 +23,254 @@ const Hero = () => {
   const contactSectionRef = useRef(null);
   const leftBlockRef = useRef(null);
   const imgRef = useRef(null);
+  const introExtraSectionRef = useRef(null);
+
+  const introHeadingRef = useRef(null);
+  const introTextRef = useRef(null);
+  const buttonGroupRef = useRef(null);
 
   const [leftContent, setLeftContent] = useState("default");
 
+  const scrollToProjects = () => {
+    if (projectsSectionRef.current && scrollContainerRef.current) {
+      scrollContainerRef.current.scrollTo({
+        top: projectsSectionRef.current.offsetTop,
+        behavior: "smooth",
+      });
+    }
+  };
+
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
+    const profile = imgRef.current;
+    const container = scrollContainerRef.current;
+    const aboutSection = introExtraSectionRef.current;
 
     gsap.fromTo(
-      techStackRef.current,
-      { opacity: 0, y: 50, scale: 0.95 },
-      {
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        duration: 1.2,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: techStackRef.current,
-          start: "top center",
-          toggleActions: "play none none reverse",
-          scroller: scrollContainerRef.current,
-        },
-      }
+      [introHeadingRef.current, introTextRef.current, buttonGroupRef.current],
+      { opacity: 0, y: 30 },
+      { opacity: 1, y: 0, duration: 2, ease: "power3.out", stagger: 0.2 }
     );
-    gsap.from(imgRef.current, {
-      rotation: 0,
-      duration: 6,
-      yoyo: true,
-      repeat: -1,
-      ease: "power1.inOut",
-      transformOrigin: "50% 50%",
-    });
 
-    ScrollTrigger.create({
-      trigger: stackSectionRef.current,
-      start: "top center",
-      end: "bottom center",
-      scroller: scrollContainerRef.current,
-      onEnter: () => setLeftContent("stack"),
-      onLeaveBack: () => setLeftContent("default"),
-    });
+    if (profile && container && aboutSection) {
+      gsap.to(profile, {
+        y: -150,
+        scale: 0.7,
+        opacity: 0.3,
+        rotate: 10,
+        ease: "none",
+        scrollTrigger: {
+          trigger: leftBlockRef.current,
+          scroller: container,
+          start: "top top",
+          end: () => `+=${aboutSection.getBoundingClientRect().height + 100}`,
+          scrub: true,
+          invalidateOnRefresh: true,
+        },
+      });
+    }
 
-    ScrollTrigger.create({
-      trigger: projectsSectionRef.current,
-      start: "top center",
-      end: "bottom center",
-      scroller: scrollContainerRef.current,
-      onEnter: () => setLeftContent("projects"),
-      onLeaveBack: () => setLeftContent("stack"),
-    });
+    const sections = [
+      { ref: stackSectionRef, content: "stack" },
+      { ref: projectsSectionRef, content: "projects" },
+      { ref: contactSectionRef, content: "contact" },
+    ];
 
-    ScrollTrigger.create({
-      trigger: contactSectionRef.current,
-      start: "top center",
-      end: "bottom center",
-      scroller: scrollContainerRef.current,
-      onEnter: () => setLeftContent("contact"),
-      onLeaveBack: () => setLeftContent("projects"),
+    sections.forEach(({ ref, content }, i) => {
+      const sectionEl = ref.current;
+
+      ScrollTrigger.create({
+        trigger: sectionEl,
+        scroller: container,
+        start: "top center",
+        end: "bottom center",
+        onEnter: () => setLeftContent(content),
+        onLeaveBack: () =>
+          setLeftContent(i === 0 ? "default" : sections[i - 1].content),
+      });
+
+      gsap.fromTo(
+        sectionEl,
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: sectionEl,
+            scroller: container,
+            start: "top 80%",
+            end: "bottom 20%",
+            toggleActions: "play reverse play reverse",
+          },
+        }
+      );
     });
   }, []);
 
-  useEffect(() => {
-    if (!leftBlockRef.current) return;
-
-    gsap.fromTo(
-      leftBlockRef.current,
-      { opacity: 0, y: 20 },
-      { opacity: 1, y: 0, duration: 1, ease: "power1.out" }
-    );
-  }, [leftContent]);
-
   return (
-    <div className="h-screen overflow-hidden pt-10">
-      <section className="h-full flex my-8">
-        <div className="hidden sm:flex w-1/3 items-center justify-center">
-          <section>
-            <div className="sticky top-0" ref={leftBlockRef}>
-              {leftContent === "default" && (
-                <>
+    <>
+      <Navbar
+        scrollContainerRef={scrollContainerRef}
+        introRef={introExtraSectionRef}
+        stackRef={stackSectionRef}
+        projectsRef={projectsSectionRef}
+        contactRef={contactSectionRef}
+      />
+
+      <div className="h-screen overflow-hidden pt-10">
+        <section className="h-full flex my-8 max-w-4xl md:max-w-5xl lg:max-w-6xl xl:max-w-7xl mx-auto px-4">
+          <div className="hidden sm:flex w-1/4 md:w-1/3 lg:w-1/3 xl:w-1/4 items-center justify-center">
+            <section>
+              <div className="sticky top-0" ref={leftBlockRef}>
+                {leftContent === "default" && (
                   <img
                     ref={imgRef}
                     src={myImage}
                     alt="Sarangan profile"
-                    className="w-48 h-48 object-cover shadow-lg border-4 border-gray-200 mt-10 rounded-full
-"
+                    className="w-72 h-80 object-cover shadow-2xl border-4 border-white"
+                    style={{
+                      clipPath: "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)",
+                    }}
                   />
-                  <h1 className="text-3xl sm:text-xl font-extrabold text-center leading-tight mt-5">
-                    SARANGAN
-                  </h1>
-                  <p className="text-center">Düsseldorf, Germany</p>
-                  <div className="flex justify-center gap-4 mt-3">
-                    <a
-                      href="https://github.com/sarangan16"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-black hover:text-gray-600"
-                    >
-                      <FaGithub size={24} />
-                    </a>
-                  </div>
-                </>
-              )}
+                )}
 
-              {leftContent === "stack" && (
-                <h2 className="text-4xl font-bold text-center">
-                  {t("stackh2")}
-                </h2>
-              )}
+                {leftContent === "stack" && (
+                  <h2 className="text-4xl font-bold text-center">
+                    {t("stackh2")}
+                  </h2>
+                )}
 
-              {leftContent === "projects" && (
-                <h2 className="text-4xl font-bold text-center">
-                  {t("projecth2")}
-                </h2>
-              )}
-              {leftContent === "contact" && (
-                <h2 className="text-4xl font-bold text-center">
-                  {t("contacth2")}
-                </h2>
-              )}
-            </div>
-          </section>
-        </div>
+                {leftContent === "projects" && (
+                  <h2 className="text-4xl font-bold text-center">
+                    {t("projecth2")}
+                  </h2>
+                )}
 
-        <div
-          className="right-content w-full md:w-2/3 overflow-y-auto px-6 hide-scrollbar pb-20"
-          style={{ paddingTop: "14rem" }}
-          ref={scrollContainerRef}
-        >
-          <div className="max-w-xl mx-auto md:text-left flex flex-col justify-start h-full mb-20 ">
-            <h1 className="block md:hidden text-2xl font-bold text-center sm:text-xl  leading-tight mt-2">
-              SARANGAN
-            </h1>
-            <p className="text-center block md:hidden font-bold leading-tight mt-5 mb-4">
-              Düsseldorf, Germany
-            </p>
+                {leftContent === "contact" && (
+                  <h2 className="text-4xl font-bold text-center">
+                    {t("contacth2")}
+                  </h2>
+                )}
+              </div>
+            </section>
+          </div>
 
-            <p className="mt-0 mb-6 text-3xl text-gray-600 ">
-              {t("saranganIntro")}{" "}
-              <span
-                className="inline-block align-baseline"
-                style={{ width: "7.5ch" }}
+          <div
+            className="right-content w-full sm:w-3/4 md:w-2/3 lg:w-2/3 xl:w-3/4 overflow-y-auto px-6 hide-scrollbar pb-20"
+            ref={scrollContainerRef}
+          >
+            <div className="max-w-4xl mx-auto h-screen flex flex-col justify-center px-6 md:px-0 space-y-6">
+              <h2
+                ref={introHeadingRef}
+                className="text-xl sm:text-2xl md:text-3xl font-semibold tracking-[0.2em] uppercase text-gray-800"
               >
-                <RotatingText
-                  texts={["WebApps", "Websites", "UI & UX"]}
-                  mainClassName="inline-block text-2xl px-1 rounded"
-                  staggerFrom="last"
-                  initial={{ y: "100%" }}
-                  animate={{ y: 0 }}
-                  exit={{ y: "-120%" }}
-                  staggerDuration={0.025}
-                  splitLevelClassName="overflow-hidden pb-0.5"
-                  transition={{ type: "spring", damping: 30, stiffness: 400 }}
-                  rotationInterval={2000}
-                />
-              </span>{" "}
-              {t("saranganIntro2")}
-            </p>
+                Frontend Developer
+              </h2>
+
+              <p
+                ref={introTextRef}
+                className="text-lg md:text-xl text-gray-600 max-w-lg leading-relaxed italic font-light"
+              >
+                Crafting{" "}
+                <span className="font-semibold text-gray-900">
+                  modern, responsive
+                </span>{" "}
+                and interactive{" "}
+                <span className="underline decoration-[#ff6633]/50 decoration-2 underline-offset-4">
+                  user experiences
+                </span>
+                .
+              </p>
+
+              <div ref={buttonGroupRef} className="flex space-x-3 mt-4">
+                <button
+                  onClick={scrollToProjects}
+                  className="px-4 py-2 text-sm bg-[#ff6633] text-white font-medium rounded-lg shadow hover:bg-[#ff9966] transition"
+                >
+                  Projects
+                </button>
+
+                <a
+                  href="https://github.com/YOUR_USERNAME/YOUR_REPOSITORY"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center px-4 py-2 text-sm bg-gray-800 text-white font-medium rounded-lg shadow hover:bg-gray-700 transition"
+                >
+                  <FaGithub className="mr-1 text-base" />
+                  Repo
+                </a>
+              </div>
+            </div>
 
             <div
-              ref={(el) => {
-                techStackRef.current = el;
-                stackSectionRef.current = el;
-              }}
-              className="mt-3"
+              ref={introExtraSectionRef}
+              className="mt-screen py-20"
               style={{ paddingTop: "15rem" }}
             >
-              <h1 className="block md:hidden text-2xl font-bold text-center sm:text-xl  leading-tight mt-6">
-                Tech Stack
-              </h1>
-              <TechStack />
-            </div>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 mb-6 relative inline-block">
+                <span className="bg-gradient-to-r from-[#ff6633] to-[#ff9966] bg-clip-text text-transparent">
+                  About Me
+                </span>
+                <span className="absolute left-0 bottom-0 w-16 h-1 bg-[#ff6633] rounded-full"></span>
+              </h2>
 
-            <div
-              className="flex flex-col justify-center"
-              style={{ paddingTop: "10rem" }}
-            >
-              <ScrollReveal
-                baseOpacity={0}
-                enableBlur={true}
-                baseRotation={5}
-                blurStrength={10}
-              />
-            </div>
+              <p className="text-gray-400 max-w-lg">
+                I’m passionate about creating modern, responsive, and
+                user-friendly web applications. I have experience building
+                e-commerce sites, dashboards, and interactive interfaces using
+                React.js, JavaScript, and modern CSS frameworks like Tailwind
+                CSS and Bootstrap. I’m skilled in API integration, form
+                validation, payment gateways, and working with databases, and I
+                have some experience with TypeScript. I focus on turning design
+                concepts into high-performance, maintainable, and accessible
+                interfaces that deliver a great user experience.
+              </p>
 
-            <div ref={projectsSectionRef}>
-              <h1 className="block md:hidden text-2xl font-bold text-center sm:text-xl  leading-tight mt-2 mb-5">
-                Projects
-              </h1>
-              <Projects />
-            </div>
-            <div ref={contactSectionRef} style={{ paddingTop: "10rem" }}>
-              <h1 className="block md:hidden text-2xl font-bold text-center sm:text-xl  leading-tight mt-2 mb-5">
-                Contact
-              </h1>
-              <Contact />
+              <div
+                ref={(el) => {
+                  techStackRef.current = el;
+                  stackSectionRef.current = el;
+                }}
+                className="mt-3"
+                style={{ paddingTop: "15rem" }}
+              >
+                <h1 className="block md:hidden text-2xl font-bold text-center sm:text-xl leading-tight mt-6">
+                  Tech Stack
+                </h1>
+                <TechStack />
+              </div>
+
+              <div
+                className="flex flex-col justify-center"
+                style={{ paddingTop: "15rem" }}
+              >
+                <ScrollReveal
+                  baseOpacity={0}
+                  enableBlur={true}
+                  baseRotation={5}
+                  blurStrength={10}
+                />
+              </div>
+
+              <div ref={projectsSectionRef} style={{ paddingTop: "10rem" }}>
+                <h1 className="block md:hidden text-2xl font-bold text-center sm:text-xl leading-tight mt-2 mb-5">
+                  Projects
+                </h1>
+                <Projects />
+              </div>
+
+              <div ref={contactSectionRef} style={{ paddingTop: "8rem" }}>
+                <h1 className="block md:hidden text-2xl font-bold text-center sm:text-xl leading-tight mt-2 mb-5">
+                  Contact
+                </h1>
+                <Contact />
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-    </div>
+        </section>
+      </div>
+    </>
   );
 };
 

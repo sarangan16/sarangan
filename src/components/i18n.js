@@ -9,8 +9,8 @@ i18n.use(initReactI18next).init({
     en: {
       translation: {
         saranganIntro:
-          "Front-End Developer Crafting visually stunning, interactive, and responsive",
-        saranganIntro2: "that solve real-world problems.",
+          "Crafting visually stunning, interactive, and responsive",
+        // saranganIntro2: "that solve real-world problems.",
         stackh2: "STACK",
         projecth2: "PROJECTS",
         contacth2: "CONTACT",
