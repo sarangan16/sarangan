@@ -27,8 +27,11 @@ const Navbar = ({
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-[#111827] shadow-lg">
       <div className="h-16 flex items-center justify-between px-6 max-w-7xl mx-auto">
-        <div className="flex-1 text-white text-xl font-bold tracking-wide">
-          Sara
+        <div
+          onClick={() => scrollToSection(introRef)}
+          className="flex-1 text-white text-xl font-bold tracking-wide cursor-pointer"
+        >
+          Sarangan
         </div>
 
         <div className="flex justify-center space-x-6">
