@@ -27,6 +27,8 @@ i18n.use(initReactI18next).init({
         "Bürokratie.description":
           "A location-based app to find public offices (Bürgerservice) across Germany. Users can filter by needed services and book a mock appointment for demo purposes. (Still in Process)",
         messageSent: "Thank you! Your message has been sent.",
+        aboutText:
+          "I’m passionate about building modern, responsive, and user-friendly web applications. I have experience creating e-commerce sites, dashboards, and interactive interfaces using React.js, JavaScript, and Tailwind CSS. Skilled in API integration, form validation, payment gateways, and databases, I focus on turning designs into high-performance, maintainable, and accessible interfaces.",
       },
     },
     de: {
@@ -34,7 +36,7 @@ i18n.use(initReactI18next).init({
         saranganIntro:
           "Frontend-Entwickler, der visuell beeindruckende, interaktive und responsive Websites gestaltet",
         saranganIntro2: "die reale Probleme lösen.",
-        stackh2: "Tech Stacks",
+        stackh2: "Technologie-Stack",
         projecth2: "PROJEKTE",
         contacth2: "KONTAKT",
         live: "Live",
@@ -50,6 +52,8 @@ i18n.use(initReactI18next).init({
         "Bürokratie.description":
           "Eine standortbasierte App, um öffentliche Ämter (Bürgerservice) in Deutschland zu finden. Nutzer können nach benötigten Services filtern und einen Demo-Termin buchen. (Noch in Bearbeitung)",
         messageSent: "Danke! Deine Nachricht wurde erfolgreich gesendet.",
+        aboutText:
+          "Ich bin leidenschaftlich daran interessiert, moderne, responsive und benutzerfreundliche Webanwendungen zu entwickeln. Ich habe Erfahrung mit der Erstellung von E-Commerce-Seiten, Dashboards und interaktiven Benutzeroberflächen mit React.js, JavaScript und Tailwind CSS. Mit Kenntnissen in API-Integration, Formularvalidierung, Zahlungssystemen und Datenbanken konzentriere ich mich darauf, Designs in leistungsstarke, wartbare und zugängliche Oberflächen umzuwandeln.",
       },
     },
   },

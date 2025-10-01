@@ -24,6 +24,8 @@ const Hero = () => {
   const leftBlockRef = useRef(null);
   const imgRef = useRef(null);
   const introExtraSectionRef = useRef(null);
+  const topSectionRef = useRef(null);
+  const aboutSectionRef = useRef(null);
 
   const introHeadingRef = useRef(null);
   const introTextRef = useRef(null);
@@ -44,6 +46,36 @@ const Hero = () => {
     const profile = imgRef.current;
     const container = scrollContainerRef.current;
     const aboutSection = introExtraSectionRef.current;
+    const words = aboutSectionRef.current?.querySelectorAll(".word");
+
+    if (!words || !container) return;
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: aboutSectionRef.current,
+        scroller: container,
+        start: "top 80%",
+        end: "bottom 20%",
+        scrub: true,
+      },
+    });
+
+    tl.fromTo(
+      words,
+      {
+        y: 20,
+        opacity: 0,
+        scale: 0.8,
+        color: "#888",
+      },
+      {
+        y: 0,
+        opacity: 1,
+        scale: 1,
+        stagger: 0.05,
+        ease: "power3.out",
+      }
+    );
 
     gsap.fromTo(
       [introHeadingRef.current, introTextRef.current, buttonGroupRef.current],
@@ -51,21 +83,27 @@ const Hero = () => {
       { opacity: 1, y: 0, duration: 2, ease: "power3.out", stagger: 0.2 }
     );
 
-    if (profile && container && aboutSection) {
-      gsap.to(profile, {
-        y: -150,
-        scale: 0.7,
-        opacity: 0.3,
-        rotate: 10,
-        ease: "none",
+    if (profile && container && aboutSection && stackSectionRef.current) {
+      gsap.set(profile, { opacity: 1, scale: 1, y: 0, rotate: 0 });
+
+      const tlProfile = gsap.timeline({
         scrollTrigger: {
-          trigger: leftBlockRef.current,
+          trigger: aboutSectionRef.current,
           scroller: container,
           start: "top top",
-          end: () => `+=${aboutSection.getBoundingClientRect().height + 100}`,
+          end: () => stackSectionRef.current.offsetTop - 50,
           scrub: true,
           invalidateOnRefresh: true,
+          toggleActions: "play reverse play reverse",
         },
+      });
+
+      tlProfile.to(profile, {
+        y: -150,
+        scale: 0.7,
+        opacity: 0,
+        rotate: 10,
+        ease: "power2.out",
       });
     }
 
@@ -112,7 +150,8 @@ const Hero = () => {
     <>
       <Navbar
         scrollContainerRef={scrollContainerRef}
-        introRef={introExtraSectionRef}
+        introRef={topSectionRef}
+        aboutRef={aboutSectionRef}
         stackRef={stackSectionRef}
         projectsRef={projectsSectionRef}
         contactRef={contactSectionRef}
@@ -160,7 +199,10 @@ const Hero = () => {
             className="right-content w-full sm:w-3/4 md:w-2/3 lg:w-2/3 xl:w-3/4 overflow-y-auto px-6 hide-scrollbar pb-20"
             ref={scrollContainerRef}
           >
-            <div className="max-w-4xl mx-auto h-screen flex flex-col justify-center px-6 md:px-0 space-y-6">
+            <div
+              ref={topSectionRef}
+              className="max-w-4xl mx-auto h-screen flex flex-col justify-center px-6 md:px-0 space-y-6"
+            >
               <h2
                 ref={introHeadingRef}
                 className="text-xl sm:text-2xl md:text-3xl font-semibold tracking-[0.2em] uppercase text-gray-800"
@@ -192,13 +234,13 @@ const Hero = () => {
                 </button>
 
                 <a
-                  href="https://github.com/YOUR_USERNAME/YOUR_REPOSITORY"
+                  href="https://github.com/sarangan16"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center px-4 py-2 text-sm bg-gray-800 text-white font-medium rounded-lg shadow hover:bg-gray-700 transition"
                 >
                   <FaGithub className="mr-1 text-base" />
-                  Repo
+                  Github Repo
                 </a>
               </div>
             </div>
@@ -206,25 +248,28 @@ const Hero = () => {
             <div
               ref={introExtraSectionRef}
               className="mt-screen py-20"
-              style={{ paddingTop: "15rem" }}
+              style={{ paddingTop: "10rem" }}
             >
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 mb-6 relative inline-block">
-                <span className="bg-gradient-to-r from-[#ff6633] to-[#ff9966] bg-clip-text text-transparent">
-                  About Me
-                </span>
                 <span className="absolute left-0 bottom-0 w-16 h-1 bg-[#ff6633] rounded-full"></span>
               </h2>
 
-              <p className="text-gray-400 max-w-lg">
-                I’m passionate about creating modern, responsive, and
-                user-friendly web applications. I have experience building
-                e-commerce sites, dashboards, and interactive interfaces using
-                React.js, JavaScript, and modern CSS frameworks like Tailwind
-                CSS and Bootstrap. I’m skilled in API integration, form
-                validation, payment gateways, and working with databases, and I
-                have some experience with TypeScript. I focus on turning design
-                concepts into high-performance, maintainable, and accessible
-                interfaces that deliver a great user experience.
+              <p
+                ref={aboutSectionRef}
+                className="text-gray-400 max-w-lg text-4xl"
+              >
+                {t("aboutText")
+                  .match(/[\wÄÖÜäöüß]+|[.,!?;:]+|\s+/g)
+                  .map((part, i) => (
+                    <span
+                      key={i}
+                      className={`word relative inline-block ${
+                        part.trim() ? "mr-[0.25em]" : ""
+                      }`}
+                    >
+                      {part}
+                    </span>
+                  ))}
               </p>
 
               <div

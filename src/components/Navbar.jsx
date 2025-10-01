@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { Menu, X } from "lucide-react";
 
 const Navbar = ({
   scrollContainerRef,
@@ -9,18 +10,18 @@ const Navbar = ({
   contactRef,
 }) => {
   const { i18n } = useTranslation();
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
+    setMenuOpen(false);
   };
 
   const scrollToSection = (sectionRef) => {
     if (sectionRef.current && scrollContainerRef.current) {
       const top = sectionRef.current.offsetTop;
-      scrollContainerRef.current.scrollTo({
-        top,
-        behavior: "smooth",
-      });
+      scrollContainerRef.current.scrollTo({ top, behavior: "smooth" });
+      setMenuOpen(false);
     }
   };
 
@@ -34,7 +35,7 @@ const Navbar = ({
           Sarangan
         </div>
 
-        <div className="flex justify-center space-x-6">
+        <div className="hidden sm:flex justify-center space-x-6">
           <button
             onClick={() => scrollToSection(introRef)}
             className="text-sm md:text-base font-medium uppercase text-gray-300 hover:text-red-400 transition"
@@ -61,16 +62,15 @@ const Navbar = ({
           </button>
         </div>
 
-        <div className="flex-1 flex justify-end">
-          {i18n.language === "en" && (
+        <div className="hidden sm:flex flex-1 justify-end">
+          {i18n.language === "en" ? (
             <button
               onClick={() => changeLanguage("de")}
               className="px-4 py-1 rounded-full bg-red-500 hover:bg-red-600 text-white text-sm font-semibold transition"
             >
               DE
             </button>
-          )}
-          {i18n.language === "de" && (
+          ) : (
             <button
               onClick={() => changeLanguage("en")}
               className="px-4 py-1 rounded-full bg-red-500 hover:bg-red-600 text-white text-sm font-semibold transition"
@@ -79,7 +79,61 @@ const Navbar = ({
             </button>
           )}
         </div>
+
+        <button
+          className="sm:hidden text-white"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          {menuOpen ? <X size={28} /> : <Menu size={28} />}
+        </button>
       </div>
+
+      {menuOpen && (
+        <div className="sm:hidden bg-[#1f2937] px-6 py-4 space-y-4">
+          <button
+            onClick={() => scrollToSection(introRef)}
+            className="block w-full text-left text-gray-300 hover:text-red-400 transition"
+          >
+            About
+          </button>
+          <button
+            onClick={() => scrollToSection(stackRef)}
+            className="block w-full text-left text-gray-300 hover:text-red-400 transition"
+          >
+            Stack
+          </button>
+          <button
+            onClick={() => scrollToSection(projectsRef)}
+            className="block w-full text-left text-gray-300 hover:text-red-400 transition"
+          >
+            Projects
+          </button>
+          <button
+            onClick={() => scrollToSection(contactRef)}
+            className="block w-full text-left text-gray-300 hover:text-red-400 transition"
+          >
+            Contact
+          </button>
+
+          <div className="pt-4">
+            {i18n.language === "en" ? (
+              <button
+                onClick={() => changeLanguage("de")}
+                className="w-full px-4 py-2 rounded-full bg-red-500 hover:bg-red-600 text-white text-sm font-semibold transition"
+              >
+                DE
+              </button>
+            ) : (
+              <button
+                onClick={() => changeLanguage("en")}
+                className="w-full px-4 py-2 rounded-full bg-red-500 hover:bg-red-600 text-white text-sm font-semibold transition"
+              >
+                EN
+              </button>
+            )}
+          </div>
+        </div>
+      )}
     </nav>
   );
 };
