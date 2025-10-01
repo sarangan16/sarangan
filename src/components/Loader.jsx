@@ -7,7 +7,7 @@ const Loader = ({ onComplete }) => {
 
   useEffect(() => {
     const text = textRef.current;
-    const letters = text.innerText.split(""); // split text into letters
+    const letters = text.innerText.split("");
     text.innerHTML = letters
       .map((l) => `<span class="inline-block opacity-0">${l}</span>`)
       .join("");
@@ -20,7 +20,6 @@ const Loader = ({ onComplete }) => {
       },
     });
 
-    // Animate letters in
     tl.to(spans, {
       opacity: 1,
       y: 0,
@@ -44,13 +43,12 @@ const Loader = ({ onComplete }) => {
         ease: "power2.in",
       })
 
-      // Morph loader into navbar
       .to(loaderRef.current, {
-        height: "4rem", // shrink to navbar height
+        height: "4rem",
         top: 0,
         y: 0,
-        backgroundColor: "#111827", // same as navbar
-        borderRadius: 0, // remove any rounding
+        backgroundColor: "#111827",
+        borderRadius: 0,
         duration: 1,
         ease: "power4.inOut",
       })
@@ -60,7 +58,7 @@ const Loader = ({ onComplete }) => {
           opacity: 1,
           scale: 1,
           color: "#fff",
-          fontSize: "1.25rem", // smaller logo size
+          fontSize: "1.25rem",
           duration: 0.8,
           ease: "power3.out",
         },
