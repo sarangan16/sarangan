@@ -8,9 +8,11 @@ i18n.use(initReactI18next).init({
   resources: {
     en: {
       translation: {
-        saranganIntro:
-          "Crafting visually stunning, interactive, and responsive",
-        // saranganIntro2: "that solve real-world problems.",
+        introHeading: "Hi, I’m <bold>Sarangan</bold>, a Frontend Developer",
+        introText:
+          "I specialize in crafting <strong>modern, responsive</strong> and <highlight>interactive experiences</highlight> that bring ideas to life on the web.",
+        viewProjects: "View Projects",
+        githubRepo: "Github Repo",
         stackh2: "STACK",
         projecth2: "PROJECTS",
         contacth2: "CONTACT",
@@ -33,6 +35,12 @@ i18n.use(initReactI18next).init({
     },
     de: {
       translation: {
+        introHeading:
+          "Hi, ich bin <bold>Sarangan</bold>, ein Frontend-Entwickler",
+        introText:
+          "Ich spezialisiere mich auf die Entwicklung von <strong>modernen, responsiven</strong> und <highlight>interaktiven Erlebnissen</highlight>, die Ideen im Web zum Leben erwecken.",
+        viewProjects: "Projekte ansehen",
+        githubRepo: "Github Repo",
         saranganIntro:
           "Frontend-Entwickler, der visuell beeindruckende, interaktive und responsive Websites gestaltet",
         saranganIntro2: "die reale Probleme lösen.",

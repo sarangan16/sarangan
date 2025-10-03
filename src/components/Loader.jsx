@@ -23,26 +23,25 @@ const Loader = ({ onComplete }) => {
     tl.to(spans, {
       opacity: 1,
       y: 0,
-      stagger: 0.08,
-      duration: 0.6,
+      stagger: 0.06,
+      duration: 0.5,
       ease: "back.out(1.7)",
     })
       .to(spans, {
         scale: 1.2,
         color: "#ff6633",
-        stagger: 0.05,
-        duration: 0.4,
+        stagger: 0.03,
+        duration: 0.3,
         yoyo: true,
         repeat: 1,
       })
       .to(spans, {
         opacity: 0,
-        y: -40,
-        stagger: 0.05,
-        duration: 0.6,
+        y: -30,
+        stagger: 0.04,
+        duration: 0.5,
         ease: "power2.in",
       })
-
       .to(loaderRef.current, {
         height: "4rem",
         top: 0,
@@ -73,9 +72,9 @@ const Loader = ({ onComplete }) => {
     >
       <h1
         ref={textRef}
-        className="text-6xl md:text-7xl font-bold tracking-wider text-white"
+        className="text-3xl md:text-4xl font-bold tracking-wider text-white"
       >
-        Sarangan
+        Loading &lt;Portfolio /&gt;
       </h1>
     </div>
   );

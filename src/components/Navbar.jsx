@@ -40,7 +40,7 @@ const Navbar = ({
             onClick={() => scrollToSection(introRef)}
             className="text-sm md:text-base font-medium uppercase text-gray-300 hover:text-red-400 transition"
           >
-            About
+            Home
           </button>
           <button
             onClick={() => scrollToSection(stackRef)}
@@ -94,7 +94,7 @@ const Navbar = ({
             onClick={() => scrollToSection(introRef)}
             className="block w-full text-left text-gray-300 hover:text-red-400 transition"
           >
-            About
+            Home
           </button>
           <button
             onClick={() => scrollToSection(stackRef)}
