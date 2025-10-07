@@ -27,6 +27,9 @@ const Hero = () => {
   const introTextRef = useRef(null);
   const buttonGroupRef = useRef(null);
 
+  const flipContainerRef = useRef(null);
+  const flipped = useRef(false);
+
   const [leftContent, setLeftContent] = useState("default");
 
   const scrollToProjects = () => {
@@ -42,14 +45,12 @@ const Hero = () => {
     const profile = imgRef.current;
     const container = scrollContainerRef.current;
 
-    // Hero text animation
     gsap.fromTo(
       [introHeadingRef.current, introTextRef.current, buttonGroupRef.current],
       { opacity: 0, y: 30 },
       { opacity: 1, y: 0, duration: 2, ease: "power3.out", stagger: 0.2 }
     );
 
-    // Profile picture fade out/in tied to scroll
     if (profile && container) {
       gsap.fromTo(
         profile,
@@ -64,7 +65,7 @@ const Hero = () => {
             trigger: topSectionRef.current,
             start: "top top",
             end: "bottom top",
-            scrub: true, // ties animation to scroll progress
+            scrub: true,
           },
         }
       );
@@ -76,7 +77,6 @@ const Hero = () => {
       { ref: contactSectionRef, content: "contact" },
     ];
 
-    // Left content animation
     sections.forEach(({ ref, content }, i) => {
       const sectionEl = ref.current;
 
@@ -126,15 +126,35 @@ const Hero = () => {
             <section>
               <div className="sticky top-0" ref={leftBlockRef}>
                 {leftContent === "default" && (
-                  <img
-                    ref={imgRef}
-                    src={myImage}
-                    alt="Sarangan profile"
-                    className="w-72 h-80 object-cover shadow-2xl border-4 border-white"
-                    style={{
-                      clipPath: "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)",
+                  <div
+                    ref={flipContainerRef}
+                    className="w-64 h-72 cursor-pointer"
+                    onClick={() => {
+                      if (!flipContainerRef.current) return;
+                      gsap.to(flipContainerRef.current, {
+                        rotationY: flipped.current ? 0 : 180,
+                        duration: 1,
+                        ease: "power2.inOut",
+                        transformPerspective: 1000,
+                      });
+                      flipped.current = !flipped.current;
                     }}
-                  />
+                    style={{
+                      transformStyle: "preserve-3d",
+                      transform: "rotateY(0deg)",
+                      perspective: "1000px",
+                    }}
+                  >
+                    <img
+                      ref={imgRef}
+                      src={myImage}
+                      alt="Sarangan profile"
+                      className="w-full h-full object-cover shadow-2xl border-4 border-white backface-hidden"
+                      style={{
+                        clipPath: "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)",
+                      }}
+                    />
+                  </div>
                 )}
 
                 {leftContent === "stack" && (
@@ -219,18 +239,15 @@ const Hero = () => {
                 techStackRef.current = el;
                 stackSectionRef.current = el;
               }}
-              style={{ paddingTop: "10rem" }}
+              className="pt-40"
             >
-              <h1 className="block md:hidden text-2xl font-bold text-center sm:text-xl leading-tight mt-2 mb-5">
+              <h1 className="block md:hidden text-2xl font-bold text-center sm:text-xl leading-tight mt-2 mb-6">
                 Tech Stack
               </h1>
               <TechStack />
             </div>
 
-            <div
-              className="flex flex-col justify-center"
-              style={{ paddingTop: "10rem" }}
-            >
+            <div className="flex flex-col justify-center">
               <ScrollReveal
                 baseOpacity={0}
                 enableBlur={true}
@@ -239,15 +256,15 @@ const Hero = () => {
               />
             </div>
 
-            <div ref={projectsSectionRef} style={{ paddingTop: "10rem" }}>
-              <h1 className="block md:hidden text-2xl font-bold text-center sm:text-xl leading-tight mt-2 mb-5">
+            <div ref={projectsSectionRef} className="pt-40">
+              <h1 className="block md:hidden text-2xl font-bold text-center sm:text-xl leading-tight mt-2 mb-6">
                 Projects
               </h1>
               <Projects />
             </div>
 
-            <div ref={contactSectionRef} style={{ paddingTop: "8rem" }}>
-              <h1 className="block md:hidden text-2xl font-bold text-center sm:text-xl leading-tight mt-2 mb-5">
+            <div ref={contactSectionRef} className="pt-40">
+              <h1 className="block md:hidden text-2xl font-bold text-center sm:text-xl leading-tight mt-2 mb-6">
                 Contact
               </h1>
               <Contact />
