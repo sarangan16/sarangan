@@ -5,10 +5,10 @@ import { SiReact, SiTailwindcss, SiJavascript } from "react-icons/si";
 
 const projects = [
   {
-    title: "KaufDE",
-    descriptionKey: "KaufDE.description",
-    github: "https://github.com/sarangan16/online-store",
-    live: "https://kaufde.vercel.app/",
+    title: "Crown Chauffeur",
+    descriptionKey: "CrownChauffeur.description",
+    github: "https://github.com/sarangan16/chaffuerElite",
+    live: "https://chaffuer-elite.vercel.app/",
     technologies: [
       <SiReact />,
       <SiTailwindcss />,
@@ -21,6 +21,18 @@ const projects = [
     descriptionKey: "GoldStack.description",
     github: "https://github.com/sarangan16/real-estate",
     live: "https://real-estate-khaki-six.vercel.app/",
+    technologies: [
+      <SiReact />,
+      <SiTailwindcss />,
+      <SiJavascript />,
+      <FaNode />,
+    ],
+  },
+  {
+    title: "KaufDE",
+    descriptionKey: "KaufDE.description",
+    github: "https://github.com/sarangan16/online-store",
+    live: "https://kaufde.vercel.app/",
     technologies: [
       <SiReact />,
       <SiTailwindcss />,
