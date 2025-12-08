@@ -59,7 +59,7 @@ const Contact = () => {
 
   return (
     <section className="px-6 py-20">
-      <div className="max-w-2xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         {submitted ? (
           <p className="text-green-600 text-center font-medium">
             {t("messageSent")}

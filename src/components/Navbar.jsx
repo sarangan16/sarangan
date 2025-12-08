@@ -42,17 +42,18 @@ const Navbar = ({
           >
             Home
           </button>
-          <button
-            onClick={() => scrollToSection(stackRef)}
-            className="text-sm md:text-base font-medium uppercase text-gray-300 hover:text-red-400 transition"
-          >
-            Stack
-          </button>
+
           <button
             onClick={() => scrollToSection(projectsRef)}
             className="text-sm md:text-base font-medium uppercase text-gray-300 hover:text-red-400 transition"
           >
             Projects
+          </button>
+          <button
+            onClick={() => scrollToSection(stackRef)}
+            className="text-sm md:text-base font-medium uppercase text-gray-300 hover:text-red-400 transition"
+          >
+            Stack
           </button>
           <button
             onClick={() => scrollToSection(contactRef)}

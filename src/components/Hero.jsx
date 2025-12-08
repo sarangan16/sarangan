@@ -14,7 +14,6 @@ const Hero = () => {
   const { t } = useTranslation();
   gsap.registerPlugin(ScrollTrigger);
 
-  const techStackRef = useRef(null);
   const scrollContainerRef = useRef(null);
   const stackSectionRef = useRef(null);
   const projectsSectionRef = useRef(null);
@@ -32,12 +31,12 @@ const Hero = () => {
 
   const [leftContent, setLeftContent] = useState("default");
 
-  const scrollToProjects = () => {
-    if (projectsSectionRef.current && scrollContainerRef.current) {
-      scrollContainerRef.current.scrollTo({
-        top: projectsSectionRef.current.offsetTop,
-        behavior: "smooth",
-      });
+  // Scroll to section with navbar offset
+  const scrollToSection = (sectionRef) => {
+    if (sectionRef.current && scrollContainerRef.current) {
+      const navbarHeight = 64; // h-16
+      const top = sectionRef.current.offsetTop - navbarHeight;
+      scrollContainerRef.current.scrollTo({ top, behavior: "smooth" });
     }
   };
 
@@ -45,12 +44,14 @@ const Hero = () => {
     const profile = imgRef.current;
     const container = scrollContainerRef.current;
 
+    // Hero intro animation
     gsap.fromTo(
       [introHeadingRef.current, introTextRef.current, buttonGroupRef.current],
       { opacity: 0, y: 30 },
       { opacity: 1, y: 0, duration: 2, ease: "power3.out", stagger: 0.2 }
     );
 
+    // Profile animation on scroll
     if (profile && container) {
       gsap.fromTo(
         profile,
@@ -71,9 +72,10 @@ const Hero = () => {
       );
     }
 
+    // Sections in the order they appear in DOM
     const sections = [
-      { ref: stackSectionRef, content: "stack" },
       { ref: projectsSectionRef, content: "projects" },
+      { ref: stackSectionRef, content: "stack" },
       { ref: contactSectionRef, content: "contact" },
     ];
 
@@ -83,7 +85,7 @@ const Hero = () => {
       ScrollTrigger.create({
         trigger: sectionEl,
         scroller: container,
-        start: "top center",
+        start: "top 40%", // triggers when section is visible
         end: "bottom center",
         onEnter: () => setLeftContent(content),
         onLeaveBack: () =>
@@ -121,8 +123,9 @@ const Hero = () => {
       />
 
       <div className="h-screen overflow-hidden pt-10">
-        <section className="h-full flex my-8 max-w-4xl md:max-w-5xl lg:max-w-6xl xl:max-w-7xl mx-auto px-4">
-          <div className="hidden sm:flex w-1/4 md:w-1/3 lg:w-1/3 xl:w-1/4 items-center justify-center">
+        <section className="h-full flex my-8 max-w-4xl md:max-w-5xl lg:max-w-6xl xl:max-w-7xl mx-auto px-4 gap-x-8">
+          {/* LEFT SIDE */}
+          <div className="hidden sm:flex w-1/3 md:w-2/5 lg:w-2/5 xl:w-1/3 items-center justify-center">
             <section>
               <div className="sticky top-0" ref={leftBlockRef}>
                 {leftContent === "default" && (
@@ -178,96 +181,99 @@ const Hero = () => {
             </section>
           </div>
 
+          {/* RIGHT SIDE */}
           <div
-            className="right-content w-full sm:w-3/4 md:w-2/3 lg:w-2/3 xl:w-3/4 overflow-y-auto px-6 hide-scrollbar pb-20"
+            className="right-content w-full sm:w-3/4 md:w-2/3 lg:w-2/3 xl:w-3/4 overflow-y-auto hide-scrollbar pb-20"
             ref={scrollContainerRef}
           >
-            <div
-              ref={topSectionRef}
-              className="max-w-5xl mx-auto h-screen flex flex-col justify-center items-start px-6 md:px-0 space-y-8"
-            >
-              <h1
-                ref={introHeadingRef}
-                className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-gray-900 leading-tight"
+            <div className="max-w-5xl ml-auto mr-0 px-6 md:px-0">
+              {/* HERO INTRO */}
+              <div
+                ref={topSectionRef}
+                className="h-screen flex flex-col justify-center items-start space-y-8"
               >
-                <Trans
-                  i18nKey="introHeading"
-                  components={{
-                    bold: (
-                      <span className="bg-gradient-to-r from-[#ff6633] to-[#ff9966] bg-clip-text text-transparent" />
-                    ),
-                  }}
-                />
-              </h1>
-
-              <p
-                ref={introTextRef}
-                className="text-lg md:text-xl text-gray-600 max-w-2xl leading-relaxed font-light"
-              >
-                <Trans
-                  i18nKey="introText"
-                  components={{
-                    strong: <span className="font-semibold text-gray-900" />,
-                    highlight: (
-                      <span className="underline decoration-[#ff6633]/50 decoration-4 underline-offset-4" />
-                    ),
-                  }}
-                />
-              </p>
-              <div ref={buttonGroupRef} className="flex space-x-4 mt-6">
-                <button
-                  onClick={scrollToProjects}
-                  className="px-6 py-3 text-base bg-[#ff6633] text-white font-semibold rounded-full shadow-lg hover:bg-[#ff9966] hover:shadow-xl transition-all duration-300"
+                <h1
+                  ref={introHeadingRef}
+                  className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-gray-900 leading-tight"
                 >
-                  {t("viewProjects")}
-                </button>
+                  <Trans
+                    i18nKey="introHeading"
+                    components={{
+                      bold: (
+                        <span className="bg-gradient-to-r from-[#ff6633] to-[#ff9966] bg-clip-text text-transparent" />
+                      ),
+                    }}
+                  />
+                </h1>
 
-                <a
-                  href="https://github.com/sarangan16"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center px-6 py-3 text-base bg-gray-900 text-white font-semibold rounded-full shadow-lg hover:bg-gray-800 hover:shadow-xl transition-all duration-300"
+                <p
+                  ref={introTextRef}
+                  className="text-lg md:text-xl text-gray-600 max-w-2xl leading-relaxed font-light"
                 >
-                  <FaGithub className="mr-2 text-lg" />
-                  {t("githubRepo")}
-                </a>
+                  <Trans
+                    i18nKey="introText"
+                    components={{
+                      strong: <span className="font-semibold text-gray-900" />,
+                      highlight: (
+                        <span className="underline decoration-[#ff6633]/50 decoration-4 underline-offset-4" />
+                      ),
+                    }}
+                  />
+                </p>
+
+                <div ref={buttonGroupRef} className="flex space-x-4 mt-6">
+                  <button
+                    onClick={() => scrollToSection(projectsSectionRef)}
+                    className="px-6 py-3 text-base bg-[#ff6633] text-white font-semibold rounded-full shadow-lg hover:bg-[#ff9966] hover:shadow-xl transition-all duration-300"
+                  >
+                    {t("viewProjects")}
+                  </button>
+
+                  <a
+                    href="https://github.com/sarangan16"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center px-6 py-3 text-base bg-gray-900 text-white font-semibold rounded-full shadow-lg hover:bg-gray-800 hover:shadow-xl transition-all duration-300"
+                  >
+                    <FaGithub className="mr-2 text-lg" />
+                    {t("githubRepo")}
+                  </a>
+                </div>
               </div>
-            </div>
 
-            <div
-              ref={(el) => {
-                techStackRef.current = el;
-                stackSectionRef.current = el;
-              }}
-              className="pt-40"
-            >
-              <h1 className="block md:hidden text-2xl font-bold text-center sm:text-xl leading-tight mt-2 mb-6">
-                Tech Stack
-              </h1>
-              <TechStack />
-            </div>
+              {/* ANIMATED DIVIDER */}
+              <div className="flex flex-col justify-center">
+                <ScrollReveal
+                  baseOpacity={0}
+                  enableBlur={true}
+                  baseRotation={5}
+                  blurStrength={10}
+                />
+              </div>
 
-            <div className="flex flex-col justify-center">
-              <ScrollReveal
-                baseOpacity={0}
-                enableBlur={true}
-                baseRotation={5}
-                blurStrength={10}
-              />
-            </div>
+              {/* PROJECTS */}
+              <div
+                ref={projectsSectionRef}
+                className="min-h-screen flex flex-col justify-center py-20"
+              >
+                <Projects />
+              </div>
 
-            <div ref={projectsSectionRef} className="pt-40">
-              <h1 className="block md:hidden text-2xl font-bold text-center sm:text-xl leading-tight mt-2 mb-6">
-                Projects
-              </h1>
-              <Projects />
-            </div>
+              {/* TECH STACK */}
+              <div
+                ref={stackSectionRef}
+                className="min-h-screen flex flex-col justify-center py-20"
+              >
+                <TechStack />
+              </div>
 
-            <div ref={contactSectionRef} className="pt-40">
-              <h1 className="block md:hidden text-2xl font-bold text-center sm:text-xl leading-tight mt-2 mb-6">
-                Contact
-              </h1>
-              <Contact />
+              {/* CONTACT */}
+              <div
+                ref={contactSectionRef}
+                className="min-h-screen flex flex-col justify-center py-20"
+              >
+                <Contact />
+              </div>
             </div>
           </div>
         </section>
