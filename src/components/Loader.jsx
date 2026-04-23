@@ -4,78 +4,48 @@ import { gsap } from "gsap";
 const Loader = ({ onComplete }) => {
   const loaderRef = useRef(null);
   const textRef = useRef(null);
+  const barRef = useRef(null);
 
   useEffect(() => {
-    const text = textRef.current;
-    const letters = text.innerText.split("");
-    text.innerHTML = letters
-      .map((l) => `<span class="inline-block opacity-0">${l}</span>`)
-      .join("");
-
-    const spans = text.querySelectorAll("span");
-
     const tl = gsap.timeline({
-      onComplete: () => {
-        if (onComplete) onComplete();
-      },
+      onComplete: () => onComplete?.(),
     });
 
-    tl.to(spans, {
-      opacity: 1,
-      y: 0,
-      stagger: 0.06,
-      duration: 0.5,
-      ease: "back.out(1.7)",
-    })
-      .to(spans, {
-        scale: 1.2,
-        color: "#ff6633",
-        stagger: 0.03,
-        duration: 0.3,
-        yoyo: true,
-        repeat: 1,
-      })
-      .to(spans, {
-        opacity: 0,
-        y: -30,
-        stagger: 0.04,
-        duration: 0.5,
-        ease: "power2.in",
+    tl.fromTo(
+      textRef.current,
+      { opacity: 0, y: 10 },
+      { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" },
+    )
+      .to(barRef.current, {
+        width: "100%",
+        duration: 0.8,
+        ease: "power2.inOut",
       })
       .to(loaderRef.current, {
-        height: "4rem",
-        top: 0,
-        y: 0,
-        backgroundColor: "#111827",
-        borderRadius: 0,
-        duration: 1,
-        ease: "power4.inOut",
-      })
-      .to(
-        textRef.current,
-        {
-          opacity: 1,
-          scale: 1,
-          color: "#fff",
-          fontSize: "1.25rem",
-          duration: 0.8,
-          ease: "power3.out",
-        },
-        "-=0.8"
-      );
+        opacity: 0,
+        duration: 0.5,
+        delay: 0.2,
+        ease: "power2.out",
+      });
   }, [onComplete]);
 
   return (
     <div
       ref={loaderRef}
-      className="fixed top-0 left-0 w-full h-screen bg-black flex items-center justify-center z-[9999] overflow-hidden"
+      className="fixed inset-0 bg-black flex flex-col items-center justify-center z-[9999]"
     >
+      {/* TEXT */}
       <h1
         ref={textRef}
-        className="text-3xl md:text-4xl font-bold tracking-wider text-white"
+        className="text-white text-lg md:text-xl tracking-[0.3em] uppercase"
       >
-        Loading &lt;Portfolio /&gt;
+        Sarangan
       </h1>
+
+      {/* orange loader */}
+      <div className="mt-6 w-40 h-[1px] bg-white/10 overflow-hidden">
+        <div ref={barRef} className="h-full w-0 bg-[#F16D34]" />
+      </div>
     </div>
   );
 };

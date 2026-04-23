@@ -1,76 +1,82 @@
-import React, { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { FaGithub } from "react-icons/fa";
-import { useTranslation, Trans } from "react-i18next";
+import React, { useRef, useState, useEffect } from "react";
+import { motion, useInView } from "framer-motion";
 
-const Hero = ({ projectsRef }) => {
-  const { t } = useTranslation();
-
-  const nameRef = useRef(null);
-  const textRef = useRef(null);
-  const buttonsRef = useRef(null);
+const Hero = () => {
+  const ref = useRef(null);
+  const inView = useInView(ref);
+  const [toggle, setToggle] = useState(false);
 
   useEffect(() => {
-    gsap.fromTo(
-      [nameRef.current, textRef.current, buttonsRef.current],
-      { opacity: 0, y: 40 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1.2,
-        ease: "power3.out",
-        stagger: 0.15,
+    if (inView) {
+      const t = setTimeout(() => setToggle(true), 2200);
+      return () => clearTimeout(t);
+    }
+  }, [inView]);
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
       },
-    );
-  }, []);
+    },
+  };
+
+  const item = {
+    hidden: { opacity: 0, y: 10 },
+    show: { opacity: 1, y: 0 },
+  };
 
   return (
-    <section className="min-h-screen flex items-center bg-black text-white px-6 md:px-16">
-      <div className="max-w-6xl w-full mx-auto">
-        {/* Name */}
-        <h1
-          ref={nameRef}
-          className="text-[48px] sm:text-[64px] md:text-[96px] lg:text-[120px] font-extrabold leading-[0.9] tracking-tight"
-        >
-          Sarangan
-        </h1>
-
-        {/* my intro txt */}
-        <p
-          ref={textRef}
-          className="mt-6 max-w-2xl text-base sm:text-lg md:text-xl text-white/60 leading-relaxed"
-        >
-          <Trans
-            i18nKey="introText"
-            components={{
-              strong: <span className="text-white font-medium" />,
-              highlight: (
-                <span className="underline decoration-white/30 decoration-2 underline-offset-4" />
-              ),
-            }}
-          />
-        </p>
-
-        {/* action */}
-        <div ref={buttonsRef} className="flex flex-wrap gap-4 mt-10">
-          <button
-            onClick={() =>
-              projectsRef?.current?.scrollIntoView({ behavior: "smooth" })
-            }
-            className="px-6 py-3 bg-white text-black rounded-full font-medium hover:bg-white/80 transition"
+    <section className="min-h-screen bg-black text-white flex items-center">
+      <div
+        ref={ref}
+        className="max-w-5xl mx-auto px-6 md:px-16 w-full flex flex-col justify-center"
+      >
+        {/* my name */}
+        <motion.div variants={container} initial="hidden" animate="show">
+          <motion.h1
+            variants={item}
+            className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-semibold tracking-tight"
           >
-            {t("viewProjects")}
-          </button>
+            SARANGAN
+          </motion.h1>
 
-          <a
-            href="https://github.com/sarangan16"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center px-6 py-3 border border-white/20 text-white rounded-full hover:border-white/60 transition"
+          <motion.p
+            variants={item}
+            className="mt-4 text-white/40 text-xs sm:text-sm uppercase tracking-[0.3em]"
           >
-            <FaGithub className="mr-2" />
-            GitHub
-          </a>
+            Frontend Developer · UI Engineer · Freelance
+          </motion.p>
+
+          <motion.p
+            variants={item}
+            className="mt-8 text-white/50 max-w-xl text-sm sm:text-base leading-relaxed"
+          >
+            Frontend developer based in Germany, focused on building modern,
+            responsive, and interactive web experiences. I also work freelance,
+            helping startups and businesses turn concepts into clean,
+            production-ready products.
+          </motion.p>
+        </motion.div>
+
+        {/* small tabs for location available*/}
+        <div className="mt-10 flex flex-wrap gap-3">
+          {/* availability */}
+          <div className="flex items-center gap-2 px-4 py-1 border border-white/10 rounded-full text-xs text-white/60">
+            <span className="w-2 h-2 rounded-full  bg-green-500" />
+            Available for work
+          </div>
+
+          {/* location */}
+          <div className="px-4 py-1 border border-white/10 rounded-full text-xs text-white/50">
+            Düsseldorf
+          </div>
+
+          {/* freelance */}
+          <div className="px-4 py-1 border border-white/10 rounded-full text-xs text-white/50">
+            Freelance
+          </div>
         </div>
       </div>
     </section>

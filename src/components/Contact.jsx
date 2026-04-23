@@ -14,11 +14,9 @@ const Contact = () => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    if (!formRef.current) return;
-
     gsap.fromTo(
       formRef.current,
-      { opacity: 1, y: 0 },
+      { opacity: 0, y: 40 },
       {
         opacity: 1,
         y: 0,
@@ -28,7 +26,7 @@ const Contact = () => {
           trigger: formRef.current,
           start: "top 80%",
         },
-      }
+      },
     );
   }, []);
 
@@ -41,81 +39,123 @@ const Contact = () => {
         "service_n3vfxer",
         "template_ngm0r1r",
         formRef.current,
-        "IyLH_onUBQW3zh1hY"
+        "IyLH_onUBQW3zh1hY",
       )
       .then(
         () => {
-          if (formRef.current) formRef.current.reset();
+          formRef.current.reset();
           setSubmitted(true);
           setLoading(false);
           setTimeout(() => setSubmitted(false), 3000);
         },
         (error) => {
-          console.error("FAILED...", error);
+          console.error(error);
           setLoading(false);
-        }
+        },
       );
   };
 
   return (
-    <section className="px-6 py-20">
-      <div className="max-w-7xl mx-auto">
-        {submitted ? (
-          <p className="text-green-600 text-center font-medium">
-            {t("messageSent")}
-          </p>
-        ) : (
-          <form
-            onSubmit={sendEmail}
-            ref={formRef}
-            className="grid grid-cols-1 gap-6 p-6 rounded-md shadow-md"
-          >
-            <div>
-              <label className="block mb-1 text-sm font-medium text-gray-700">
-                Name
-              </label>
-              <input
-                type="text"
-                name="user_name"
-                required
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-300"
-              />
-            </div>
-
-            <div>
-              <label className="block mb-1 text-sm font-medium text-gray-700">
-                Email
-              </label>
-              <input
-                type="email"
-                name="user_email"
-                required
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-300"
-              />
-            </div>
-
-            <div>
-              <label className="block mb-1 text-sm font-medium text-gray-700">
-                Message
-              </label>
-              <textarea
-                name="message"
-                rows="5"
-                required
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-300 resize-none"
-              />
-            </div>
-
-            <button
-              type="submit"
-              disabled={loading}
-              className="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition duration-200"
-            >
-              {loading ? "Sending..." : "Send Message"}
-            </button>
-          </form>
-        )}
+    <section className="bg-black text-white py-24 px-6 md:px-16">
+      {/* HEADER */}
+      <div className="max-w-3xl mx-auto mb-12">
+        <h2 className="text-3xl md:text-5xl font-semibold tracking-tight">
+          Contact
+        </h2>
+        <p className="mt-4 text-white/50">
+          Let’s build something together — open for freelance or full-time
+          roles.
+        </p>
       </div>
+
+      {/* FORM */}
+      <form
+        onSubmit={sendEmail}
+        ref={formRef}
+        className="max-w-3xl mx-auto space-y-8"
+      >
+        {/* NAME */}
+        <div className="space-y-2">
+          <label className="text-sm text-white/50 uppercase tracking-widest">
+            Name
+          </label>
+          <input
+            type="text"
+            name="user_name"
+            required
+            className="
+              w-full bg-transparent
+              border-b border-white/10
+              py-3 text-white
+              focus:outline-none
+              focus:border-[#F16D34]
+              transition
+            "
+          />
+        </div>
+
+        {/* EMAIL */}
+        <div className="space-y-2">
+          <label className="text-sm text-white/50 uppercase tracking-widest">
+            Email
+          </label>
+          <input
+            type="email"
+            name="user_email"
+            required
+            className="
+              w-full bg-transparent
+              border-b border-white/10
+              py-3 text-white
+              focus:outline-none
+              focus:border-[#F16D34]
+              transition
+            "
+          />
+        </div>
+
+        {/* MESSAGE */}
+        <div className="space-y-2">
+          <label className="text-sm text-white/50 uppercase tracking-widest">
+            Message
+          </label>
+          <textarea
+            name="message"
+            rows="5"
+            required
+            className="
+              w-full bg-transparent
+              border-b border-white/10
+              py-3 text-white
+              focus:outline-none
+              focus:border-[#F16D34]
+              transition resize-none
+            "
+          />
+        </div>
+
+        {/* BUTTON + STATUS */}
+        <div className="flex items-center justify-between pt-4">
+          <button
+            type="submit"
+            disabled={loading}
+            className="
+              px-6 py-3
+              bg-[#F16D34]
+              text-black
+              font-medium
+              hover:opacity-90
+              transition
+            "
+          >
+            {loading ? "Sending..." : "Send Message"}
+          </button>
+
+          {submitted && (
+            <p className="text-sm text-white/60">{t("messageSent")}</p>
+          )}
+        </div>
+      </form>
     </section>
   );
 };
