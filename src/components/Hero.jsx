@@ -12,6 +12,7 @@ const Hero = () => {
       return () => clearTimeout(t);
     }
   }, [inView]);
+
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -28,7 +29,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-screen bg-black text-white flex items-center">
+    <section className="min-h-screen flex items-start md:items-center pt-20 md:pt-0">
       <div
         ref={ref}
         className="max-w-5xl mx-auto px-6 md:px-16 w-full flex flex-col justify-center"
@@ -64,20 +65,17 @@ const Hero = () => {
           </motion.p>
         </motion.div>
 
-        {/* small tabs for location available*/}
+        {/* small tabs for location available */}
         <div className="mt-10 flex flex-wrap gap-3">
-          {/* availability */}
           <div className="flex items-center gap-2 px-4 py-1 border border-white/10 rounded-full text-xs text-white/60">
-            <span className="w-2 h-2 rounded-full  bg-green-500" />
+            <span className="w-2 h-2 rounded-full bg-green-500" />
             Available for work
           </div>
 
-          {/* location */}
           <div className="px-4 py-1 border border-white/10 rounded-full text-xs text-white/50">
             Düsseldorf
           </div>
 
-          {/* freelance */}
           <div className="px-4 py-1 border border-white/10 rounded-full text-xs text-white/50">
             Freelance
           </div>

@@ -56,15 +56,14 @@ const Contact = () => {
   };
 
   return (
-    <section className="bg-black text-white py-24 px-6 md:px-16">
+    <section className="py-24 px-6 md:px-16">
       {/* HEADER */}
-      <div className="max-w-3xl mx-auto mb-12">
-        <h2 className="text-3xl md:text-5xl font-semibold tracking-tight">
+      <div className="max-w-5xl mx-auto mb-12">
+        <h2 className="text-4xl md:text-6xl font-semibold tracking-tight">
           Contact
         </h2>
         <p className="mt-4 text-white/50">
-          Let’s build something together — open for freelance or full-time
-          roles.
+          Let’s build something together roles.
         </p>
       </div>
 
@@ -72,7 +71,7 @@ const Contact = () => {
       <form
         onSubmit={sendEmail}
         ref={formRef}
-        className="max-w-3xl mx-auto space-y-8"
+        className="max-w-5xl mx-auto space-y-8"
       >
         {/* NAME */}
         <div className="space-y-2">

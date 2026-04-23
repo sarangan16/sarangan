@@ -7,21 +7,21 @@ const projects = [
     titleKey: "CrownChauffeur",
     descriptionKey: "CrownChauffeur.description",
     github: "https://github.com/sarangan16/chaffuerElite",
-    live: "https://your-live-site.com",
+    live: "https://chaffuer-elite.vercel.app/",
     tech: ["React", "Node.js", "Express", "Zod", "GSAP", "Tailwind"],
   },
   {
     titleKey: "GoldStack",
     descriptionKey: "GoldStack.description",
     github: "https://github.com/sarangan16/real-estate",
-    live: "https://your-live-site.com",
+    live: "https://real-estate-khaki-six.vercel.app/",
     tech: ["React", "Framer Motion", "Tailwind", "Vite", "Toastify"],
   },
   {
     titleKey: "KaufDE",
     descriptionKey: "KaufDE.description",
     github: "https://github.com/sarangan16/online-store",
-    live: "https://your-live-site.com",
+    live: "https://kaufde.vercel.app/",
     tech: ["React", "Stripe", "GSAP", "EmailJS", "Express", "Router"],
   },
 ];
@@ -30,7 +30,7 @@ const Projects = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="px-6 md:px-16 py-32 bg-black text-white">
+    <section className="px-6 md:px-16 py-32 ">
       {/* HEADER */}
       <div className="max-w-5xl mx-auto mb-20">
         <h2 className="text-4xl md:text-6xl font-semibold tracking-tight">
