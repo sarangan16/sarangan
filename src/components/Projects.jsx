@@ -4,24 +4,24 @@ import { FaGithub } from "react-icons/fa";
 
 const projects = [
   {
-    title: "Crown Chauffeur",
+    titleKey: "CrownChauffeur",
     descriptionKey: "CrownChauffeur.description",
     github: "https://github.com/sarangan16/chaffuerElite",
-    image: "/images/crown.png",
+    live: "https://your-live-site.com",
     tech: ["React", "Node.js", "Express", "Zod", "GSAP", "Tailwind"],
   },
   {
-    title: "GoldStack",
+    titleKey: "GoldStack",
     descriptionKey: "GoldStack.description",
     github: "https://github.com/sarangan16/real-estate",
-    image: "/images/goldstack.png",
+    live: "https://your-live-site.com",
     tech: ["React", "Framer Motion", "Tailwind", "Vite", "Toastify"],
   },
   {
-    title: "KaufDE",
+    titleKey: "KaufDE",
     descriptionKey: "KaufDE.description",
     github: "https://github.com/sarangan16/online-store",
-    image: "/images/kaufde.png",
+    live: "https://your-live-site.com",
     tech: ["React", "Stripe", "GSAP", "EmailJS", "Express", "Router"],
   },
 ];
@@ -31,41 +31,77 @@ const Projects = () => {
 
   return (
     <section className="px-6 md:px-16 py-32 bg-black text-white">
-      <div className="max-w-5xl mx-auto mb-16">
-        <h2 className="text-3xl md:text-5xl font-semibold tracking-tight">
-          Projects
+      {/* HEADER */}
+      <div className="max-w-5xl mx-auto mb-20">
+        <h2 className="text-4xl md:text-6xl font-semibold tracking-tight">
+          {t("projecth2")}
         </h2>
-        <p className="mt-4 text-white/50 max-w-xl">
-          Full-stack development toolkit focused on performance, scalability,
-          and modern UI systems.
-        </p>
       </div>
-      <div className="max-w-5xl mx-auto space-y-14">
-        {projects.map((project, index) => (
-          <div key={index} className="group border-b border-white/10 pb-10">
-            {/* TITLE */}
-            <div className="flex justify-between items-start">
-              <h2 className="text-2xl md:text-4xl font-medium tracking-tight">
-                {String(index + 1).padStart(2, "0")} — {t(project.title)}
-              </h2>
 
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white/40 hover:text-[#F16D34] transition"
-              >
-                <FaGithub />
-              </a>
+      {/* PROJECT LIST */}
+      <div className="max-w-5xl mx-auto space-y-16">
+        {projects.map((project, index) => (
+          <div key={index} className="group border-b border-white/10 pb-12">
+            {/* TITLE ROW */}
+            <div className="flex justify-between items-start">
+              <h3 className="text-lg md:text-2xl font-medium tracking-tight text-white/90 flex items-center">
+                {/* NUMBER */}
+                <span className="text-[#F16D34] text-sm mr-3">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+
+                {/* TITLE */}
+                {t(project.titleKey)}
+              </h3>
+
+              {/* GITHUB */}
+              <div className="flex items-center gap-6">
+                {/* LIVE */}
+                {project.live && (
+                  <a
+                    href={project.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="
+        text-xs md:text-sm uppercase tracking-[0.2em]
+        text-white/60
+        hover:text-[#F16D34]
+        transition
+      "
+                  >
+                    Live
+                  </a>
+                )}
+
+                {/* separator */}
+                {project.live && <span className="text-white/10">/</span>}
+
+                {/* GITHUB */}
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="
+      flex items-center gap-2
+      text-xs md:text-sm uppercase tracking-[0.2em]
+      text-white/60
+      hover:text-[#F16D34]
+      transition
+    "
+                >
+                  <FaGithub size={16} />
+                  Code
+                </a>
+              </div>
             </div>
 
             {/* DESCRIPTION */}
-            <p className="text-white/50 mt-3 max-w-xl leading-relaxed">
+            <p className="text-white/50 mt-4 max-w-xl text-sm md:text-base leading-relaxed">
               {t(project.descriptionKey)}
             </p>
 
-            {/* TECH STACK (NEW) */}
-            <div className="flex flex-wrap gap-2 mt-4">
+            {/* TECH STACK */}
+            <div className="flex flex-wrap gap-2 mt-5">
               {project.tech.map((tech, i) => (
                 <span
                   key={i}

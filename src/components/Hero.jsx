@@ -34,7 +34,11 @@ const Hero = () => {
         className="max-w-5xl mx-auto px-6 md:px-16 w-full flex flex-col justify-center"
       >
         {/* my name */}
-        <motion.div variants={container} initial="hidden" animate="show">
+        <motion.div
+          variants={container}
+          initial="hidden"
+          animate={inView ? "show" : "hidden"}
+        >
           <motion.h1
             variants={item}
             className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-semibold tracking-tight"

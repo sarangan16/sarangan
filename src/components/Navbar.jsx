@@ -41,7 +41,9 @@ const Navbar = ({ heroRef, projectsRef, stackRef, contactRef }) => {
           onClick={() => scrollTo(heroRef)}
           className="text-white text-sm uppercase tracking-[0.35em] cursor-pointer hover:opacity-70 transition"
         >
-          DEVCORP
+          <span>
+            Code<span className="text-[#F16D34]">Werk</span>
+          </span>
         </div>
 
         {/* DESKTOP NAV */}

@@ -75,10 +75,6 @@ const TechStack = () => {
         <h2 className="text-3xl md:text-5xl font-semibold tracking-tight">
           Tech Stack
         </h2>
-        <p className="mt-4 text-white/50 max-w-xl">
-          Full-stack development toolkit focused on performance, scalability,
-          and modern UI systems.
-        </p>
       </div>
 
       {/* GRID */}
@@ -86,7 +82,7 @@ const TechStack = () => {
         {categories.map((cat, idx) => (
           <div key={idx} className="space-y-6">
             {/* CATEGORY TITLE */}
-            <h3 className="text-white/70 uppercase tracking-[0.3em] text-xs">
+            <h3 className="text-[#F16D34] uppercase tracking-[0.3em] text-xs">
               {cat.title}
             </h3>
 

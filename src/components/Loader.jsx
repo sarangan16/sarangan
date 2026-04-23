@@ -39,7 +39,7 @@ const Loader = ({ onComplete }) => {
         ref={textRef}
         className="text-white text-lg md:text-xl tracking-[0.3em] uppercase"
       >
-        Sarangan
+        Code<span className="text-[#F16D34]">Werk</span>
       </h1>
 
       {/* orange loader */}
