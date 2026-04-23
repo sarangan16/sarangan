@@ -2,13 +2,7 @@ import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Menu, X } from "lucide-react";
 
-const Navbar = ({
-  scrollContainerRef,
-  introRef,
-  stackRef,
-  projectsRef,
-  contactRef,
-}) => {
+const Navbar = ({ introRef, stackRef, projectsRef, contactRef }) => {
   const { i18n } = useTranslation();
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -17,122 +11,103 @@ const Navbar = ({
     setMenuOpen(false);
   };
 
-  const scrollToSection = (sectionRef) => {
-    if (sectionRef.current && scrollContainerRef.current) {
-      const top = sectionRef.current.offsetTop;
-      scrollContainerRef.current.scrollTo({ top, behavior: "smooth" });
-      setMenuOpen(false);
-    }
+  const scrollTo = (ref) => {
+    ref?.current?.scrollIntoView({ behavior: "smooth" });
+    setMenuOpen(false);
   };
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-[#111827] shadow-lg">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/5">
       <div className="h-16 flex items-center justify-between px-6 max-w-7xl mx-auto">
+        {/* My Brand */}
         <div
-          onClick={() => scrollToSection(introRef)}
-          className="flex-1 text-white text-xl font-bold tracking-wide cursor-pointer"
+          onClick={() => scrollTo(introRef)}
+          className="text-white text-lg tracking-widest uppercase cursor-pointer hover:opacity-70 transition"
         >
           Sarangan
         </div>
 
-        <div className="hidden sm:flex justify-center space-x-6">
+        {/* Nav Links */}
+        <div className="hidden sm:flex gap-10 text-sm uppercase tracking-wide text-white/60">
           <button
-            onClick={() => scrollToSection(introRef)}
-            className="text-sm md:text-base font-medium uppercase text-gray-300 hover:text-red-400 transition"
+            onClick={() => scrollTo(introRef)}
+            className="hover:text-white transition"
           >
             Home
           </button>
-
           <button
-            onClick={() => scrollToSection(projectsRef)}
-            className="text-sm md:text-base font-medium uppercase text-gray-300 hover:text-red-400 transition"
-          >
-            Projects
-          </button>
-          <button
-            onClick={() => scrollToSection(stackRef)}
-            className="text-sm md:text-base font-medium uppercase text-gray-300 hover:text-red-400 transition"
+            onClick={() => scrollTo(stackRef)}
+            className="hover:text-white transition"
           >
             Stack
           </button>
           <button
-            onClick={() => scrollToSection(contactRef)}
-            className="text-sm md:text-base font-medium uppercase text-gray-300 hover:text-red-400 transition"
+            onClick={() => scrollTo(projectsRef)}
+            className="hover:text-white transition"
+          >
+            Projects
+          </button>
+          <button
+            onClick={() => scrollTo(contactRef)}
+            className="hover:text-white transition"
           >
             Contact
           </button>
         </div>
 
-        <div className="hidden sm:flex flex-1 justify-end">
-          {i18n.language === "en" ? (
-            <button
-              onClick={() => changeLanguage("de")}
-              className="px-4 py-1 rounded-full bg-red-500 hover:bg-red-600 text-white text-sm font-semibold transition"
-            >
-              DE
-            </button>
-          ) : (
-            <button
-              onClick={() => changeLanguage("en")}
-              className="px-4 py-1 rounded-full bg-red-500 hover:bg-red-600 text-white text-sm font-semibold transition"
-            >
-              EN
-            </button>
-          )}
+        {/* Language Change */}
+        <div className="hidden sm:flex items-center gap-4">
+          <button
+            onClick={() => changeLanguage(i18n.language === "en" ? "de" : "en")}
+            className="text-xs uppercase tracking-widest text-white/50 hover:text-white transition"
+          >
+            {i18n.language === "en" ? "DE" : "EN"}
+          </button>
         </div>
 
+        {/* Mobile screen menu hid */}
         <button
           className="sm:hidden text-white"
           onClick={() => setMenuOpen(!menuOpen)}
         >
-          {menuOpen ? <X size={28} /> : <Menu size={28} />}
+          {menuOpen ? <X size={26} /> : <Menu size={26} />}
         </button>
       </div>
 
+      {/* mobile menu */}
       {menuOpen && (
-        <div className="sm:hidden bg-[#1f2937] px-6 py-4 space-y-4">
+        <div className="sm:hidden bg-black border-t border-white/5 px-6 py-6 space-y-5 text-white/70 uppercase text-sm tracking-wide">
           <button
-            onClick={() => scrollToSection(introRef)}
-            className="block w-full text-left text-gray-300 hover:text-red-400 transition"
+            onClick={() => scrollTo(introRef)}
+            className="block hover:text-white"
           >
             Home
           </button>
           <button
-            onClick={() => scrollToSection(stackRef)}
-            className="block w-full text-left text-gray-300 hover:text-red-400 transition"
+            onClick={() => scrollTo(stackRef)}
+            className="block hover:text-white"
           >
             Stack
           </button>
           <button
-            onClick={() => scrollToSection(projectsRef)}
-            className="block w-full text-left text-gray-300 hover:text-red-400 transition"
+            onClick={() => scrollTo(projectsRef)}
+            className="block hover:text-white"
           >
             Projects
           </button>
           <button
-            onClick={() => scrollToSection(contactRef)}
-            className="block w-full text-left text-gray-300 hover:text-red-400 transition"
+            onClick={() => scrollTo(contactRef)}
+            className="block hover:text-white"
           >
             Contact
           </button>
 
-          <div className="pt-4">
-            {i18n.language === "en" ? (
-              <button
-                onClick={() => changeLanguage("de")}
-                className="w-full px-4 py-2 rounded-full bg-red-500 hover:bg-red-600 text-white text-sm font-semibold transition"
-              >
-                DE
-              </button>
-            ) : (
-              <button
-                onClick={() => changeLanguage("en")}
-                className="w-full px-4 py-2 rounded-full bg-red-500 hover:bg-red-600 text-white text-sm font-semibold transition"
-              >
-                EN
-              </button>
-            )}
-          </div>
+          <button
+            onClick={() => changeLanguage(i18n.language === "en" ? "de" : "en")}
+            className="pt-4 text-white/60 hover:text-white transition"
+          >
+            {i18n.language === "en" ? "Switch to DE" : "Switch to EN"}
+          </button>
         </div>
       )}
     </nav>
