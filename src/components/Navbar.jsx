@@ -24,7 +24,7 @@ const NavItem = ({ children, onClick }) => {
   );
 };
 
-const Navbar = ({ heroRef, projectsRef, stackRef, contactRef }) => {
+const Navbar = ({ heroRef, aboutRef, projectsRef, stackRef, contactRef }) => {
   const { i18n } = useTranslation();
   const [open, setOpen] = useState(false);
 
@@ -49,6 +49,8 @@ const Navbar = ({ heroRef, projectsRef, stackRef, contactRef }) => {
         {/* desktop nav */}
         <div className="hidden md:flex items-center gap-10 text-sm uppercase tracking-[0.25em]">
           <NavItem onClick={() => scrollTo(heroRef)}>Home</NavItem>
+
+          <NavItem onClick={() => scrollTo(aboutRef)}>About</NavItem>
 
           <NavItem onClick={() => scrollTo(projectsRef)}>Projects</NavItem>
 
@@ -85,6 +87,9 @@ const Navbar = ({ heroRef, projectsRef, stackRef, contactRef }) => {
         <div className="md:hidden bg-black border-t border-white/5 px-6 py-8 space-y-6 text-white/70 uppercase text-sm tracking-widest">
           <button onClick={() => scrollTo(heroRef)} className="block">
             Home
+          </button>
+          <button onClick={() => scrollTo(aboutRef)} className="block">
+            About
           </button>
 
           <button onClick={() => scrollTo(projectsRef)} className="block">

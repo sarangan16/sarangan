@@ -20,6 +20,26 @@ i18n.use(initReactI18next).init({
           description:
             "Frontend developer based in Germany, focused on building modern, responsive, and interactive web applications. I design and develop complete user-facing products, integrating APIs and backend services to deliver smooth, production-ready experiences for startups and businesses.",
         },
+        about: {
+          title: "About",
+          philosophy:
+            "I believe good interfaces are felt, not noticed. My job is to make complex things simple — and simple things feel effortless. I obsess over the details most people skip: load states, empty states, the 200ms that separates fast from instant.",
+          approach:
+            "Outside of code I'm drawn to type design, brutalist web aesthetics, and anything that challenges how a UI is supposed to look. That curiosity shows up in my work.",
+          fact1: {
+            label: "Background",
+            value: "More than 4 years shipping production React",
+          },
+          fact2: {
+            label: "Strength",
+            value: "Turning Figma into pixel-perfect, animated UI",
+          },
+          fact3: {
+            label: "Working style",
+            value: "Async-friendly, docs-first, minimal meetings",
+          },
+          availability: "Open to full-time & freelance ",
+        },
 
         navigation: {
           home: "Home",
@@ -81,6 +101,26 @@ i18n.use(initReactI18next).init({
           location: "Düsseldorf",
           description:
             "Frontend-Entwickler aus Deutschland mit Fokus auf moderne, responsive und interaktive Webanwendungen. Ich entwickle komplette Benutzeroberflächen, integriere APIs und Backend-Services und liefere produktionsreife Lösungen für Startups und Unternehmen.",
+        },
+        about: {
+          title: "Über mich",
+          philosophy:
+            "Ich glaube, dass gute Interfaces gefühlt, nicht bemerkt werden. Meine Aufgabe ist es, Komplexes einfach zu machen — und Einfaches mühelos anfühlen zu lassen.",
+          approach:
+            "Abseits von Code interessiere ich mich für Typografie, brutalistisches Webdesign und alles, was die Konventionen eines UI in Frage stellt.",
+          fact1: {
+            label: "Hintergrund",
+            value: "4+ Jahre React in Produktion",
+          },
+          fact2: {
+            label: "Stärke",
+            value: "Figma in pixelgenaue, animierte UI umsetzen",
+          },
+          fact3: {
+            label: "Arbeitsstil",
+            value: "Async-freundlich, dokumentationsorientiert",
+          },
+          availability: "Offen für Festanstellung & Freelance ",
         },
 
         navigation: {

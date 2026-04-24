@@ -5,6 +5,7 @@ import Projects from "./components/Projects";
 import TechStack from "./components/Techstack";
 import Contact from "./components/Contact";
 import Navbar from "./components/Navbar";
+import About from "./components/About";
 import "./components/i18n";
 import { useTranslation } from "react-i18next";
 
@@ -15,11 +16,14 @@ function App() {
   const projectsRef = useRef(null);
   const stackRef = useRef(null);
   const contactRef = useRef(null);
+  const aboutRef = useRef(null);
 
   useEffect(() => {
-    i18n.changeLanguage(navigator.language);
+    const browserLang = navigator.language.split("-")[0];
+    const supported = ["en", "de"];
+    const lang = supported.includes(browserLang) ? browserLang : "de";
+    i18n.changeLanguage(lang);
   }, [i18n]);
-
   return (
     <div className="bg-[#0a0a0a] text-white">
       <Navbar
@@ -27,25 +31,28 @@ function App() {
         projectsRef={projectsRef}
         stackRef={stackRef}
         contactRef={contactRef}
+        aboutRef={aboutRef}
       />
 
       <main>
-        {/* HERO */}
+        {/* hero */}
         <section ref={heroRef}>
           <Hero projectsRef={projectsRef} />
         </section>
-
-        {/* PROJECTS */}
+        <section ref={aboutRef}>
+          <About />
+        </section>
+        {/* projects */}
         <section ref={projectsRef}>
           <Projects />
         </section>
 
-        {/* STACK */}
+        {/* stack */}
         <section ref={stackRef}>
           <TechStack />
         </section>
 
-        {/* CONTACT */}
+        {/* contact */}
         <section ref={contactRef}>
           <Contact />
         </section>

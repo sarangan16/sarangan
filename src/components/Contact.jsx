@@ -137,13 +137,16 @@ const Contact = () => {
             type="submit"
             disabled={loading}
             className="
-              px-6 py-3
-              bg-[#F16D34]
-              text-black
-              font-medium
-              hover:opacity-90
-              transition
-            "
+    px-6 py-3
+    bg-[#F16D34]
+    text-black
+    text-xs uppercase tracking-[0.25em]
+    rounded-full
+    font-medium
+    hover:opacity-90
+    transition
+    disabled:opacity-50
+  "
           >
             {loading ? t("buttons.sending") : t("buttons.sendMessage")}
           </button>

@@ -43,7 +43,7 @@ const Projects = () => {
         {projects.map((project, index) => (
           <div key={index} className="group border-b border-white/10 pb-12">
             {/* title row */}
-            <div className="flex justify-between items-start">
+            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3">
               <h3 className="text-lg md:text-2xl font-medium tracking-tight text-white/90 flex items-center">
                 {/* project number */}
                 <span className="text-[#F16D34] text-xl mr-3">
@@ -55,7 +55,7 @@ const Projects = () => {
               </h3>
 
               {/* action buttons for project */}
-              <div className="flex items-center gap-6">
+              <div className="flex items-center gap-6 ml-8 sm:ml-0">
                 {/* live link */}
                 {project.live && (
                   <a
