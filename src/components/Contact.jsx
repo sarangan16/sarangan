@@ -149,7 +149,7 @@ const Contact = () => {
           </button>
 
           {submitted && (
-            <p className="text-sm text-white/60">{t("messageSent")}</p>
+            <p className="text-sm text-white/60"> {t("contact.messageSent")}</p>
           )}
         </div>
       </form>
