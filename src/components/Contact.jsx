@@ -60,9 +60,9 @@ const Contact = () => {
       {/* HEADER */}
       <div className="max-w-5xl mx-auto mb-12">
         <h2 className="text-4xl md:text-6xl font-semibold tracking-tight">
-          Contact
+          {t("contact.title")}
         </h2>
-        <p className="mt-4 text-white/50">Let’s build something together.</p>
+        <p className="mt-4 text-white/50">{t("contact.subtitle")}</p>
       </div>
 
       {/* FORM */}
@@ -74,7 +74,7 @@ const Contact = () => {
         {/* NAME */}
         <div className="space-y-2">
           <label className="text-sm text-white/50 uppercase tracking-widest">
-            Name
+            {t("contact.name")}
           </label>
           <input
             type="text"
@@ -94,7 +94,7 @@ const Contact = () => {
         {/* EMAIL */}
         <div className="space-y-2">
           <label className="text-sm text-white/50 uppercase tracking-widest">
-            Email
+            {t("contact.email")}
           </label>
           <input
             type="email"
@@ -114,7 +114,7 @@ const Contact = () => {
         {/* MESSAGE */}
         <div className="space-y-2">
           <label className="text-sm text-white/50 uppercase tracking-widest">
-            Message
+            {t("contact.message")}
           </label>
           <textarea
             name="message"
@@ -145,7 +145,7 @@ const Contact = () => {
               transition
             "
           >
-            {loading ? "Sending..." : "Send Message"}
+            {loading ? t("buttons.sending") : t("buttons.sendMessage")}
           </button>
 
           {submitted && (

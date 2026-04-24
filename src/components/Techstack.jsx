@@ -20,6 +20,7 @@ import {
   SiVercel,
   SiNetlify,
 } from "react-icons/si";
+import { useTranslation } from "react-i18next";
 
 const categories = [
   {
@@ -68,12 +69,13 @@ const categories = [
 ];
 
 const TechStack = () => {
+  const { t } = useTranslation();
   return (
     <section className=" py-20 md:py-32 px-6 md:px-16">
       {/* hq title */}
       <div className="max-w-5xl mx-auto mb-16">
         <h2 className="text-4xl md:text-6xl font-semibold tracking-tight">
-          Tech Stack
+          {t("stack.title")}
         </h2>
       </div>
 

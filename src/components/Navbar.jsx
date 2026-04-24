@@ -34,7 +34,7 @@ const Navbar = ({ heroRef, projectsRef, stackRef, contactRef }) => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-black/70 backdrop-blur-md border-b border-white/5">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-[#0a0a0a] backdrop-blur-md border-b border-white/5">
       <div className="h-16 flex items-center justify-between px-6 md:px-16">
         {/* brand */}
         <div
@@ -61,7 +61,14 @@ const Navbar = ({ heroRef, projectsRef, stackRef, contactRef }) => {
             onClick={() =>
               i18n.changeLanguage(i18n.language === "en" ? "de" : "en")
             }
-            className="ml-4 text-white/40 hover:text-white transition"
+            className=" ml-4 px-3 py-1
+    border border-[#F16D34]/40
+    rounded-full
+    text-xs tracking-[0.25em]
+    text-[#F16D34]
+    hover:bg-[#F16D34]
+    hover:text-black
+    transition"
           >
             {i18n.language === "en" ? "DE" : "EN"}
           </button>

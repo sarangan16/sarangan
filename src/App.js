@@ -21,7 +21,7 @@ function App() {
   }, [i18n]);
 
   return (
-    <div className="bg-black text-white">
+    <div className="bg-[#0a0a0a] text-white">
       <Navbar
         heroRef={heroRef}
         projectsRef={projectsRef}

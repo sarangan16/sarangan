@@ -34,7 +34,7 @@ const Projects = () => {
       {/* h1 title */}
       <div className="max-w-5xl mx-auto mb-20">
         <h2 className="text-4xl md:text-6xl font-semibold tracking-tight">
-          {t("projecth2")}
+          {t("projects.title")}
         </h2>
       </div>
 
@@ -51,7 +51,7 @@ const Projects = () => {
                 </span>
 
                 {/* title */}
-                {t(project.titleKey)}
+                {t(`projects.${project.titleKey}.title`)}
               </h3>
 
               {/* action buttons for project */}
@@ -95,12 +95,12 @@ const Projects = () => {
               </div>
             </div>
 
-            {/* DESCRIPTION */}
+            {/* Description */}
             <p className="text-white/50 mt-4 max-w-xl text-sm md:text-base leading-relaxed">
-              {t(project.descriptionKey)}
+              {t(`projects.${project.titleKey}.description`)}
             </p>
 
-            {/* TECH STACK */}
+            {/* tech stack */}
             <div className="flex flex-wrap gap-2 mt-5">
               {project.tech.map((tech, i) => (
                 <span
