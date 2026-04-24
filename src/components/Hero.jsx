@@ -1,17 +1,10 @@
 import React, { useRef, useState, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
+import { MapPin } from "lucide-react";
 
-const Hero = () => {
+const Hero = ({ projectsRef }) => {
   const ref = useRef(null);
   const inView = useInView(ref);
-  const [toggle, setToggle] = useState(false);
-
-  useEffect(() => {
-    if (inView) {
-      const t = setTimeout(() => setToggle(true), 2200);
-      return () => clearTimeout(t);
-    }
-  }, [inView]);
 
   const container = {
     hidden: { opacity: 0 },
@@ -29,7 +22,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-start md:items-center pt-20 md:pt-0">
+    <section className="min-h-screen bg-black text-white flex items-start md:items-center pt-28 md:pt-0">
       <div
         ref={ref}
         className="max-w-5xl mx-auto px-6 md:px-16 w-full flex flex-col justify-center"
@@ -51,34 +44,63 @@ const Hero = () => {
             variants={item}
             className="mt-4 text-white/40 text-xs sm:text-sm uppercase tracking-[0.3em]"
           >
-            Frontend Developer · UI Engineer · Freelance
+            Frontend Developer <span className="text-white/20">·</span>{" "}
+            Freelance <span className="text-white/20">·</span>{" "}
+            <span className="inline-flex items-center gap-1">
+              <MapPin size={12} className="text-white/30" />
+              Düsseldorf
+            </span>
           </motion.p>
-
           <motion.p
             variants={item}
-            className="mt-8 text-white/50 max-w-xl text-sm sm:text-base leading-relaxed"
+            className="mt-6 text-white/50 max-w-xl text-sm sm:text-base leading-relaxed"
           >
             Frontend developer based in Germany, focused on building modern,
-            responsive, and interactive web experiences. I also work freelance,
-            helping startups and businesses turn concepts into clean,
-            production-ready products.
+            responsive, and interactive web applications. I design and develop
+            complete user-facing products, integrating APIs and backend services
+            to deliver smooth, production-ready experiences for startups and
+            businesses.
           </motion.p>
         </motion.div>
 
-        {/* small tabs for location available */}
-        <div className="mt-10 flex flex-wrap gap-3">
-          <div className="flex items-center gap-2 px-4 py-1 border border-white/10 rounded-full text-xs text-white/60">
-            <span className="w-2 h-2 rounded-full bg-green-500" />
-            Available for work
-          </div>
+        <div className="mt-6 flex flex-wrap gap-3">
+          {/* Projects */}
+          <button
+            onClick={() =>
+              projectsRef?.current?.scrollIntoView({ behavior: "smooth" })
+            }
+            className="
+      px-5 py-2
+      border border-[#F16D34]/40
+      rounded-full
+      text-xs uppercase tracking-[0.3em]
+      text-[#F16D34]
+      hover:bg-[#F16D34]
+      hover:text-black
+      transition
+    "
+          >
+            Projects
+          </button>
 
-          <div className="px-4 py-1 border border-white/10 rounded-full text-xs text-white/50">
-            Düsseldorf
-          </div>
-
-          <div className="px-4 py-1 border border-white/10 rounded-full text-xs text-white/50">
-            Freelance
-          </div>
+          {/* GitHub */}
+          <a
+            href="https://github.com/sarangan16"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="
+      px-5 py-2
+      border border-white/10
+      rounded-full
+      text-xs uppercase tracking-[0.3em]
+      text-white/70
+      hover:border-[#F16D34]
+      hover:text-[#F16D34]
+      transition
+    "
+          >
+            GitHub
+          </a>
         </div>
       </div>
     </section>

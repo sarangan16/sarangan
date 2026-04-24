@@ -34,12 +34,12 @@ const Loader = ({ onComplete }) => {
       ref={loaderRef}
       className="fixed inset-0 bg-black flex flex-col items-center justify-center z-[9999]"
     >
-      {/* TEXT */}
+      {/* loading text */}
       <h1
         ref={textRef}
         className="text-white text-lg md:text-xl tracking-[0.3em] uppercase"
       >
-        Code<span className="text-[#F16D34]">Werk</span>
+        Raavn<span className="text-[#F16D34]">Code</span>
       </h1>
 
       {/* orange loader */}

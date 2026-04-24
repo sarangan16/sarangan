@@ -69,24 +69,24 @@ const categories = [
 
 const TechStack = () => {
   return (
-    <section className=" py-24 px-6 md:px-16">
-      {/* HEADER */}
+    <section className=" py-20 md:py-32 px-6 md:px-16">
+      {/* hq title */}
       <div className="max-w-5xl mx-auto mb-16">
         <h2 className="text-4xl md:text-6xl font-semibold tracking-tight">
           Tech Stack
         </h2>
       </div>
 
-      {/* GRID */}
+      {/* tech stack */}
       <div className="max-w-5xl mx-auto space-y-14">
         {categories.map((cat, idx) => (
           <div key={idx} className="space-y-6">
-            {/* CATEGORY TITLE */}
+            {/* tech stack title */}
             <h3 className="text-[#F16D34] uppercase tracking-[0.3em] text-xs">
               {cat.title}
             </h3>
 
-            {/* ITEMS GRID */}
+            {/* tech icons */}
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
               {cat.items.map((tech, i) => {
                 const Icon = tech.icon;
@@ -102,10 +102,9 @@ const TechStack = () => {
                       transition-all duration-300
                     "
                   >
-                    {/* ICON */}
                     <Icon className="text-white/70 group-hover:text-[#F16D34] transition" />
 
-                    {/* NAME */}
+                    {/* name */}
                     <span className="text-sm text-white/60 group-hover:text-white transition">
                       {tech.name}
                     </span>

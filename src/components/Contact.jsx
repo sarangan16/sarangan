@@ -56,15 +56,13 @@ const Contact = () => {
   };
 
   return (
-    <section className="py-24 px-6 md:px-16">
+    <section className="py-20 md:py-32 px-6 md:px-16">
       {/* HEADER */}
       <div className="max-w-5xl mx-auto mb-12">
         <h2 className="text-4xl md:text-6xl font-semibold tracking-tight">
           Contact
         </h2>
-        <p className="mt-4 text-white/50">
-          Let’s build something together roles.
-        </p>
+        <p className="mt-4 text-white/50">Let’s build something together.</p>
       </div>
 
       {/* FORM */}

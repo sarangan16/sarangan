@@ -36,17 +36,17 @@ const Navbar = ({ heroRef, projectsRef, stackRef, contactRef }) => {
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-black/70 backdrop-blur-md border-b border-white/5">
       <div className="h-16 flex items-center justify-between px-6 md:px-16">
-        {/* BRAND */}
+        {/* brand */}
         <div
           onClick={() => scrollTo(heroRef)}
           className="text-white text-sm uppercase tracking-[0.35em] cursor-pointer hover:opacity-70 transition"
         >
           <span>
-            Code<span className="text-[#F16D34]">Werk</span>
+            Raavn<span className="text-[#F16D34] ">Code</span>
           </span>
         </div>
 
-        {/* DESKTOP NAV */}
+        {/* desktop nav */}
         <div className="hidden md:flex items-center gap-10 text-sm uppercase tracking-[0.25em]">
           <NavItem onClick={() => scrollTo(heroRef)}>Home</NavItem>
 
@@ -56,7 +56,7 @@ const Navbar = ({ heroRef, projectsRef, stackRef, contactRef }) => {
 
           <NavItem onClick={() => scrollTo(contactRef)}>Contact</NavItem>
 
-          {/* LANGUAGE */}
+          {/* language selector */}
           <button
             onClick={() =>
               i18n.changeLanguage(i18n.language === "en" ? "de" : "en")
@@ -67,13 +67,13 @@ const Navbar = ({ heroRef, projectsRef, stackRef, contactRef }) => {
           </button>
         </div>
 
-        {/* MOBILE */}
+        {/* small screen */}
         <button className="md:hidden text-white" onClick={() => setOpen(!open)}>
           {open ? <X size={22} /> : <Menu size={22} />}
         </button>
       </div>
 
-      {/* MOBILE MENU */}
+      {/* mobile menu */}
       {open && (
         <div className="md:hidden bg-black border-t border-white/5 px-6 py-8 space-y-6 text-white/70 uppercase text-sm tracking-widest">
           <button onClick={() => scrollTo(heroRef)} className="block">

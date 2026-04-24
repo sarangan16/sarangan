@@ -30,33 +30,33 @@ const Projects = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="px-6 md:px-16 py-32 ">
-      {/* HEADER */}
+    <section className="px-6 md:px-16 py-20 md:py-32 ">
+      {/* h1 title */}
       <div className="max-w-5xl mx-auto mb-20">
         <h2 className="text-4xl md:text-6xl font-semibold tracking-tight">
           {t("projecth2")}
         </h2>
       </div>
 
-      {/* PROJECT LIST */}
+      {/* project list  */}
       <div className="max-w-5xl mx-auto space-y-16">
         {projects.map((project, index) => (
           <div key={index} className="group border-b border-white/10 pb-12">
-            {/* TITLE ROW */}
+            {/* title row */}
             <div className="flex justify-between items-start">
               <h3 className="text-lg md:text-2xl font-medium tracking-tight text-white/90 flex items-center">
-                {/* NUMBER */}
-                <span className="text-[#F16D34] text-sm mr-3">
+                {/* project number */}
+                <span className="text-[#F16D34] text-xl mr-3">
                   {String(index + 1).padStart(2, "0")}
                 </span>
 
-                {/* TITLE */}
+                {/* title */}
                 {t(project.titleKey)}
               </h3>
 
-              {/* GITHUB */}
+              {/* action buttons for project */}
               <div className="flex items-center gap-6">
-                {/* LIVE */}
+                {/* live link */}
                 {project.live && (
                   <a
                     href={project.live}
@@ -76,7 +76,7 @@ const Projects = () => {
                 {/* separator */}
                 {project.live && <span className="text-white/10">/</span>}
 
-                {/* GITHUB */}
+                {/* github Btn */}
                 <a
                   href={project.github}
                   target="_blank"
