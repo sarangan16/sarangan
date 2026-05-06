@@ -18,7 +18,12 @@ i18n.use(initReactI18next).init({
           freelance: "Freelance",
           location: "Düsseldorf",
           description:
-            "Frontend developer based in Germany, focused on building modern, responsive, and interactive web applications. I design and develop complete user-facing products, integrating APIs and backend services to deliver smooth, production-ready experiences for startups and businesses.",
+            "Frontend Developer based in Germany, building fast, scalable React applications for real-world SaaS products. I turn complex systems — from e-commerce to logistics — into responsive, production-ready interfaces with seamless API integration and a strong focus on performance.",
+          available: "Available for work",
+          role_line1: "Frontend",
+          role_line2: "Developer",
+          name: "Sarangan",
+          cta_projects: "Projects",
         },
         about: {
           title: "About",
@@ -100,7 +105,12 @@ i18n.use(initReactI18next).init({
           freelance: "Freelance",
           location: "Düsseldorf",
           description:
-            "Frontend-Entwickler aus Deutschland mit Fokus auf moderne, responsive und interaktive Webanwendungen. Ich entwickle komplette Benutzeroberflächen, integriere APIs und Backend-Services und liefere produktionsreife Lösungen für Startups und Unternehmen.",
+            "Frontend-Entwickler mit Sitz in Deutschland, spezialisiert auf die Entwicklung schneller und skalierbarer React-Anwendungen für praxisnahe SaaS-Produkte. Ich verwandle komplexe Systeme – von E-Commerce bis Logistik – in responsive, produktionsreife Benutzeroberflächen mit nahtloser API-Integration und starkem Fokus auf Performance.",
+          available: "Verfügbar für Projekte",
+          role_line1: "Frontend",
+          role_line2: "Entwickler",
+          name: "Sarangan",
+          cta_projects: "Projekte",
         },
         about: {
           title: "Über mich",

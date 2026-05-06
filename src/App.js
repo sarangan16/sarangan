@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef } from "react";
 import "./App.css";
 import Hero from "./components/Hero";
 import Projects from "./components/Projects";
@@ -7,23 +7,15 @@ import Contact from "./components/Contact";
 import Navbar from "./components/Navbar";
 import About from "./components/About";
 import "./components/i18n";
-import { useTranslation } from "react-i18next";
+import SectionIndicator from "./components/animations/SectionIndicator";
 
 function App() {
-  const { i18n } = useTranslation();
-
   const heroRef = useRef(null);
   const projectsRef = useRef(null);
   const stackRef = useRef(null);
   const contactRef = useRef(null);
   const aboutRef = useRef(null);
 
-  useEffect(() => {
-    const browserLang = navigator.language.split("-")[0];
-    const supported = ["en", "de"];
-    const lang = supported.includes(browserLang) ? browserLang : "de";
-    i18n.changeLanguage(lang);
-  }, [i18n]);
   return (
     <div className="bg-[#0a0a0a] text-white">
       <Navbar
@@ -33,12 +25,21 @@ function App() {
         contactRef={contactRef}
         aboutRef={aboutRef}
       />
+      <SectionIndicator
+        heroRef={heroRef}
+        aboutRef={aboutRef}
+        projectsRef={projectsRef}
+        stackRef={stackRef}
+        contactRef={contactRef}
+      />
 
       <main>
         {/* hero */}
         <section ref={heroRef}>
           <Hero projectsRef={projectsRef} />
         </section>
+
+        {/*about */}
         <section ref={aboutRef}>
           <About />
         </section>

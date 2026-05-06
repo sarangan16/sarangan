@@ -1,107 +1,80 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { MapPin } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 const Hero = ({ projectsRef }) => {
   const ref = useRef(null);
-  const inView = useInView(ref);
-
+  const inView = useInView(ref, { once: true });
   const { t } = useTranslation();
 
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const item = {
-    hidden: { opacity: 0, y: 10 },
-    show: { opacity: 1, y: 0 },
-  };
-
   return (
-    <section className="min-h-screen text-white flex items-start md:items-center pt-28 md:pt-0">
-      <div
-        ref={ref}
-        className="max-w-5xl mx-auto px-6 md:px-16 w-full flex flex-col justify-center"
-      >
-        {/* my name */}
+    <section className="min-h-screen flex items-center text-white">
+      <div ref={ref} className="max-w-5xl mx-auto px-6 md:px-16 w-full">
         <motion.div
-          variants={container}
-          initial="hidden"
-          animate={inView ? "show" : "hidden"}
+          initial={{ opacity: 0, y: 16 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="flex items-center gap-3 mb-4"
         >
-          <motion.h1
-            variants={item}
-            className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-semibold tracking-tight"
-          >
-            SARANGAN
-          </motion.h1>
-
-          <motion.p
-            variants={item}
-            className="mt-4 text-white/40 text-xs sm:text-sm uppercase tracking-[0.3em]"
-          >
-            {t("hero.role")} <span className="text-white/20">·</span>{" "}
-            {t("hero.freelance")} <span className="text-white/20">·</span>{" "}
-            <span className="inline-flex items-center gap-1">
-              <MapPin size={12} className="text-white/30" />
-              {t("hero.location")}
-            </span>
-          </motion.p>
-
-          <motion.p
-            variants={item}
-            className="mt-6 text-white/50 max-w-xl text-sm sm:text-base leading-relaxed"
-          >
-            {t("hero.description")}
-          </motion.p>
+          <span className="block w-7 h-px bg-[#F16D34] opacity-60" />
+          <span className="font-['Poiret_One'] uppercase tracking-[0.35em] text-white/65">
+            SARANGAN SIVAMOORTHY
+          </span>
         </motion.div>
 
-        <div className="mt-6 flex flex-wrap gap-3">
-          {/* Projects */}
+        <motion.h1
+          initial={{ opacity: 0, y: 16 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="text-[clamp(52px,10vw,110px)] font-['Poiret_One'] uppercase font-extrabold letter-spa leading-[0.90] tracking-widest"
+          style={{}}
+        >
+          {t("hero.role_line1")}
+          <br />
+          <span className="text-[#F16D34]">{t("hero.role_line2")}</span>
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 16 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.35 }}
+          className="mt-5 text-[13px] uppercase tracking-[0.35em] text-white/20"
+          style={{}}
+        ></motion.p>
+
+        <motion.p
+          initial={{ opacity: 0, y: 16 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.45 }}
+          className="mt-5 text-white/40 max-w-lg text-sm leading-relaxed"
+        >
+          {t("hero.description")}
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.55 }}
+          className="mt-7 flex flex-wrap gap-3"
+        >
           <button
             onClick={() =>
               projectsRef?.current?.scrollIntoView({ behavior: "smooth" })
             }
-            className="
-      px-5 py-2
-      border border-[#F16D34]/40
-      rounded-full
-      text-xs uppercase tracking-[0.3em]
-      text-[#F16D34]
-      hover:bg-[#F16D34]
-      hover:text-black
-      transition
-    "
+            className="px-5 py-2.5 border border-[#F16D34]/40 rounded-full text-[11px] uppercase tracking-[0.28em] text-[#F16D34] hover:bg-[#F16D34] hover:text-black transition"
           >
-            Projects
+            {t("hero.cta_projects")}
           </button>
 
-          {/* GitHub */}
           <a
             href="https://github.com/sarangan16"
             target="_blank"
             rel="noopener noreferrer"
-            className="
-      px-5 py-2
-      border border-white/10
-      rounded-full
-      text-xs uppercase tracking-[0.3em]
-      text-white/70
-      hover:border-[#F16D34]
-      hover:text-[#F16D34]
-      transition
-    "
+            className="px-5 py-2.5 border border-white/10 rounded-full text-[11px] uppercase tracking-[0.28em] text-white/50 hover:border-[#F16D34] hover:text-[#F16D34] transition"
           >
             GitHub
           </a>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

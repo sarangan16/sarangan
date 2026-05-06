@@ -8,7 +8,7 @@ const projects = [
     descriptionKey: "CrownChauffeur.description",
     github: "https://github.com/sarangan16/chaffuerElite",
     live: "https://chaffuer-elite.vercel.app/",
-    tech: ["React", "Node.js", "Express", "Zod", "GSAP", "Tailwind"],
+    tech: ["Node.js", "Express", "Zod", "React", "GSAP", "Tailwind"],
   },
   {
     titleKey: "GoldStack",
@@ -22,7 +22,7 @@ const projects = [
     descriptionKey: "KaufDE.description",
     github: "https://github.com/sarangan16/online-store",
     live: "https://kaufde.vercel.app/",
-    tech: ["React", "Stripe", "GSAP", "EmailJS", "Express", "Router"],
+    tech: ["Express", "Stripe", "EmailJS", "React", "Router", "Tailwind"],
   },
 ];
 
@@ -30,10 +30,10 @@ const Projects = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="px-6 md:px-16 py-20 md:py-32 ">
+    <section className="px-6 md:px-16 py-12 md:py-20 ">
       {/* h1 title */}
       <div className="max-w-5xl mx-auto mb-20">
-        <h2 className="text-4xl md:text-6xl font-semibold tracking-tight">
+        <h2 className="font-['Poiret_One'] text-4xl md:text-6xl font-semibold tracking-tight">
           {t("projects.title")}
         </h2>
       </div>

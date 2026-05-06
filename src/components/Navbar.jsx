@@ -42,12 +42,12 @@ const Navbar = ({ heroRef, aboutRef, projectsRef, stackRef, contactRef }) => {
           className="text-white text-sm uppercase tracking-[0.35em] cursor-pointer hover:opacity-70 transition"
         >
           <span>
-            Raavn<span className="text-[#F16D34] ">Code</span>
+            dev<span className="text-[#F16D34] ">.</span>
           </span>
         </div>
 
         {/* desktop nav */}
-        <div className="hidden md:flex items-center gap-10 text-sm uppercase tracking-[0.25em]">
+        <div className="hidden md:flex items-center gap-6 lg:gap-8 text-sm uppercase tracking-[0.03em]">
           <NavItem onClick={() => scrollTo(heroRef)}>Home</NavItem>
 
           <NavItem onClick={() => scrollTo(aboutRef)}>About</NavItem>

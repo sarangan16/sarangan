@@ -1,14 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
 
 *{
-  font-family: "Poiret One", sans-serif;
+
   font-optical-sizing: auto;
+  
 }
 html{
    scroll-behavior: smooth;
 }
 body {
   min-height: 100vh;
-background: linear-gradient(to bottom, #e6f0ff 0%, #ffffff 100%);
+  background: linear-gradient(to bottom, #e6f0ff 0%, #ffffff 100%);
+  font-family: "Poiret One";
 
 }

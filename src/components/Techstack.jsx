@@ -71,20 +71,20 @@ const categories = [
 const TechStack = () => {
   const { t } = useTranslation();
   return (
-    <section className=" py-20 md:py-32 px-6 md:px-16">
+    <section className=" py-12 md:py-20 px-6 md:px-16">
       {/* hq title */}
-      <div className="max-w-5xl mx-auto mb-16">
-        <h2 className="text-4xl md:text-6xl font-semibold tracking-tight">
+      <div className="max-w-5xl mx-auto mb-10">
+        <h2 className="font-['Poiret_One'] text-4xl md:text-6xl font-semibold tracking-tight">
           {t("stack.title")}
         </h2>
       </div>
 
       {/* tech stack */}
-      <div className="max-w-5xl mx-auto space-y-14">
+      <div className="max-w-5xl mx-auto space-y-10">
         {categories.map((cat, idx) => (
           <div key={idx} className="space-y-6">
             {/* tech stack title */}
-            <h3 className="text-[#F16D34] uppercase tracking-[0.3em] text-xs">
+            <h3 className="text-[#F16D34] uppercase tracking-[0.2em] text-xs">
               {cat.title}
             </h3>
 
@@ -98,7 +98,7 @@ const TechStack = () => {
                     key={i}
                     className="
                       group border border-white/5
-                      rounded-xl p-4
+                      rounded-lg p-3
                       flex items-center gap-3
                       hover:border-[#F16D34]/40
                       transition-all duration-300

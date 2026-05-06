@@ -25,11 +25,11 @@ const About = () => {
   ];
 
   return (
-    <section className="px-6 md:px-16 py-20 md:py-32">
+    <section className="px-6 md:px-16 py-12 md:py-20">
       <div className="max-w-5xl mx-auto">
         {/* About heading */}
-        <div className="mb-20">
-          <h2 className="text-4xl md:text-6xl font-semibold tracking-tight">
+        <div className="mb-10">
+          <h2 className="font-['Poiret_One'] text-4xl md:text-6xl font-semibold tracking-tight">
             {t("about.title")}
           </h2>
         </div>
@@ -39,7 +39,7 @@ const About = () => {
           variants={container}
           initial="hidden"
           animate={inView ? "show" : "hidden"}
-          className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start"
+          className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start"
         >
           {/* my photo */}
           <motion.div variants={item}>
