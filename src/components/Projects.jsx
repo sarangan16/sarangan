@@ -30,7 +30,7 @@ const Projects = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="px-6 md:px-16 py-12 md:py-20 ">
+    <section className="min-h-screen px-6 md:px-16 py-12 md:py-20 ">
       {/* h1 title */}
       <div className="max-w-5xl mx-auto mb-20">
         <h2 className="font-['Poiret_One'] text-4xl md:text-6xl font-semibold tracking-tight">

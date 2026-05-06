@@ -25,7 +25,7 @@ const About = () => {
   ];
 
   return (
-    <section className="px-6 md:px-16 py-12 md:py-20">
+    <section className="min-h-screen px-6 md:px-16 py-12 md:py-20">
       <div className="max-w-5xl mx-auto">
         {/* About heading */}
         <div className="mb-10">

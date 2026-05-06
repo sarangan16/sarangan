@@ -71,7 +71,7 @@ const categories = [
 const TechStack = () => {
   const { t } = useTranslation();
   return (
-    <section className=" py-12 md:py-20 px-6 md:px-16">
+    <section className="min-h-screen py-12 md:py-20 px-6 md:px-16">
       {/* hq title */}
       <div className="max-w-5xl mx-auto mb-10">
         <h2 className="font-['Poiret_One'] text-4xl md:text-6xl font-semibold tracking-tight">

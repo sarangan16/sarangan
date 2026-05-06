@@ -56,7 +56,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="py-20 md:py-20 px-6 md:px-16">
+    <section className="min-h-screen py-20 md:py-20 px-6 md:px-16">
       {/* HEADER */}
       <div className="max-w-5xl mx-auto mb-8">
         <h2 className="font-['Poiret_One'] text-4xl md:text-6xl font-semibold tracking-tight">
