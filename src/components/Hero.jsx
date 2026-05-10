@@ -18,7 +18,7 @@ const Hero = ({ projectsRef }) => {
         >
           <span className="block w-7 h-px bg-[#F16D34] opacity-60" />
           <span className="font-['Poiret_One'] uppercase tracking-[0.35em] text-white/65">
-            SARANGAN SIVAMOORTHY
+            DÜSSELDORF · BUILDING FOR THE WEB
           </span>
         </motion.div>
 
@@ -29,7 +29,7 @@ const Hero = ({ projectsRef }) => {
           className="text-[clamp(52px,10vw,110px)] font-['Poiret_One'] uppercase font-extrabold letter-spa leading-[0.90] tracking-widest"
           style={{}}
         >
-          {t("hero.role_line1")}
+          Sarangan
           <br />
           <span className="text-[#F16D34]">{t("hero.role_line2")}</span>
         </motion.h1>
@@ -46,7 +46,7 @@ const Hero = ({ projectsRef }) => {
           initial={{ opacity: 0, y: 16 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.45 }}
-          className="mt-5 text-white/40 max-w-lg text-sm leading-relaxed"
+          className="mt-5 text-white/60 max-w-lg text-sm leading-relaxed"
         >
           {t("hero.description")}
         </motion.p>
@@ -61,7 +61,7 @@ const Hero = ({ projectsRef }) => {
             onClick={() =>
               projectsRef?.current?.scrollIntoView({ behavior: "smooth" })
             }
-            className="px-5 py-2.5 border border-[#F16D34]/40 rounded-full text-[11px] uppercase tracking-[0.28em] text-[#F16D34] hover:bg-[#F16D34] hover:text-black transition"
+            className="px-6 py-2 bg-[#F16D34] border border-[#F16D34] rounded-full text-[11px] uppercase tracking-[0.28em] text-white/70 hover:bg-transparent hover:text-[#F16D34] transition"
           >
             {t("hero.cta_projects")}
           </button>
@@ -70,7 +70,7 @@ const Hero = ({ projectsRef }) => {
             href="https://github.com/sarangan16"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-5 py-2.5 border border-white/10 rounded-full text-[11px] uppercase tracking-[0.28em] text-white/50 hover:border-[#F16D34] hover:text-[#F16D34] transition"
+            className="px-5 py-2.5 border border-white/10 rounded-full text-[11px] uppercase tracking-[0.28em] text-white/30 hover:border-white/30 hover:text-white/60 transitionn"
           >
             GitHub
           </a>
