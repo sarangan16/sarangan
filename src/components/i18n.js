@@ -113,7 +113,7 @@ i18n.use(initReactI18next).init({
           cta_projects: "Projekte",
         },
         about: {
-          title: "Über mich",
+          title: "Profil",
           philosophy:
             "Ich glaube, dass gute Interfaces gefühlt, nicht bemerkt werden. Meine Aufgabe ist es, Komplexes einfach zu machen — und Einfaches mühelos anfühlen zu lassen.",
           approach:
