@@ -15,12 +15,13 @@ import {
   SiRedux,
   SiWebpack,
   SiJest,
-  SiStorybook,
   SiFigma,
   SiVercel,
   SiNetlify,
 } from "react-icons/si";
 import { useTranslation } from "react-i18next";
+import { SiMongodb, SiStripe, SiGreensock } from "react-icons/si";
+import { MdEmail } from "react-icons/md";
 
 const categories = [
   {
@@ -29,9 +30,7 @@ const categories = [
       { name: "React", icon: FaReact },
       { name: "JavaScript", icon: SiJavascript },
       { name: "HTML5", icon: FaHtml5 },
-      { name: "CSS3", icon: FaCss3Alt },
       { name: "Tailwind", icon: SiTailwindcss },
-      { name: "Bootstrap", icon: FaBootstrap },
       { name: "Sass", icon: FaSass },
     ],
   },
@@ -39,31 +38,41 @@ const categories = [
     title: "UI & Animation",
     items: [
       { name: "Framer Motion", icon: SiFramer },
-      { name: "Storybook", icon: SiStorybook },
+      { name: "GSAP", icon: SiGreensock },
     ],
   },
   {
-    title: "State & Build Tools",
+    title: "Backend & Data",
+    items: [
+      { name: "Node.js", icon: FaNodeJs },
+      { name: "MongoDB", icon: SiMongodb },
+      { name: "Stripe", icon: SiStripe },
+      { name: "Resend", icon: MdEmail },
+      { name: "EmailJS", icon: MdEmail },
+    ],
+  },
+  {
+    title: "Auth & Infra",
+    items: [
+      { name: "Clerk", icon: SiVercel },
+      { name: "Vercel", icon: SiVercel },
+      { name: "Netlify", icon: SiNetlify },
+      { name: "CI/CD", icon: FaGithub },
+    ],
+  },
+  {
+    title: "State & Build",
     items: [
       { name: "Redux", icon: SiRedux },
       { name: "Vite", icon: SiVite },
-      { name: "Webpack", icon: SiWebpack },
-      { name: "Node.js", icon: FaNodeJs },
     ],
   },
   {
-    title: "Testing & Version Control",
+    title: "Testing & Design",
     items: [
       { name: "Jest", icon: SiJest },
-      { name: "GitHub", icon: FaGithub },
-    ],
-  },
-  {
-    title: "Deployment & Design",
-    items: [
       { name: "Figma", icon: SiFigma },
-      { name: "Vercel", icon: SiVercel },
-      { name: "Netlify", icon: SiNetlify },
+      { name: "GitHub", icon: FaGithub },
     ],
   },
 ];
@@ -72,45 +81,33 @@ const TechStack = () => {
   const { t } = useTranslation();
   return (
     <section className="min-h-screen py-12 md:py-20 px-6 md:px-16">
-      {/* hq title */}
-      <div className="max-w-5xl mx-auto mb-10">
-        <h2 className="font-['Poiret_One'] text-4xl md:text-6xl font-semibold tracking-tight">
+      <div className="max-w-5xl mx-auto mb-16">
+        <h2 className="font-['Poiret_One'] text-4xl md:text-6xl font-bold uppercase tracking-widest">
           {t("stack.title")}
         </h2>
       </div>
 
-      {/* tech stack */}
-      <div className="max-w-5xl mx-auto space-y-10">
+      <div className="max-w-5xl mx-auto space-y-0">
         {categories.map((cat, idx) => (
-          <div key={idx} className="space-y-6">
-            {/* tech stack title */}
-            <h3 className="text-[#F16D34] uppercase tracking-[0.2em] text-xs">
+          <div
+            key={idx}
+            className="flex flex-col sm:flex-row sm:items-baseline gap-3 sm:gap-12 border-b border-white/5 py-6"
+          >
+            <span className="text-[#F16D34] uppercase tracking-[0.2em] text-[10px] w-40 flex-shrink-0">
               {cat.title}
-            </h3>
+            </span>
 
-            {/* tech icons */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+            <div className="flex flex-wrap gap-x-6 gap-y-2">
               {cat.items.map((tech, i) => {
                 const Icon = tech.icon;
-
                 return (
-                  <div
+                  <span
                     key={i}
-                    className="
-                      group border border-white/5
-                      rounded-lg p-3
-                      flex items-center gap-3
-                      hover:border-[#F16D34]/40
-                      transition-all duration-300
-                    "
+                    className="flex items-center gap-2 text-sm text-white/40 hover:text-white transition cursor-default"
                   >
-                    <Icon className="text-white/70 group-hover:text-[#F16D34] transition" />
-
-                    {/* name */}
-                    <span className="text-sm text-white/60 group-hover:text-white transition">
-                      {tech.name}
-                    </span>
-                  </div>
+                    <Icon size={13} className="flex-shrink-0" />
+                    {tech.name}
+                  </span>
                 );
               })}
             </div>
