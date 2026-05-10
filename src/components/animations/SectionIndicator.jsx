@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 // it changes the right side nav section indication. so far only visible to big screens.
 
 const sections = [
-  { id: "hero", label: "Home" },
+  { id: "hero", label: "Scroll" },
   { id: "about", label: "About" },
   { id: "projects", label: "Projects" },
   { id: "stack", label: "Stack" },

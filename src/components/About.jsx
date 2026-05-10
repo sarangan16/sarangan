@@ -29,7 +29,7 @@ const About = () => {
       <div className="max-w-5xl mx-auto">
         {/* About heading */}
         <div className="mb-10">
-          <h2 className="font-['Poiret_One'] text-4xl md:text-6xl font-semibold tracking-tight">
+          <h2 className="font-['Poiret_One'] text-4xl md:text-6xl font-bold uppercase tracking-widest">
             {t("about.title")}
           </h2>
         </div>

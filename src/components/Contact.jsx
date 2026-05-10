@@ -59,7 +59,7 @@ const Contact = () => {
     <section className="min-h-screen py-20 md:py-20 px-6 md:px-16">
       {/* HEADER */}
       <div className="max-w-5xl mx-auto mb-8">
-        <h2 className="font-['Poiret_One'] text-4xl md:text-6xl font-semibold tracking-tight">
+        <h2 className="font-['Poiret_One'] text-4xl md:text-6xl font-bold uppercase tracking-widest">
           {t("contact.title")}
         </h2>
         <p className="mt-2 text-white/50">{t("contact.subtitle")}</p>
