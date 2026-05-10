@@ -33,7 +33,7 @@ const Projects = () => {
     <section className="min-h-screen px-6 md:px-16 py-12 md:py-20 ">
       {/* h1 title */}
       <div className="max-w-5xl mx-auto mb-20">
-        <h2 className="font-['Poiret_One'] text-4xl md:text-6xl font-semibold tracking-tight">
+        <h2 className="font-['Poiret_One'] text-4xl md:text-6xl font-bold uppercase tracking-widest">
           {t("projects.title")}
         </h2>
       </div>
@@ -62,12 +62,7 @@ const Projects = () => {
                     href={project.live}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="
-        text-xs md:text-sm uppercase tracking-[0.2em]
-        text-white/60
-        hover:text-[#F16D34]
-        transition
-      "
+                    className="flex items-center gap-1.5 text-xs md:text-sm uppercase tracking-[0.2em] text-white/40 hover:text-[#F16D34] border-b border-transparent hover:border-[#F16D34] pb-px transition"
                   >
                     Live
                   </a>
@@ -81,13 +76,7 @@ const Projects = () => {
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="
-      flex items-center gap-2
-      text-xs md:text-sm uppercase tracking-[0.2em]
-      text-white/60
-      hover:text-[#F16D34]
-      transition
-    "
+                  className="flex items-center gap-2 text-xs md:text-sm uppercase tracking-[0.2em] text-white/40 hover:text-[#F16D34] border-b border-transparent hover:border-[#F16D34] pb-px transition"
                 >
                   <FaGithub size={16} />
                   Code
