@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Menu, X } from "lucide-react";
+import logo from "../images/logo.png";
 
 const NavItem = ({ children, onClick }) => {
   return (
@@ -41,9 +42,7 @@ const Navbar = ({ heroRef, aboutRef, projectsRef, stackRef, contactRef }) => {
           onClick={() => scrollTo(heroRef)}
           className="text-white text-sm uppercase tracking-[0.35em] cursor-pointer hover:opacity-70 transition"
         >
-          <span>
-            dev<span className="text-[#F16D34] ">.</span>
-          </span>
+          <img src={logo} alt="Sarangan" className="h-8 w-auto invert-0" />
         </div>
 
         {/* desktop nav */}
