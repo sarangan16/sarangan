@@ -1,6 +1,5 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { FaGithub } from "react-icons/fa";
 
 const projects = [
   {
@@ -10,19 +9,20 @@ const projects = [
     live: "https://chaffuer-elite.vercel.app/",
     tech: ["Node.js", "Express", "Zod", "React", "GSAP", "Tailwind"],
   },
-  {
-    titleKey: "GoldStack",
-    descriptionKey: "GoldStack.description",
-    github: "https://github.com/sarangan16/real-estate",
-    live: "https://real-estate-khaki-six.vercel.app/",
-    tech: ["React", "Framer Motion", "Tailwind", "Vite", "Toastify"],
-  },
+
   {
     titleKey: "KaufDE",
     descriptionKey: "KaufDE.description",
     github: "https://github.com/sarangan16/online-store",
     live: "https://kaufde.vercel.app/",
     tech: ["Express", "Stripe", "EmailJS", "React", "Router", "Tailwind"],
+  },
+  {
+    titleKey: "GoldStack",
+    descriptionKey: "GoldStack.description",
+    github: "https://github.com/sarangan16/real-estate",
+    live: "https://real-estate-khaki-six.vercel.app/",
+    tech: ["React", "Framer Motion", "Tailwind", "Vite", "Toastify"],
   },
 ];
 
@@ -62,8 +62,9 @@ const Projects = () => {
                     href={project.live}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-1.5 text-xs md:text-sm uppercase tracking-[0.2em] text-white/40 hover:text-[#F16D34] border-b border-transparent hover:border-[#F16D34] pb-px transition"
+                    className="group flex items-center gap-1.5 text-[11px] uppercase tracking-[0.18em] text-white/40 hover:text-[#F16D34] border-b border-white/20 hover:border-[#F16D34] pb-0.5 transition-all duration-300"
                   >
+                    <i className="ti ti-external-link text-[15px] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                     Live
                   </a>
                 )}
@@ -76,9 +77,9 @@ const Projects = () => {
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-xs md:text-sm uppercase tracking-[0.2em] text-white/40 hover:text-[#F16D34] border-b border-transparent hover:border-[#F16D34] pb-px transition"
+                  className="group flex items-center gap-1.5 text-[11px] uppercase tracking-[0.18em] text-white/40 hover:text-white border-b border-white/20 hover:border-white pb-0.5 transition-all duration-300"
                 >
-                  <FaGithub size={16} />
+                  <i className="ti ti-brand-github text-[15px] transition-transform duration-300 group-hover:rotate-12" />
                   Code
                 </a>
               </div>
