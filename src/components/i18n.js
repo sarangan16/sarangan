@@ -78,7 +78,7 @@ i18n.use(initReactI18next).init({
           KaufDE: {
             title: "KaufDE",
             description:
-              "An online store built with React and Tailwind CSS using the FakeStoreAPI. Features include product listing, filtering, sorting, and add-to-cart functionality.",
+              "A modern e-commerce experience built with React and Tailwind CSS powered by the DummyJSON API. Features dynamic product browsing with category filtering, live search, sorting, and a fully functional cart system with a slide-in drawer for seamless item management. Includes real Stripe checkout integration, EmailJS-powered contact forms, GSAP-powered scroll animations, and a fully responsive design optimized across all screen sizes.",
           },
         },
 
@@ -165,7 +165,7 @@ i18n.use(initReactI18next).init({
           KaufDE: {
             title: "KaufDE",
             description:
-              "Ein Online-Shop mit React und Tailwind CSS basierend auf der FakeStoreAPI. Funktionen: Produktliste, Filter, Sortierung und Warenkorb.",
+              "Ein modernes E-Commerce-Erlebnis, entwickelt mit React und Tailwind CSS auf Basis der DummyJSON API. Enthält dynamisches Produkt-Browsing mit Kategoriefilterung, Live-Suche, Sortierung sowie ein vollständig integriertes Warenkorb-System mit Slide-in-Drawer für eine nahtlose Produktverwaltung. Inklusive echter Stripe-Checkout-Integration, kontaktformularen mit EmailJS, GSAP-gestützten Scroll-Animationen und vollständig responsivem Design für alle Bildschirmgrößen.",
           },
         },
 
