@@ -3,6 +3,13 @@ import { useTranslation } from "react-i18next";
 
 const projects = [
   {
+    titleKey: "KaufDE",
+    descriptionKey: "KaufDE.description",
+    github: "https://github.com/sarangan16/online-store",
+    live: "https://kaufde.vercel.app/",
+    tech: ["Express", "Stripe", "EmailJS", "React", "Router", "Tailwind"],
+  },
+  {
     titleKey: "CrownChauffeur",
     descriptionKey: "CrownChauffeur.description",
     github: "https://github.com/sarangan16/chaffuerElite",
@@ -10,13 +17,6 @@ const projects = [
     tech: ["Node.js", "Express", "Zod", "React", "GSAP", "Tailwind"],
   },
 
-  {
-    titleKey: "KaufDE",
-    descriptionKey: "KaufDE.description",
-    github: "https://github.com/sarangan16/online-store",
-    live: "https://kaufde.vercel.app/",
-    tech: ["Express", "Stripe", "EmailJS", "React", "Router", "Tailwind"],
-  },
   {
     titleKey: "GoldStack",
     descriptionKey: "GoldStack.description",
@@ -70,7 +70,7 @@ const Projects = () => {
                 )}
 
                 {/* separator */}
-                {project.live && <span className="text-white/10">/</span>}
+                {project.live && <span className="text-white/20">/</span>}
 
                 {/* github Btn */}
                 <a
@@ -86,7 +86,7 @@ const Projects = () => {
             </div>
 
             {/* Description */}
-            <p className="text-white/50 mt-4 max-w-xl text-sm md:text-base leading-relaxed">
+            <p className="text-white/60 mt-4 max-w-xl text-sm md:text-base leading-relaxed">
               {t(`projects.${project.titleKey}.description`)}
             </p>
 
