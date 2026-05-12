@@ -10,6 +10,7 @@ import {
 import {
   SiTailwindcss,
   SiJavascript,
+  SiTypescript,
   SiVite,
   SiFramer,
   SiRedux,
@@ -28,6 +29,7 @@ const categories = [
     title: "Frontend",
     items: [
       { name: "React", icon: FaReact },
+      { name: "TypeScript", icon: SiTypescript },
       { name: "JavaScript", icon: SiJavascript },
       { name: "HTML5", icon: FaHtml5 },
       { name: "Tailwind", icon: SiTailwindcss },

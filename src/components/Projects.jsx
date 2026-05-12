@@ -41,7 +41,7 @@ const Projects = () => {
       {/* project list  */}
       <div className="max-w-5xl mx-auto space-y-16">
         {projects.map((project, index) => (
-          <div key={index} className="group border-b border-white/10 pb-12">
+          <div key={index} className="border-b border-white/10 pb-12">
             {/* title row */}
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3">
               <h3 className="text-lg md:text-2xl font-medium tracking-tight text-white/90 flex items-center">
