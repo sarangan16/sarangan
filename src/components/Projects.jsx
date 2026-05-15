@@ -16,6 +16,13 @@ const projects = [
     live: "https://chaffuer-elite.vercel.app/",
     tech: ["Node.js", "Express", "Zod", "React", "GSAP", "Tailwind"],
   },
+  {
+    titleKey: "JobBoard",
+    descriptionKey: "JobBoard.description",
+    github: "https://github.com/sarangan16/job-board",
+    live: "https://job-board-nine-ecru.vercel.app/",
+    tech: ["React", "TypeScript", "Supabase", "Zustand", "Tailwind"],
+  },
 
   {
     titleKey: "GoldStack",
