@@ -70,7 +70,7 @@ const Hero = ({ projectsRef }) => {
             href="https://github.com/sarangan16"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-5 py-2.5 border border-white/10 rounded-full text-[11px] uppercase tracking-[0.28em] text-white/30 hover:border-white/30 hover:text-white/60 transitionn"
+            className="px-5 py-2.5 border border-white/30 rounded-full text-[11px] uppercase tracking-[0.28em] text-white/50 hover:border-white/30 hover:text-white/60 transitionn"
           >
             GitHub
           </a>

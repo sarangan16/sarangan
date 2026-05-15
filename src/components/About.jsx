@@ -71,7 +71,7 @@ const About = () => {
                   key={i}
                   className="flex items-start justify-between gap-4 border-b border-white/5 pb-5 last:border-0 last:pb-0"
                 >
-                  <span className="text-white/40 text-xs uppercase tracking-[0.3em] pt-0.5">
+                  <span className="text-white/50 text-xs uppercase tracking-[0.3em] pt-0.5">
                     {fact.label}
                   </span>
                   <span className="text-white/70 text-sm text-right">

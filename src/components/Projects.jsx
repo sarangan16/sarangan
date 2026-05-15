@@ -93,7 +93,7 @@ const Projects = () => {
             </div>
 
             {/* Description */}
-            <p className="text-white/60 mt-4 max-w-xl text-sm md:text-base leading-relaxed">
+            <p className="text-white/70 mt-4 max-w-xl text-sm md:text-base leading-relaxed">
               {t(`projects.${project.titleKey}.description`)}
             </p>
 

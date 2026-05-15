@@ -71,7 +71,7 @@ i18n.use(initReactI18next).init({
           JobBoard: {
             title: "JobBoard",
             description:
-              "A full-stack job application tracker I built for myself while navigating the German job market. Tired of losing track of applications across spreadsheets and emails, I built this to stay organized — then decided to make it free for everyone. Features email authentication, a Kanban board with drag and drop, per-user cloud storage with Row Level Security, and status history tracking across Applied, Interview, Offer, and Rejected stages.",
+              "Built for myself while job hunting in Germany. Kanban board with drag and drop, real authentication, and per-user cloud storage. Free for everyone to use.",
           },
 
           GoldStack: {
@@ -83,7 +83,7 @@ i18n.use(initReactI18next).init({
           KaufDE: {
             title: "KaufDE",
             description:
-              "A modern e-commerce experience built with React and Tailwind CSS powered by the DummyJSON API. Features dynamic product browsing with category filtering, live search, sorting, and a fully functional cart system with a slide-in drawer for seamless item management. Includes real Stripe checkout integration, EmailJS-powered contact forms, GSAP-powered scroll animations, and a fully responsive design optimized across all screen sizes.",
+              "A production e-commerce platform delivered to a real client. Stripe checkout, live product search, cart management, and GSAP animations — fully responsive across all devices.",
           },
         },
 
@@ -163,7 +163,7 @@ i18n.use(initReactI18next).init({
           JobBoard: {
             title: "JobBoard",
             description:
-              "Ein Full-Stack-Bewerbungstracker, den ich für mich selbst entwickelt habe — während meiner eigenen Jobsuche auf dem deutschen Arbeitsmarkt. Da ich den Überblick über meine Bewerbungen in Tabellen und E-Mails verloren hatte, habe ich dieses Tool gebaut, um organisiert zu bleiben — und mich dann entschieden, es kostenlos für alle zugänglich zu machen. Mit E-Mail-Authentifizierung, einem Kanban-Board mit Drag-and-Drop, benutzerspezifischem Cloud-Speicher mit Row Level Security und Statusverlauf über die Phasen Beworben, Interview, Angebot und Abgelehnt.",
+              "Gebaut für mich selbst — während meiner Jobsuche in Deutschland. Kanban-Board mit Drag-and-Drop, echter Authentifizierung und benutzerspezifischem Cloud-Speicher. Kostenlos für jeden nutzbar.",
           },
 
           GoldStack: {
@@ -175,7 +175,7 @@ i18n.use(initReactI18next).init({
           KaufDE: {
             title: "KaufDE",
             description:
-              "Ein modernes E-Commerce-Erlebnis, entwickelt mit React und Tailwind CSS auf Basis der DummyJSON API. Enthält dynamisches Produkt-Browsing mit Kategoriefilterung, Live-Suche, Sortierung sowie ein vollständig integriertes Warenkorb-System mit Slide-in-Drawer für eine nahtlose Produktverwaltung. Inklusive echter Stripe-Checkout-Integration, kontaktformularen mit EmailJS, GSAP-gestützten Scroll-Animationen und vollständig responsivem Design für alle Bildschirmgrößen.",
+              "Eine produktionsreife E-Commerce-Plattform, die für einen echten Kunden entwickelt wurde. Stripe-Checkout, Live-Produktsuche, Warenkorb-Verwaltung und GSAP-Animationen — vollständig responsiv auf allen Geräten.",
           },
         },
 
