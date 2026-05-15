@@ -68,6 +68,11 @@ i18n.use(initReactI18next).init({
             description:
               "A luxury chauffeur booking platform featuring real-time fare estimation, vehicle selection, and airport transfer scheduling. Designed with React, Tailwind CSS, and GSAP for a smooth experience. Includes email booking confirmation and form validation using React Hook Form and Zod.",
           },
+          JobBoard: {
+            title: "JobBoard",
+            description:
+              "A full-stack job application tracker I built for myself while navigating the German job market. Tired of losing track of applications across spreadsheets and emails, I built this to stay organized — then decided to make it free for everyone. Features email authentication, a Kanban board with drag and drop, per-user cloud storage with Row Level Security, and status history tracking across Applied, Interview, Offer, and Rejected stages.",
+          },
 
           GoldStack: {
             title: "GoldStack",
@@ -154,6 +159,11 @@ i18n.use(initReactI18next).init({
             title: "Crown Chauffeur",
             description:
               "Eine Luxus-Chauffeur-Plattform mit Echtzeit-Preisschätzung, Fahrzeugauswahl und Flughafen-Transfers. Entwickelt mit React, Tailwind CSS und GSAP für ein reibungsloses Erlebnis. Inklusive E-Mail-Bestätigung und Formularvalidierung.",
+          },
+          JobBoard: {
+            title: "JobBoard",
+            description:
+              "Ein Full-Stack-Bewerbungstracker, den ich für mich selbst entwickelt habe — während meiner eigenen Jobsuche auf dem deutschen Arbeitsmarkt. Da ich den Überblick über meine Bewerbungen in Tabellen und E-Mails verloren hatte, habe ich dieses Tool gebaut, um organisiert zu bleiben — und mich dann entschieden, es kostenlos für alle zugänglich zu machen. Mit E-Mail-Authentifizierung, einem Kanban-Board mit Drag-and-Drop, benutzerspezifischem Cloud-Speicher mit Row Level Security und Statusverlauf über die Phasen Beworben, Interview, Angebot und Abgelehnt.",
           },
 
           GoldStack: {
