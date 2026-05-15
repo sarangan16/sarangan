@@ -12,3 +12,11 @@
   display: none; 
 }
 
+@keyframes border-shine {
+  0%, 100% { box-shadow: 0 0 0px 0px rgba(241, 109, 52, 0); }
+  50% { box-shadow: 0 0 8px 1px rgba(241, 109, 52, 0.5); }
+}
+
+.shine-border {
+  animation: border-shine 2.5s ease-in-out infinite;
+}

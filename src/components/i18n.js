@@ -28,7 +28,7 @@ i18n.use(initReactI18next).init({
         about: {
           title: "About",
           philosophy:
-            "I believe good interfaces are felt, not noticed. My job is to make complex things simple — and simple things feel effortless. I obsess over the details most people skip: load states, empty states, the 200ms that separates fast from instant.",
+            "I believe good interfaces are felt, not noticed. I obsess over the details most people skip — the transitions, the empty states, the moment something goes from working to actually feeling right.",
           approach:
             "Outside of code I'm drawn to type design, brutalist web aesthetics, and anything that challenges how a UI is supposed to look. That curiosity shows up in my work.",
           fact1: {
@@ -120,7 +120,7 @@ i18n.use(initReactI18next).init({
         about: {
           title: "Profil",
           philosophy:
-            "Ich glaube, dass gute Interfaces gefühlt, nicht bemerkt werden. Meine Aufgabe ist es, Komplexes einfach zu machen — und Einfaches mühelos anfühlen zu lassen.",
+            "Ich glaube, dass gute Interfaces gefühlt werden, nicht bemerkt. Ich bin besessen von den Details, die die meisten überspringen — die Übergänge, die leeren Zustände, der Moment, in dem etwas aufhört zu funktionieren und anfängt, sich richtig anzufühlen.",
           approach:
             "Abseits von Code interessiere ich mich für Typografie, brutalistisches Webdesign und alles, was die Konventionen eines UI in Frage stellt.",
           fact1: {
