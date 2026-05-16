@@ -23,14 +23,6 @@ const projects = [
     live: "https://job-board-nine-ecru.vercel.app/",
     tech: ["React", "TypeScript", "Supabase", "Zustand", "Tailwind"],
   },
-
-  {
-    titleKey: "GoldStack",
-    descriptionKey: "GoldStack.description",
-    github: "https://github.com/sarangan16/real-estate",
-    live: "https://real-estate-khaki-six.vercel.app/",
-    tech: ["React", "Framer Motion", "Tailwind", "Vite", "Toastify"],
-  },
 ];
 
 const Projects = () => {
