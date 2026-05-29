@@ -33,7 +33,7 @@ i18n.use(initReactI18next).init({
             "Outside of code I'm drawn to type design, brutalist web aesthetics, and anything that challenges how a UI is supposed to look. That curiosity shows up in my work.",
           fact1: {
             label: "Background",
-            value: "More than 4 years shipping production React",
+            value: "React in Production",
           },
           fact2: {
             label: "Strength",
@@ -71,7 +71,7 @@ i18n.use(initReactI18next).init({
           JobBoard: {
             title: "JobBoard",
             description:
-              "Built for myself while job hunting in Germany. Kanban board with drag and drop, real authentication, and per-user cloud storage. Free for everyone to use.",
+              "Built for myself while job hunting in Germany. Kanban board with drag and drop, real authentication, and per-user cloud storage. — Demo: demo@myjob.com · Password: 654321",
           },
 
           GoldStack: {
@@ -125,7 +125,7 @@ i18n.use(initReactI18next).init({
             "Abseits von Code interessiere ich mich für Typografie, brutalistisches Webdesign und alles, was die Konventionen eines UI in Frage stellt.",
           fact1: {
             label: "Hintergrund",
-            value: "4+ Jahre React in Produktion",
+            value: "React in Produktion",
           },
           fact2: {
             label: "Stärke",
@@ -163,7 +163,7 @@ i18n.use(initReactI18next).init({
           JobBoard: {
             title: "JobBoard",
             description:
-              "Gebaut für mich selbst — während meiner Jobsuche in Deutschland. Kanban-Board mit Drag-and-Drop, echter Authentifizierung und benutzerspezifischem Cloud-Speicher. Kostenlos für jeden nutzbar.",
+              "Gebaut für mich selbst — während meiner Jobsuche in Deutschland. Kanban-Board mit Drag-and-Drop, echter Authentifizierung und benutzerspezifischem Cloud-Speicher. — Demo: demo@myjob.com · Passwort: 654321",
           },
 
           GoldStack: {
