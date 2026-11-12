@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { motion, useInView, useReducedMotion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 
-// Rolls the orange line through each role (Developer → Founder → Builder).
+// developer -> founder -> builder
 const RollingRole = ({ words }) => {
   const [index, setIndex] = useState(0);
   const [instant, setInstant] = useState(false);
@@ -17,18 +17,18 @@ const RollingRole = ({ words }) => {
     return () => clearInterval(id);
   }, [reduceMotion, words.length]);
 
-  // The first word is repeated at the end so the roll loops seamlessly.
-  // Each row is 1.2em tall so umlauts (GRÜNDER) aren't clipped or seen early.
+  // first word again at the end so the loop doesn't jump
+  // rows are 1.3em but the box is 1em, otherwise the Ü dots from the next word peek in
   const list = [...words, words[0]];
 
   return (
     <span
-      className="inline-block h-[1.2em] -my-[0.15em] overflow-hidden align-top"
+      className="block h-[1em] mt-[0.06em] mb-[0.02em] overflow-hidden text-[#F16D34]"
       aria-label={words.join(", ")}
     >
       <motion.span
-        className="flex flex-col"
-        animate={{ y: `${-index * 1.2}em` }}
+        className="block"
+        animate={{ y: `${-index * 1.3}em` }}
         transition={
           instant ? { duration: 0 } : { duration: 0.7, ease: [0.7, 0, 0.2, 1] }
         }
@@ -40,7 +40,11 @@ const RollingRole = ({ words }) => {
         }}
       >
         {list.map((word, i) => (
-          <span key={i} aria-hidden="true" className="block h-[1.2em] leading-[1.2]">
+          <span
+            key={i}
+            aria-hidden="true"
+            className="block h-[1.3em] pt-[0.07em] leading-[1em] whitespace-nowrap"
+          >
             {word}
           </span>
         ))}
@@ -79,10 +83,7 @@ const Hero = ({ projectsRef }) => {
           style={{}}
         >
           Sarangan
-          <br />
-          <span className="text-[#F16D34]">
-            <RollingRole key={i18n.language} words={roleWords} />
-          </span>
+          <RollingRole key={i18n.language} words={roleWords} />
         </motion.h1>
 
         <motion.p
