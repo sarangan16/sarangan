@@ -45,7 +45,7 @@ const Hero = ({ projectsRef }) => {
             href="https://zlockd.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[#F16D34] border-b border-[#F16D34]/40 hover:border-[#F16D34] pb-0.5 transition"
+            className="text-white/90 border-b border-white/30 hover:text-white hover:border-white pb-0.5 transition"
           >
             Zlockd
           </a>
