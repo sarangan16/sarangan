@@ -1,11 +1,60 @@
-import React, { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import React, { useEffect, useRef, useState } from "react";
+import { motion, useInView, useReducedMotion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+
+// Rolls the orange line through each role (Developer → Founder → Builder).
+const RollingRole = ({ words }) => {
+  const [index, setIndex] = useState(0);
+  const [instant, setInstant] = useState(false);
+  const reduceMotion = useReducedMotion();
+
+  useEffect(() => {
+    if (reduceMotion || words.length < 2) return;
+    const id = setInterval(() => {
+      setInstant(false);
+      setIndex((i) => i + 1);
+    }, 2200);
+    return () => clearInterval(id);
+  }, [reduceMotion, words.length]);
+
+  // The first word is repeated at the end so the roll loops seamlessly.
+  // Each row is 1.2em tall so umlauts (GRÜNDER) aren't clipped or seen early.
+  const list = [...words, words[0]];
+
+  return (
+    <span
+      className="inline-block h-[1.2em] -my-[0.15em] overflow-hidden align-top"
+      aria-label={words.join(", ")}
+    >
+      <motion.span
+        className="flex flex-col"
+        animate={{ y: `${-index * 1.2}em` }}
+        transition={
+          instant ? { duration: 0 } : { duration: 0.7, ease: [0.7, 0, 0.2, 1] }
+        }
+        onAnimationComplete={() => {
+          if (index === words.length) {
+            setInstant(true);
+            setIndex(0);
+          }
+        }}
+      >
+        {list.map((word, i) => (
+          <span key={i} aria-hidden="true" className="block h-[1.2em] leading-[1.2]">
+            {word}
+          </span>
+        ))}
+      </motion.span>
+    </span>
+  );
+};
 
 const Hero = ({ projectsRef }) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true });
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const roles = t("hero.roles", { returnObjects: true });
+  const roleWords = Array.isArray(roles) ? roles : [t("hero.role_line2")];
 
   return (
     <section className="min-h-screen flex items-center text-white">
@@ -26,12 +75,14 @@ const Hero = ({ projectsRef }) => {
           initial={{ opacity: 0, y: 16 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-[clamp(52px,10vw,110px)] font-['Poiret_One'] uppercase font-extrabold letter-spa leading-[0.90] tracking-widest"
+          className="text-[clamp(40px,13.5vw,52px)] sm:text-[clamp(52px,10vw,110px)] font-['Poiret_One'] uppercase font-extrabold letter-spa leading-[0.90] tracking-widest"
           style={{}}
         >
           Sarangan
           <br />
-          <span className="text-[#F16D34]">{t("hero.role_line2")}</span>
+          <span className="text-[#F16D34]">
+            <RollingRole key={i18n.language} words={roleWords} />
+          </span>
         </motion.h1>
 
         <motion.p
