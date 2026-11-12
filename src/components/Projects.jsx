@@ -18,6 +18,12 @@ const projects = [
     ],
   },
   {
+    titleKey: "Duesseldoener",
+    descriptionKey: "Duesseldoener.description",
+    live: "https://dusseldoner-website.vercel.app/",
+    tech: ["Next.js", "TypeScript", "Tailwind", "Framer Motion", "SEO", "i18n"],
+  },
+  {
     titleKey: "KaufDE",
     descriptionKey: "KaufDE.description",
     github: "https://github.com/sarangan16/online-store",

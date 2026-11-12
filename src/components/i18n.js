@@ -17,7 +17,7 @@ i18n.use(initReactI18next).init({
           role: "Frontend Developer",
           freelance: "Freelance",
           location: "Düsseldorf",
-          founderLine: "Founder @ Zlockd",
+          founderLine: "Founder @",
           description:
             "Frontend-focused full-stack developer based in Germany, building fast, scalable React applications for real-world SaaS products. I turn complex systems — from e-commerce to logistics — into responsive, production-ready interfaces with seamless API integration and a strong focus on performance.",
           available: "Available for work",
@@ -73,6 +73,11 @@ i18n.use(initReactI18next).init({
             description:
               "My own SaaS product. Businesses with appointments — salons, studios, practices, workshops — get bookings straight from WhatsApp: instant replies, booking, confirmations and reminders, 24/7, in 7 languages. Includes a real-time dashboard for appointments, walk-ins, staff and revenue, plus Stripe subscriptions.",
           },
+          Duesseldoener: {
+            title: "Düsseldöner",
+            description:
+              "Live website for a döner restaurant in Düsseldorf-Bilk. SEO-first Next.js site with structured data for local search, a live open/closed badge, German/English, mobile-first video hero and direct ordering via delivery platforms. Menu content is CMS-ready.",
+          },
           CrownChauffeur: {
             title: "Crown Chauffeur",
             description:
@@ -119,7 +124,7 @@ i18n.use(initReactI18next).init({
           role: "Frontend Entwickler",
           freelance: "Freelance",
           location: "Düsseldorf",
-          founderLine: "Gründer @ Zlockd",
+          founderLine: "Gründer @",
           description:
             "Frontend-fokussierter Full-Stack-Entwickler mit Sitz in Deutschland, spezialisiert auf die Entwicklung schneller und skalierbarer React-Anwendungen für praxisnahe SaaS-Produkte. Ich verwandle komplexe Systeme – von E-Commerce bis Logistik – in responsive, produktionsreife Benutzeroberflächen mit nahtloser API-Integration und starkem Fokus auf Performance.",
           available: "Verfügbar für Projekte",
@@ -174,6 +179,11 @@ i18n.use(initReactI18next).init({
             title: "Zlockd — Gründer",
             description:
               "Mein eigenes SaaS-Produkt. Unternehmen mit Terminen — Salons, Studios, Praxen, Werkstätten — erhalten Buchungen direkt über WhatsApp: sofortige Antworten, Buchung, Bestätigung und Erinnerungen, rund um die Uhr, in 7 Sprachen. Inklusive Echtzeit-Dashboard für Termine, Walk-ins, Team und Einnahmen sowie Stripe-Abos.",
+          },
+          Duesseldoener: {
+            title: "Düsseldöner",
+            description:
+              "Live-Website für ein Döner-Restaurant in Düsseldorf-Bilk. SEO-orientierte Next.js-Seite mit strukturierten Daten für die lokale Suche, Live-Öffnungsstatus, Deutsch/Englisch, Mobile-first Video-Hero und direkter Bestellung über Lieferplattformen. Speisekarte CMS-ready.",
           },
           CrownChauffeur: {
             title: "Crown Chauffeur",

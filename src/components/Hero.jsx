@@ -40,13 +40,14 @@ const Hero = ({ projectsRef }) => {
           transition={{ duration: 0.6, delay: 0.35 }}
           className="mt-5 text-[13px] uppercase tracking-[0.35em] text-white/50"
         >
+          {t("hero.founderLine")}{" "}
           <a
             href="https://zlockd.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-[#F16D34] transition"
+            className="text-[#F16D34] border-b border-[#F16D34]/40 hover:border-[#F16D34] pb-0.5 transition"
           >
-            {t("hero.founderLine")}
+            Zlockd
           </a>
         </motion.p>
 
