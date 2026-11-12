@@ -57,19 +57,6 @@ const About = () => {
 
           {/* right side about me */}
           <motion.div variants={item} className="flex flex-col gap-8 pt-2">
-            <p className="text-white/80 text-sm md:text-base leading-relaxed">
-              {t("about.founder.text")}{" "}
-              <a
-                href="https://zlockd.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#F16D34] border-b border-[#F16D34]/40 hover:border-[#F16D34] transition"
-              >
-                Zlockd
-              </a>
-              {t("about.founder.textAfter")}
-            </p>
-
             <p className="text-white/70 text-sm md:text-base leading-relaxed">
               {t("about.philosophy")}
             </p>

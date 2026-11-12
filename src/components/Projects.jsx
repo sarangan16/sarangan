@@ -6,7 +6,16 @@ const projects = [
     titleKey: "Zlockd",
     descriptionKey: "Zlockd.description",
     live: "https://zlockd.com",
-    tech: ["React", "Next.js", "Node.js", "Express", "PostgreSQL", "WhatsApp API", "Stripe"],
+    tech: [
+      "React",
+      "Next.js",
+      "Node.js",
+      "PostgreSQL",
+      "Twilio",
+      "WhatsApp API",
+      "LLM",
+      "Stripe",
+    ],
   },
   {
     titleKey: "KaufDE",

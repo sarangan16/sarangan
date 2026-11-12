@@ -1,34 +1,41 @@
-import {
-  FaReact,
-  FaHtml5,
-  FaCss3Alt,
-  FaNodeJs,
-  FaBootstrap,
-  FaSass,
-  FaGithub,
-} from "react-icons/fa";
+import { FaReact, FaHtml5, FaNodeJs, FaSass, FaGithub } from "react-icons/fa";
 import {
   SiTailwindcss,
   SiJavascript,
   SiTypescript,
+  SiNextdotjs,
   SiVite,
   SiFramer,
   SiRedux,
-  SiWebpack,
   SiJest,
   SiFigma,
   SiVercel,
   SiNetlify,
+  SiMongodb,
+  SiPostgresql,
+  SiExpress,
+  SiStripe,
+  SiGreensock,
+  SiWhatsapp,
+  SiTwilio,
+  SiJsonwebtokens,
+  SiRailway,
+  SiSentry,
 } from "react-icons/si";
+import {
+  MdEmail,
+  MdAutoAwesome,
+  MdSchedule,
+  MdInsertChart,
+} from "react-icons/md";
 import { useTranslation } from "react-i18next";
-import { SiMongodb, SiStripe, SiGreensock } from "react-icons/si";
-import { MdEmail } from "react-icons/md";
 
 const categories = [
   {
     title: "Frontend",
     items: [
       { name: "React", icon: FaReact },
+      { name: "Next.js", icon: SiNextdotjs },
       { name: "TypeScript", icon: SiTypescript },
       { name: "JavaScript", icon: SiJavascript },
       { name: "HTML5", icon: FaHtml5 },
@@ -41,24 +48,39 @@ const categories = [
     items: [
       { name: "Framer Motion", icon: SiFramer },
       { name: "GSAP", icon: SiGreensock },
+      { name: "Recharts", icon: MdInsertChart },
     ],
   },
   {
     title: "Backend & Data",
     items: [
       { name: "Node.js", icon: FaNodeJs },
+      { name: "Express", icon: SiExpress },
+      { name: "PostgreSQL", icon: SiPostgresql },
       { name: "MongoDB", icon: SiMongodb },
       { name: "Stripe", icon: SiStripe },
+      { name: "Cron Jobs", icon: MdSchedule },
       { name: "Resend", icon: MdEmail },
       { name: "EmailJS", icon: MdEmail },
     ],
   },
   {
+    title: "AI & Messaging",
+    items: [
+      { name: "WhatsApp API", icon: SiWhatsapp },
+      { name: "Twilio", icon: SiTwilio },
+      { name: "LLMs (Groq · Llama)", icon: MdAutoAwesome },
+    ],
+  },
+  {
     title: "Auth & Infra",
     items: [
+      { name: "JWT", icon: SiJsonwebtokens },
       { name: "Clerk", icon: SiVercel },
       { name: "Vercel", icon: SiVercel },
+      { name: "Railway", icon: SiRailway },
       { name: "Netlify", icon: SiNetlify },
+      { name: "Sentry", icon: SiSentry },
       { name: "CI/CD", icon: FaGithub },
     ],
   },

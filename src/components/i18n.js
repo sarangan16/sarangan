@@ -17,8 +17,9 @@ i18n.use(initReactI18next).init({
           role: "Frontend Developer",
           freelance: "Freelance",
           location: "Düsseldorf",
+          founderLine: "Founder @ Zlockd",
           description:
-            "Frontend Developer based in Germany, building fast, scalable React applications for real-world SaaS products. I turn complex systems — from e-commerce to logistics — into responsive, production-ready interfaces with seamless API integration and a strong focus on performance.",
+            "Frontend-focused full-stack developer based in Germany, building fast, scalable React applications for real-world SaaS products. I turn complex systems — from e-commerce to logistics — into responsive, production-ready interfaces with seamless API integration and a strong focus on performance.",
           available: "Available for work",
           role_line1: "Frontend",
           role_line2: "Developer",
@@ -28,9 +29,6 @@ i18n.use(initReactI18next).init({
         about: {
           title: "About",
           founder: {
-            text: "I'm the founder of",
-            textAfter:
-              " — a WhatsApp booking assistant for any business that runs on appointments. Customers just text, and Zlockd books, confirms and sends reminders automatically, 24/7, in 7 languages. I designed and built it end to end.",
             label: "Founder",
             value: "Zlockd — WhatsApp booking SaaS",
           },
@@ -121,8 +119,9 @@ i18n.use(initReactI18next).init({
           role: "Frontend Entwickler",
           freelance: "Freelance",
           location: "Düsseldorf",
+          founderLine: "Gründer @ Zlockd",
           description:
-            "Frontend-Entwickler mit Sitz in Deutschland, spezialisiert auf die Entwicklung schneller und skalierbarer React-Anwendungen für praxisnahe SaaS-Produkte. Ich verwandle komplexe Systeme – von E-Commerce bis Logistik – in responsive, produktionsreife Benutzeroberflächen mit nahtloser API-Integration und starkem Fokus auf Performance.",
+            "Frontend-fokussierter Full-Stack-Entwickler mit Sitz in Deutschland, spezialisiert auf die Entwicklung schneller und skalierbarer React-Anwendungen für praxisnahe SaaS-Produkte. Ich verwandle komplexe Systeme – von E-Commerce bis Logistik – in responsive, produktionsreife Benutzeroberflächen mit nahtloser API-Integration und starkem Fokus auf Performance.",
           available: "Verfügbar für Projekte",
           role_line1: "Frontend",
           role_line2: "Entwickler",
@@ -132,9 +131,6 @@ i18n.use(initReactI18next).init({
         about: {
           title: "Profil",
           founder: {
-            text: "Ich bin Gründer von",
-            textAfter:
-              " — einem WhatsApp-Buchungsassistenten für jedes Business mit Terminen. Kunden schreiben einfach, und Zlockd bucht, bestätigt und erinnert automatisch — rund um die Uhr, in 7 Sprachen. Konzipiert und entwickelt habe ich es komplett selbst.",
             label: "Gründer",
             value: "Zlockd — WhatsApp-Buchungs-SaaS",
           },

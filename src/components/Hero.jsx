@@ -38,9 +38,17 @@ const Hero = ({ projectsRef }) => {
           initial={{ opacity: 0, y: 16 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.35 }}
-          className="mt-5 text-[13px] uppercase tracking-[0.35em] text-white/20"
-          style={{}}
-        ></motion.p>
+          className="mt-5 text-[13px] uppercase tracking-[0.35em] text-white/50"
+        >
+          <a
+            href="https://zlockd.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-[#F16D34] transition"
+          >
+            {t("hero.founderLine")}
+          </a>
+        </motion.p>
 
         <motion.p
           initial={{ opacity: 0, y: 16 }}
