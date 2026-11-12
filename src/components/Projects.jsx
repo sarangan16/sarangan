@@ -3,6 +3,12 @@ import { useTranslation } from "react-i18next";
 
 const projects = [
   {
+    titleKey: "Zlockd",
+    descriptionKey: "Zlockd.description",
+    live: "https://zlockd.com",
+    tech: ["React", "Next.js", "Node.js", "Express", "PostgreSQL", "WhatsApp API", "Stripe"],
+  },
+  {
     titleKey: "KaufDE",
     descriptionKey: "KaufDE.description",
     github: "https://github.com/sarangan16/online-store",
@@ -69,18 +75,22 @@ const Projects = () => {
                 )}
 
                 {/* separator */}
-                {project.live && <span className="text-white/20">/</span>}
+                {project.live && project.github && (
+                  <span className="text-white/20">/</span>
+                )}
 
                 {/* github Btn */}
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex items-center gap-1.5 text-[11px] uppercase tracking-[0.18em] text-white/40 hover:text-white border-b border-white/20 hover:border-white pb-0.5 transition-all duration-300"
-                >
-                  <i className="ti ti-brand-github text-[15px] transition-transform duration-300 group-hover:rotate-12" />
-                  Code
-                </a>
+                {project.github && (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex items-center gap-1.5 text-[11px] uppercase tracking-[0.18em] text-white/40 hover:text-white border-b border-white/20 hover:border-white pb-0.5 transition-all duration-300"
+                  >
+                    <i className="ti ti-brand-github text-[15px] transition-transform duration-300 group-hover:rotate-12" />
+                    Code
+                  </a>
+                )}
               </div>
             </div>
 

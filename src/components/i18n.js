@@ -27,6 +27,13 @@ i18n.use(initReactI18next).init({
         },
         about: {
           title: "About",
+          founder: {
+            text: "I'm the founder of",
+            textAfter:
+              " — a WhatsApp booking assistant for any business that runs on appointments. Customers just text, and Zlockd books, confirms and sends reminders automatically, 24/7, in 7 languages. I designed and built it end to end.",
+            label: "Founder",
+            value: "Zlockd — WhatsApp booking SaaS",
+          },
           philosophy:
             "I believe good interfaces are felt, not noticed. I obsess over the details most people skip — the transitions, the empty states, the moment something goes from working to actually feeling right.",
           approach:
@@ -63,6 +70,11 @@ i18n.use(initReactI18next).init({
         projects: {
           title: "Projects",
 
+          Zlockd: {
+            title: "Zlockd — Founder",
+            description:
+              "My own SaaS product. Businesses with appointments — salons, studios, practices, workshops — get bookings straight from WhatsApp: instant replies, booking, confirmations and reminders, 24/7, in 7 languages. Includes a real-time dashboard for appointments, walk-ins, staff and revenue, plus Stripe subscriptions.",
+          },
           CrownChauffeur: {
             title: "Crown Chauffeur",
             description:
@@ -119,6 +131,13 @@ i18n.use(initReactI18next).init({
         },
         about: {
           title: "Profil",
+          founder: {
+            text: "Ich bin Gründer von",
+            textAfter:
+              " — einem WhatsApp-Buchungsassistenten für jedes Business mit Terminen. Kunden schreiben einfach, und Zlockd bucht, bestätigt und erinnert automatisch — rund um die Uhr, in 7 Sprachen. Konzipiert und entwickelt habe ich es komplett selbst.",
+            label: "Gründer",
+            value: "Zlockd — WhatsApp-Buchungs-SaaS",
+          },
           philosophy:
             "Ich glaube, dass gute Interfaces gefühlt werden, nicht bemerkt. Ich bin besessen von den Details, die die meisten überspringen — die Übergänge, die leeren Zustände, der Moment, in dem etwas aufhört zu funktionieren und anfängt, sich richtig anzufühlen.",
           approach:
@@ -155,6 +174,11 @@ i18n.use(initReactI18next).init({
         projects: {
           title: "Projekte",
 
+          Zlockd: {
+            title: "Zlockd — Gründer",
+            description:
+              "Mein eigenes SaaS-Produkt. Unternehmen mit Terminen — Salons, Studios, Praxen, Werkstätten — erhalten Buchungen direkt über WhatsApp: sofortige Antworten, Buchung, Bestätigung und Erinnerungen, rund um die Uhr, in 7 Sprachen. Inklusive Echtzeit-Dashboard für Termine, Walk-ins, Team und Einnahmen sowie Stripe-Abos.",
+          },
           CrownChauffeur: {
             title: "Crown Chauffeur",
             description:
