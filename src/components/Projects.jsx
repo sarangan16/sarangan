@@ -20,7 +20,7 @@ const projects = [
   {
     titleKey: "Duesseldoener",
     descriptionKey: "Duesseldoener.description",
-    live: "https://dusseldoner-website.vercel.app/",
+    live: "https://düsseldoner.de/",
     tech: ["Next.js", "TypeScript", "Tailwind", "Framer Motion", "SEO", "i18n"],
   },
   {
