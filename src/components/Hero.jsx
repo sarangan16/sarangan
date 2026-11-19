@@ -11,8 +11,15 @@ const RollingRole = ({ words }) => {
   useEffect(() => {
     if (reduceMotion || words.length < 2) return;
     const id = setInterval(() => {
-      setInstant(false);
-      setIndex((i) => i + 1);
+      setIndex((i) => {
+        // onAnimationComplete gets skipped sometimes (tab in background etc), snap back here too
+        if (i >= words.length) {
+          setInstant(true);
+          return 0;
+        }
+        setInstant(false);
+        return i + 1;
+      });
     }, 2200);
     return () => clearInterval(id);
   }, [reduceMotion, words.length]);
