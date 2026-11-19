@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
 
 *{
 
@@ -11,6 +11,5 @@ html{
 body {
   min-height: 100vh;
   background: linear-gradient(to bottom, #e6f0ff 0%, #ffffff 100%);
-  font-family: "Poiret One";
-  letter-spacing: 0.05em;
+  font-family: "Inter", system-ui, sans-serif;
 }

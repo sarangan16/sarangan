@@ -106,7 +106,7 @@ const TechStack = () => {
   return (
     <section className="min-h-screen py-12 md:py-20 px-6 md:px-16">
       <div className="max-w-5xl mx-auto mb-16">
-        <h2 className="font-['Poiret_One'] text-4xl md:text-6xl font-bold uppercase tracking-widest">
+        <h2 className="font-display text-4xl md:text-6xl font-bold uppercase tracking-tight">
           {t("stack.title")}
         </h2>
       </div>

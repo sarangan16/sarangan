@@ -53,7 +53,7 @@ const Projects = () => {
     <section className="min-h-screen px-6 md:px-16 py-12 md:py-20 ">
       {/* h1 title */}
       <div className="max-w-5xl mx-auto mb-20">
-        <h2 className="font-['Poiret_One'] text-4xl md:text-6xl font-bold uppercase tracking-widest">
+        <h2 className="font-display text-4xl md:text-6xl font-bold uppercase tracking-tight">
           {t("projects.title")}
         </h2>
       </div>

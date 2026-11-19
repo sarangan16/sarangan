@@ -77,7 +77,7 @@ const Hero = ({ projectsRef }) => {
           className="flex items-center gap-3 mb-4"
         >
           <span className="block w-7 h-px bg-[#F16D34] opacity-60" />
-          <span className="font-['Poiret_One'] uppercase tracking-[0.35em] text-white/65">
+          <span className="font-display uppercase tracking-[0.15em] sm:tracking-[0.3em] text-[11px] sm:text-sm leading-relaxed text-white/65">
             DÜSSELDORF · BUILDING FOR THE WEB
           </span>
         </motion.div>
@@ -86,7 +86,7 @@ const Hero = ({ projectsRef }) => {
           initial={{ opacity: 0, y: 16 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-[clamp(40px,13.5vw,52px)] sm:text-[clamp(52px,10vw,110px)] font-['Poiret_One'] uppercase font-extrabold letter-spa leading-[0.90] tracking-widest"
+          className="text-[clamp(40px,13.5vw,52px)] sm:text-[clamp(52px,10vw,110px)] font-display uppercase font-bold leading-[0.90] tracking-[-0.02em]"
           style={{}}
         >
           Sarangan
