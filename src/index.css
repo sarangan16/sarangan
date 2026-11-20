@@ -20,3 +20,15 @@
 .shine-border {
   animation: border-shine 2.5s ease-in-out infinite;
 }
+
+/* hero xray layer */
+.xray-grid {
+  background-image:
+    linear-gradient(rgba(241, 109, 52, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(241, 109, 52, 0.07) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.xray-stroke {
+  -webkit-text-stroke: 1px #f16d34;
+}
