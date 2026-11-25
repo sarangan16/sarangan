@@ -1,109 +1,39 @@
-import React, { useState } from "react";
+import React from "react";
 import { useTranslation } from "react-i18next";
-import { Menu, X } from "lucide-react";
 import logo from "../images/logo.png";
 
-const NavItem = ({ children, onClick }) => {
-  return (
-    <button
-      onClick={onClick}
-      className="relative group text-white/60 hover:text-white transition"
-    >
-      {children}
-
-      {/* HOVER LINE */}
-      <span
-        className="
-        absolute left-0 -bottom-1
-        w-0 h-[1px]
-        bg-[#F16D34]
-        transition-all duration-300 ease-out
-        group-hover:w-full
-      "
-      />
-    </button>
-  );
-};
-
-const Navbar = ({ heroRef, aboutRef, projectsRef, stackRef, contactRef }) => {
-  const { i18n } = useTranslation();
-  const [open, setOpen] = useState(false);
-
-  const scrollTo = (ref) => {
-    ref?.current?.scrollIntoView({ behavior: "smooth" });
-    setOpen(false);
-  };
+// just logo, contact + language. hero and scroll guide do the rest
+const Navbar = ({ heroRef, contactRef }) => {
+  const { t, i18n } = useTranslation();
+  const go = (ref) => ref?.current?.scrollIntoView({ behavior: "smooth" });
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-[#0a0a0a] backdrop-blur-md border-b border-white/5">
-      <div className="h-16 flex items-center justify-between px-6 md:px-16">
-        {/* brand */}
-        <div
-          onClick={() => scrollTo(heroRef)}
-          className="text-white text-sm uppercase tracking-[0.35em] cursor-pointer hover:opacity-70 transition"
-        >
-          <img src={logo} alt="Sarangan" className="h-8 w-auto invert-0" />
-        </div>
-
-        {/* desktop nav */}
-        <div className="hidden md:flex items-center gap-6 lg:gap-8 text-sm uppercase tracking-[0.03em]">
-          <NavItem onClick={() => scrollTo(heroRef)}>Home</NavItem>
-
-          <NavItem onClick={() => scrollTo(aboutRef)}>About</NavItem>
-
-          <NavItem onClick={() => scrollTo(projectsRef)}>Projects</NavItem>
-
-          <NavItem onClick={() => scrollTo(stackRef)}>Stack</NavItem>
-
-          <NavItem onClick={() => scrollTo(contactRef)}>Contact</NavItem>
-
-          {/* language selector */}
-          <button
-            onClick={() =>
-              i18n.changeLanguage(i18n.language === "en" ? "de" : "en")
-            }
-            className=" ml-4 px-3 py-1
-    border border-[#F16D34]/40
-    rounded-full
-    text-xs tracking-[0.25em]
-    text-[#F16D34]
-    hover:bg-[#F16D34]
-    hover:text-black
-    transition"
-          >
-            {i18n.language === "en" ? "DE" : "EN"}
+      {/* same container as the sections so the logo lines up with the content */}
+      <div className="px-6 md:px-16">
+        <div className="h-16 max-w-5xl mx-auto flex items-center justify-between">
+          <button onClick={() => go(heroRef)} className="hover:opacity-70 transition">
+            <img src={logo} alt="Sarangan" className="h-8 w-auto" />
           </button>
-        </div>
 
-        {/* small screen */}
-        <button className="md:hidden text-white" onClick={() => setOpen(!open)}>
-          {open ? <X size={22} /> : <Menu size={22} />}
-        </button>
+          <div className="flex items-center gap-6">
+            <button
+              onClick={() => go(contactRef)}
+              className="relative group text-sm text-white/60 hover:text-white transition"
+            >
+              {t("contact.title")}
+              <span className="absolute left-0 -bottom-1 w-0 h-px bg-[#F16D34] transition-all duration-300 group-hover:w-full" />
+            </button>
+
+            <button
+              onClick={() => i18n.changeLanguage(i18n.language === "en" ? "de" : "en")}
+              className="px-3 py-1 border border-[#F16D34]/40 rounded-full text-xs tracking-[0.25em] text-[#F16D34] hover:bg-[#F16D34] hover:text-black transition"
+            >
+              {i18n.language === "en" ? "DE" : "EN"}
+            </button>
+          </div>
+        </div>
       </div>
-
-      {/* mobile menu */}
-      {open && (
-        <div className="md:hidden bg-black border-t border-white/5 px-6 py-8 space-y-6 text-white/70 uppercase text-sm tracking-widest">
-          <button onClick={() => scrollTo(heroRef)} className="block">
-            Home
-          </button>
-          <button onClick={() => scrollTo(aboutRef)} className="block">
-            About
-          </button>
-
-          <button onClick={() => scrollTo(projectsRef)} className="block">
-            Projects
-          </button>
-
-          <button onClick={() => scrollTo(stackRef)} className="block">
-            Stack
-          </button>
-
-          <button onClick={() => scrollTo(contactRef)} className="block">
-            Contact
-          </button>
-        </div>
-      )}
     </nav>
   );
 };

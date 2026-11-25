@@ -25,6 +25,7 @@ i18n.use(initReactI18next).init({
           role_line2: "Developer",
           name: "Sarangan",
           cta_projects: "Projects",
+          roles: ["Developer", "Founder", "Builder"],
         },
         about: {
           title: "About",
@@ -132,6 +133,7 @@ i18n.use(initReactI18next).init({
           role_line2: "Entwickler",
           name: "Sarangan",
           cta_projects: "Projekte",
+          roles: ["Entwickler", "Gründer", "Macher"],
         },
         about: {
           title: "Profil",
