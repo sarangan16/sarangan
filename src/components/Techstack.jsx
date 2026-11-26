@@ -25,7 +25,6 @@ import {
 import {
   MdEmail,
   MdAutoAwesome,
-  MdSchedule,
   MdInsertChart,
 } from "react-icons/md";
 import { useTranslation } from "react-i18next";
@@ -59,7 +58,6 @@ const categories = [
       { name: "PostgreSQL", icon: SiPostgresql },
       { name: "MongoDB", icon: SiMongodb },
       { name: "Stripe", icon: SiStripe },
-      { name: "Cron Jobs", icon: MdSchedule },
       { name: "Resend", icon: MdEmail },
       { name: "EmailJS", icon: MdEmail },
     ],
@@ -82,6 +80,7 @@ const categories = [
       { name: "Netlify", icon: SiNetlify },
       { name: "Sentry", icon: SiSentry },
       { name: "CI/CD", icon: FaGithub },
+      { name: "GitHub", icon: FaGithub },
     ],
   },
   {
@@ -96,7 +95,6 @@ const categories = [
     items: [
       { name: "Jest", icon: SiJest },
       { name: "Figma", icon: SiFigma },
-      { name: "GitHub", icon: FaGithub },
     ],
   },
 ];

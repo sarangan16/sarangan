@@ -19,10 +19,10 @@ const About = () => {
   };
 
   const facts = [
-    { label: t("about.founder.label"), value: t("about.founder.value") },
-    { label: t("about.fact1.label"), value: t("about.fact1.value") },
-    { label: t("about.fact2.label"), value: t("about.fact2.value") },
-    { label: t("about.fact3.label"), value: t("about.fact3.value") },
+    { label: t("about.experience.label"), value: t("about.experience.value") },
+    { label: t("about.focus.label"), value: t("about.focus.value") },
+    { label: t("about.product.label"), value: t("about.product.value") },
+    { label: t("about.workstyle.label"), value: t("about.workstyle.value") },
   ];
 
   return (
@@ -58,14 +58,10 @@ const About = () => {
           {/* right side about me */}
           <motion.div variants={item} className="flex flex-col gap-8 pt-2">
             <p className="text-white/70 text-sm md:text-base leading-relaxed">
-              {t("about.philosophy")}
+              {t("about.intro")}
             </p>
 
-            <p className="text-white/50 text-sm leading-relaxed">
-              {t("about.approach")}
-            </p>
-
-            {/* Fact rows — for quick glance */}
+            {/* fact rows, quick glance */}
             <div className="border-t border-white/10 pt-8 flex flex-col gap-5">
               {facts.map((fact, i) => (
                 <div

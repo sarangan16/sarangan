@@ -20,7 +20,7 @@ const char = {
   out: { y: "-105%", transition: { duration: 0.45, ease } },
 };
 
-// entwickler -> gründer -> macher, letter by letter. tap to skip
+// entwickler -> gründer, letter by letter. tap to skip
 const Roller = ({ words }) => {
   const [i, setI] = useState(0);
   const [width, setWidth] = useState(0);
@@ -140,15 +140,13 @@ const Hero = ({ projectsRef }) => {
             {...fade(0.7)}
             className="md:col-start-8 md:col-span-5 flex flex-wrap md:justify-end gap-x-8 gap-y-3 font-display text-base sm:text-lg"
           >
-            <a
-              href="https://zlockd.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex items-center gap-2 border-b border-white/20 text-white/70 hover:text-white hover:border-white pb-1 transition"
+            <button
+              onClick={() => projectsRef?.current?.scrollIntoView({ behavior: "smooth" })}
+              className="group flex items-center gap-2 border-b border-[#F16D34] text-[#F16D34] pb-1 transition hover:text-white hover:border-white"
             >
-              {t("hero.founderLine")} Zlockd
-              <span className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5">↗</span>
-            </a>
+              {t("hero.cta_projects")}
+              <span className="transition-transform group-hover:translate-y-0.5">↓</span>
+            </button>
             <a
               href="https://github.com/sarangan16"
               target="_blank"
@@ -158,13 +156,6 @@ const Hero = ({ projectsRef }) => {
               GitHub
               <span className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5">↗</span>
             </a>
-            <button
-              onClick={() => projectsRef?.current?.scrollIntoView({ behavior: "smooth" })}
-              className="group flex items-center gap-2 border-b border-[#F16D34] text-[#F16D34] pb-1 transition hover:text-white hover:border-white"
-            >
-              {t("hero.cta_projects")}
-              <span className="transition-transform group-hover:translate-y-0.5">↓</span>
-            </button>
           </motion.div>
         </div>
       </div>

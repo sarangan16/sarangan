@@ -1,11 +1,58 @@
-import React from "react";
+import React, { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+
+// small read more under zlockd
+const CaseStudy = ({ id }) => {
+  const { t } = useTranslation();
+  const [open, setOpen] = useState(false);
+  const items = t(`projects.${id}.caseStudy`, { returnObjects: true });
+  if (!Array.isArray(items)) return null;
+
+  return (
+    <div className="mt-4 max-w-xl">
+      <button
+        type="button"
+        onClick={() => setOpen((o) => !o)}
+        aria-expanded={open}
+        aria-controls={`${id}-case`}
+        className="group flex items-center gap-1.5 text-[11px] uppercase tracking-[0.18em] text-white/40 hover:text-[#F16D34] border-b border-white/20 hover:border-[#F16D34] pb-0.5 transition-all duration-300"
+      >
+        {open ? t("projects.less") : t("projects.more")}
+        <span>{open ? "↑" : "↓"}</span>
+      </button>
+
+      <AnimatePresence initial={false}>
+        {open && (
+          <motion.div
+            id={`${id}-case`}
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.4, ease: [0.2, 0.7, 0.2, 1] }}
+            className="overflow-hidden"
+          >
+            <dl className="pt-6 flex flex-col gap-5">
+              {items.map((item, i) => (
+                <div key={i}>
+                  <dt className="text-white/50 text-xs uppercase tracking-[0.3em]">{item.label}</dt>
+                  <dd className="text-white/70 text-sm leading-relaxed mt-2">{item.text}</dd>
+                </div>
+              ))}
+            </dl>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+};
 
 const projects = [
   {
     titleKey: "Zlockd",
     descriptionKey: "Zlockd.description",
     live: "https://zlockd.com",
+    caseStudy: true,
     tech: [
       "React",
       "Next.js",
@@ -28,6 +75,7 @@ const projects = [
     descriptionKey: "KaufDE.description",
     github: "https://github.com/sarangan16/online-store",
     live: "https://kaufde.vercel.app/",
+    backend: true,
     tech: ["Express", "Stripe", "EmailJS", "React", "Router", "Tailwind"],
   },
   {
@@ -35,6 +83,7 @@ const projects = [
     descriptionKey: "CrownChauffeur.description",
     github: "https://github.com/sarangan16/chaffuerElite",
     live: "https://chaffuer-elite.vercel.app/",
+    backend: true,
     tech: ["Node.js", "Express", "Zod", "React", "GSAP", "Tailwind"],
   },
   {
@@ -42,6 +91,7 @@ const projects = [
     descriptionKey: "JobBoard.description",
     github: "https://github.com/sarangan16/job-board",
     live: "https://job-board-nine-ecru.vercel.app/",
+    backend: true,
     tech: ["React", "TypeScript", "Supabase", "Zustand", "Tailwind"],
   },
 ];
@@ -113,6 +163,17 @@ const Projects = () => {
             <p className="text-white/70 mt-4 max-w-xl text-sm md:text-base leading-relaxed">
               {t(`projects.${project.titleKey}.description`)}
             </p>
+
+            {project.backend && (
+              <p className="mt-3 max-w-xl text-sm leading-relaxed text-white/70">
+                <span className="text-white/50 text-xs uppercase tracking-[0.3em] mr-3">
+                  {t("projects.backend")}
+                </span>
+                {t(`projects.${project.titleKey}.backend`)}
+              </p>
+            )}
+
+            {project.caseStudy && <CaseStudy id={project.titleKey} />}
 
             {/* tech stack */}
             <div className="flex flex-wrap gap-2 mt-5">

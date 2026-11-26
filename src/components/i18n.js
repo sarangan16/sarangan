@@ -17,39 +17,36 @@ i18n.use(initReactI18next).init({
           role: "Frontend Developer",
           freelance: "Freelance",
           location: "Düsseldorf",
-          founderLine: "Founder @",
           description:
-            "Frontend-focused full-stack developer based in Germany, building fast, scalable React applications for real-world SaaS products. I turn complex systems — from e-commerce to logistics — into responsive, production-ready interfaces with seamless API integration and a strong focus on performance.",
-          available: "Available for work",
+            "Frontend developer with over four years of experience in React, TypeScript and Next.js, most recently at Eriline. On the backend I work with Node.js and PostgreSQL. My own product, Zlockd, is a WhatsApp booking system for hair salons.",
+          available: "Open to full-time roles and projects",
           role_line1: "Frontend",
           role_line2: "Developer",
           name: "Sarangan",
           cta_projects: "Projects",
-          roles: ["Developer", "Founder", "Builder"],
+          roles: ["Developer", "Founder"],
         },
         about: {
           title: "About",
-          founder: {
-            label: "Founder",
-            value: "Zlockd — WhatsApp booking SaaS",
+          intro:
+            "I build interfaces that load fast and are easy to use. I care about the details that often get missed: transitions, empty states, error messages. Outside of code I'm interested in typography and web design.",
+          experience: {
+            label: "Experience",
+            value: "4+ years of React and TypeScript, most recently at Eriline",
           },
-          philosophy:
-            "I believe good interfaces are felt, not noticed. I obsess over the details most people skip — the transitions, the empty states, the moment something goes from working to actually feeling right.",
-          approach:
-            "Outside of code I'm drawn to type design, brutalist web aesthetics, and anything that challenges how a UI is supposed to look. That curiosity shows up in my work.",
-          fact1: {
-            label: "Background",
-            value: "React in Production",
+          focus: {
+            label: "Focus",
+            value: "Turning Figma designs into clean, animated interfaces",
           },
-          fact2: {
-            label: "Strength",
-            value: "Turning Figma into pixel-perfect, animated UI",
+          product: {
+            label: "Own product",
+            value: "Zlockd, WhatsApp booking system",
           },
-          fact3: {
-            label: "Working style",
-            value: "Async-friendly, docs-first, minimal meetings",
+          workstyle: {
+            label: "Way of working",
+            value: "Experienced with remote work, clean documentation",
           },
-          availability: "Open to full-time & freelance ",
+          availability: "Open to full-time roles and projects",
         },
 
         navigation: {
@@ -68,11 +65,28 @@ i18n.use(initReactI18next).init({
 
         projects: {
           title: "Projects",
+          backend: "Backend",
+          more: "Read more",
+          less: "Show less",
 
           Zlockd: {
-            title: "Zlockd — Founder",
+            title: "Zlockd · Founder",
             description:
-              "My own SaaS product. Businesses with appointments — salons, studios, practices, workshops — get bookings straight from WhatsApp: instant replies, booking, confirmations and reminders, 24/7, in 7 languages. Includes a real-time dashboard for appointments, walk-ins, staff and revenue, plus Stripe subscriptions.",
+              "A registered business with paying clients in Germany. Salons and other appointment-based businesses take bookings directly through WhatsApp: replies, booking, confirmation and reminders around the clock, in seven languages. I built the frontend, backend and WhatsApp integration on my own.",
+            caseStudy: [
+              {
+                label: "My role",
+                text: "I built the product on my own, from the WhatsApp integration and backend to the dashboard.",
+              },
+              {
+                label: "How it works",
+                text: "A customer writes on WhatsApp, the system detects the language and preferred time, checks free slots in PostgreSQL, confirms the booking and sends a reminder later. The salon sees everything in real time in the dashboard.",
+              },
+              {
+                label: "Tech",
+                text: "Next.js and React on the frontend, Node.js and PostgreSQL on the backend, Twilio for WhatsApp, Stripe for monthly subscriptions with automatic renewal, an LLM for replies in seven languages.",
+              },
+            ],
           },
           Duesseldoener: {
             title: "Düsseldöner",
@@ -83,11 +97,15 @@ i18n.use(initReactI18next).init({
             title: "Crown Chauffeur",
             description:
               "A luxury chauffeur booking platform featuring real-time fare estimation, vehicle selection, and airport transfer scheduling. Designed with React, Tailwind CSS, and GSAP for a smooth experience. Includes email booking confirmation and form validation using React Hook Form and Zod.",
+            backend:
+              "Express backend. Fare based on route and road tolls, pickup and drop-off points via a free UK API.",
           },
           JobBoard: {
             title: "JobBoard",
             description:
-              "Built for myself while job hunting in Germany. Kanban board with drag and drop, real authentication, and per-user cloud storage. — Demo: demo@myjob.com · Password: 654321",
+              "Built for my own job search in Germany. Kanban board with drag and drop, real authentication and per-user cloud storage. Demo: demo@myjob.com · Password: 654321",
+            backend:
+              "Supabase for login and data storage, each user only sees their own data.",
           },
 
           GoldStack: {
@@ -99,7 +117,9 @@ i18n.use(initReactI18next).init({
           KaufDE: {
             title: "KaufDE",
             description:
-              "A production e-commerce platform delivered to a real client. Stripe checkout, live product search, cart management, and GSAP animations — fully responsive across all devices.",
+              "Online shop with product search, cart and Stripe checkout through my own Express backend. GSAP animations, responsive on all devices. Product data comes from a test API (DummyJSON).",
+            backend:
+              "Own Express API for the Stripe checkout. Cart with quantity and price calculation, contact form via EmailJS.",
           },
         },
 
@@ -125,39 +145,36 @@ i18n.use(initReactI18next).init({
           role: "Frontend Entwickler",
           freelance: "Freelance",
           location: "Düsseldorf",
-          founderLine: "Gründer @",
           description:
-            "Frontend-fokussierter Full-Stack-Entwickler mit Sitz in Deutschland, spezialisiert auf die Entwicklung schneller und skalierbarer React-Anwendungen für praxisnahe SaaS-Produkte. Ich verwandle komplexe Systeme – von E-Commerce bis Logistik – in responsive, produktionsreife Benutzeroberflächen mit nahtloser API-Integration und starkem Fokus auf Performance.",
-          available: "Verfügbar für Projekte",
+            "Frontend-Entwickler mit über vier Jahren Erfahrung in React, TypeScript und Next.js, zuletzt bei Eriline. Im Backend arbeite ich mit Node.js und PostgreSQL. Mein eigenes Produkt Zlockd ist ein WhatsApp-Buchungssystem für Friseursalons.",
+          available: "Offen für Festanstellung und Projekte",
           role_line1: "Frontend",
           role_line2: "Entwickler",
           name: "Sarangan",
           cta_projects: "Projekte",
-          roles: ["Entwickler", "Gründer", "Macher"],
+          roles: ["Entwickler", "Gründer"],
         },
         about: {
           title: "Profil",
-          founder: {
-            label: "Gründer",
-            value: "Zlockd — WhatsApp-Buchungs-SaaS",
+          intro:
+            "Ich entwickle Oberflächen, die schnell laden und sich einfach bedienen lassen. Mir sind die Details wichtig, die oft untergehen: Übergänge, leere Zustände, Fehlermeldungen. Neben dem Code interessiere ich mich für Typografie und Webdesign.",
+          experience: {
+            label: "Erfahrung",
+            value: "Über 4 Jahre React und TypeScript, zuletzt bei Eriline",
           },
-          philosophy:
-            "Ich glaube, dass gute Interfaces gefühlt werden, nicht bemerkt. Ich bin besessen von den Details, die die meisten überspringen — die Übergänge, die leeren Zustände, der Moment, in dem etwas aufhört zu funktionieren und anfängt, sich richtig anzufühlen.",
-          approach:
-            "Abseits von Code interessiere ich mich für Typografie, brutalistisches Webdesign und alles, was die Konventionen eines UI in Frage stellt.",
-          fact1: {
-            label: "Hintergrund",
-            value: "React in Produktion",
+          focus: {
+            label: "Schwerpunkt",
+            value: "Figma-Designs in saubere, animierte Oberflächen umsetzen",
           },
-          fact2: {
-            label: "Stärke",
-            value: "Figma in pixelgenaue, animierte UI umsetzen",
+          product: {
+            label: "Eigenes Produkt",
+            value: "Zlockd, WhatsApp-Buchungssystem",
           },
-          fact3: {
-            label: "Arbeitsstil",
-            value: "Async-freundlich, dokumentationsorientiert",
+          workstyle: {
+            label: "Arbeitsweise",
+            value: "Remote-erfahren, saubere Dokumentation",
           },
-          availability: "Offen für Festanstellung & Freelance ",
+          availability: "Offen für Festanstellung und Projekte",
         },
 
         navigation: {
@@ -176,11 +193,28 @@ i18n.use(initReactI18next).init({
 
         projects: {
           title: "Projekte",
+          backend: "Backend",
+          more: "Mehr erfahren",
+          less: "Weniger",
 
           Zlockd: {
-            title: "Zlockd — Gründer",
+            title: "Zlockd · Gründer",
             description:
-              "Mein eigenes SaaS-Produkt. Unternehmen mit Terminen — Salons, Studios, Praxen, Werkstätten — erhalten Buchungen direkt über WhatsApp: sofortige Antworten, Buchung, Bestätigung und Erinnerungen, rund um die Uhr, in 7 Sprachen. Inklusive Echtzeit-Dashboard für Termine, Walk-ins, Team und Einnahmen sowie Stripe-Abos.",
+              "Ein eingetragenes Unternehmen mit zahlenden Kunden in Deutschland. Salons und andere Betriebe mit Terminen nehmen Buchungen direkt über WhatsApp an: Antworten, Buchung, Bestätigung und Erinnerungen rund um die Uhr, in sieben Sprachen. Frontend, Backend und WhatsApp-Anbindung habe ich allein entwickelt.",
+            caseStudy: [
+              {
+                label: "Meine Rolle",
+                text: "Ich habe das Produkt allein entwickelt, von der WhatsApp-Anbindung über das Backend bis zum Dashboard.",
+              },
+              {
+                label: "Ablauf",
+                text: "Eine Kundin schreibt per WhatsApp, das System erkennt Sprache und Wunschtermin, prüft freie Zeiten in PostgreSQL, bestätigt die Buchung und schickt später eine Erinnerung. Der Salon sieht alles in Echtzeit im Dashboard.",
+              },
+              {
+                label: "Technik",
+                text: "Next.js und React im Frontend, Node.js und PostgreSQL im Backend, Twilio für WhatsApp, Stripe für monatliche Abos mit automatischer Verlängerung, ein LLM für die Antworten in sieben Sprachen.",
+              },
+            ],
           },
           Duesseldoener: {
             title: "Düsseldöner",
@@ -191,11 +225,15 @@ i18n.use(initReactI18next).init({
             title: "Crown Chauffeur",
             description:
               "Eine Luxus-Chauffeur-Plattform mit Echtzeit-Preisschätzung, Fahrzeugauswahl und Flughafen-Transfers. Entwickelt mit React, Tailwind CSS und GSAP für ein reibungsloses Erlebnis. Inklusive E-Mail-Bestätigung und Formularvalidierung.",
+            backend:
+              "Express-Backend. Fahrpreis nach Strecke und Mautgebühren, Abhol- und Zielorte über eine freie UK-API.",
           },
           JobBoard: {
             title: "JobBoard",
             description:
-              "Gebaut für mich selbst — während meiner Jobsuche in Deutschland. Kanban-Board mit Drag-and-Drop, echter Authentifizierung und benutzerspezifischem Cloud-Speicher. — Demo: demo@myjob.com · Passwort: 654321",
+              "Für meine eigene Jobsuche in Deutschland gebaut. Kanban-Board mit Drag-and-Drop, echter Authentifizierung und eigenem Cloud-Speicher pro Nutzer. Demo: demo@myjob.com · Passwort: 654321",
+            backend:
+              "Supabase für Login und Datenspeicherung, jeder Nutzer sieht nur seine eigenen Daten.",
           },
 
           GoldStack: {
@@ -207,7 +245,9 @@ i18n.use(initReactI18next).init({
           KaufDE: {
             title: "KaufDE",
             description:
-              "Eine produktionsreife E-Commerce-Plattform, die für einen echten Kunden entwickelt wurde. Stripe-Checkout, Live-Produktsuche, Warenkorb-Verwaltung und GSAP-Animationen — vollständig responsiv auf allen Geräten.",
+              "Online-Shop mit Produktsuche, Warenkorb und Stripe-Checkout über ein eigenes Express-Backend. GSAP-Animationen, auf allen Geräten responsiv. Produktdaten kommen aus einer Test-API (DummyJSON).",
+            backend:
+              "Eigene Express-API für den Stripe-Checkout. Warenkorb mit Mengen- und Preisberechnung, Kontaktformular über EmailJS.",
           },
         },
 
