@@ -14,11 +14,11 @@ i18n.use(initReactI18next).init({
       translation: {
         hero: {
           title: "SARANGAN",
-          role: "Frontend Developer",
+          role: "Full-Stack Developer",
           freelance: "Freelance",
           location: "Düsseldorf",
           description:
-            "Frontend developer with over four years of experience in React, TypeScript and Next.js, most recently at Eriline. On the backend I work with Node.js and PostgreSQL. My own product, Zlockd, is a WhatsApp booking system for hair salons.",
+            "Full-stack developer with years of experience, from the interface to the database. React, TypeScript and Next.js on the frontend, Node.js, Express and PostgreSQL on the backend. My own product, Zlockd, is a WhatsApp booking SaaS for any business that runs on appointments, with paying clients in Germany.",
           available: "Open to full-time roles and projects",
           role_line1: "Frontend",
           role_line2: "Developer",
@@ -29,18 +29,22 @@ i18n.use(initReactI18next).init({
         about: {
           title: "About",
           intro:
-            "I build interfaces that load fast and are easy to use. I care about the details that often get missed: transitions, empty states, error messages. Outside of code I'm interested in typography and web design.",
+            "I build complete web applications: interface, API, database and deployment. I care about fast load times, clean and maintainable code, and the details that often get missed, like empty states and error messages. With Zlockd I took a product from the first idea to paying clients on my own.",
           experience: {
             label: "Experience",
-            value: "4+ years of React and TypeScript, most recently at Eriline",
+            value: "Several years, frontend and backend",
           },
-          focus: {
-            label: "Focus",
-            value: "Turning Figma designs into clean, animated interfaces",
+          frontend: {
+            label: "Frontend",
+            value: "React, TypeScript, Next.js, Tailwind",
+          },
+          backend: {
+            label: "Backend",
+            value: "Node.js, Express, PostgreSQL, Stripe",
           },
           product: {
             label: "Own product",
-            value: "Zlockd, WhatsApp booking system",
+            value: "Zlockd, WhatsApp booking SaaS with paying clients",
           },
           workstyle: {
             label: "Way of working",
@@ -142,11 +146,11 @@ i18n.use(initReactI18next).init({
       translation: {
         hero: {
           title: "SARANGAN",
-          role: "Frontend Entwickler",
+          role: "Full-Stack-Entwickler",
           freelance: "Freelance",
           location: "Düsseldorf",
           description:
-            "Frontend-Entwickler mit über vier Jahren Erfahrung in React, TypeScript und Next.js, zuletzt bei Eriline. Im Backend arbeite ich mit Node.js und PostgreSQL. Mein eigenes Produkt Zlockd ist ein WhatsApp-Buchungssystem für Friseursalons.",
+            "Full-Stack-Entwickler mit mehrjähriger Erfahrung, von der Oberfläche bis zur Datenbank. React, TypeScript und Next.js im Frontend, Node.js, Express und PostgreSQL im Backend. Mein eigenes Produkt Zlockd ist ein WhatsApp-Buchungssystem als SaaS für alle Betriebe, die mit Terminen arbeiten, mit zahlenden Kunden in Deutschland.",
           available: "Offen für Festanstellung und Projekte",
           role_line1: "Frontend",
           role_line2: "Entwickler",
@@ -157,18 +161,22 @@ i18n.use(initReactI18next).init({
         about: {
           title: "Profil",
           intro:
-            "Ich entwickle Oberflächen, die schnell laden und sich einfach bedienen lassen. Mir sind die Details wichtig, die oft untergehen: Übergänge, leere Zustände, Fehlermeldungen. Neben dem Code interessiere ich mich für Typografie und Webdesign.",
+            "Ich entwickle komplette Webanwendungen: Oberfläche, API, Datenbank und Deployment. Mir sind schnelle Ladezeiten, sauberer und wartbarer Code und die Details wichtig, die oft untergehen, etwa leere Zustände und Fehlermeldungen. Mit Zlockd habe ich ein Produkt allein von der ersten Idee bis zu zahlenden Kunden gebracht.",
           experience: {
             label: "Erfahrung",
-            value: "Über 4 Jahre React und TypeScript, zuletzt bei Eriline",
+            value: "Mehrjährig, Frontend und Backend",
           },
-          focus: {
-            label: "Schwerpunkt",
-            value: "Figma-Designs in saubere, animierte Oberflächen umsetzen",
+          frontend: {
+            label: "Frontend",
+            value: "React, TypeScript, Next.js, Tailwind",
+          },
+          backend: {
+            label: "Backend",
+            value: "Node.js, Express, PostgreSQL, Stripe",
           },
           product: {
             label: "Eigenes Produkt",
-            value: "Zlockd, WhatsApp-Buchungssystem",
+            value: "Zlockd, WhatsApp-Buchungs-SaaS mit zahlenden Kunden",
           },
           workstyle: {
             label: "Arbeitsweise",

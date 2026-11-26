@@ -20,7 +20,8 @@ const About = () => {
 
   const facts = [
     { label: t("about.experience.label"), value: t("about.experience.value") },
-    { label: t("about.focus.label"), value: t("about.focus.value") },
+    { label: t("about.frontend.label"), value: t("about.frontend.value") },
+    { label: t("about.backend.label"), value: t("about.backend.value") },
     { label: t("about.product.label"), value: t("about.product.value") },
     { label: t("about.workstyle.label"), value: t("about.workstyle.value") },
   ];
