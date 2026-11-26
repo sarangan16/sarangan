@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import logo from "../images/logo.png";
+import logo from "../images/logo.svg";
 
 // just logo, contact + language. hero and scroll guide do the rest
 const Navbar = ({ heroRef, contactRef }) => {
